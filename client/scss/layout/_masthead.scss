@@ -1,8 +1,8 @@
 // Styling for the masthead
 header.masthead {
   text-align: center;
-  color:white;
-  background-image: url('../img/informatique.jpg');
+  color: black;
+  /*background-image: url('../img/informatique.jpg');*/
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -29,13 +29,12 @@ header.masthead {
 @media(min-width:768px) {
   header.masthead {
     .intro-text {
-      padding-top: 300px;
       padding-bottom: 200px;
       .intro-lead-in {
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
-        margin-bottom: 25px;
+        margin-bottom: 45px;
         @include serif-font;
       }
       .intro-heading {

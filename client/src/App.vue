@@ -8,11 +8,11 @@
 
 <script type="text/javascript">
 import navbar from './components/Navigation.vue'
-// import foot from './components/Footer.vue'
+import foot from './components/Footer.vue'
 export default{
   components: {
-    navbar
-  // foot
+    navbar,
+    foot
   }
 }
 </script>
