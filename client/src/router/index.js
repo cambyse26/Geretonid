@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Download from '@/components/Download'
 import Fonctionalities from '@/components/Fonctionalities'
 import Us from '@/components/Us'
 import Sensibilisation from '@/components/Sensibilisation'
-import Action from '@/components/Action'
+import Droit from '@/components/Droit'
 
 Vue.use(Router)
 
@@ -15,11 +14,6 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/download',
-      name: 'Download',
-      component: Download
     },
     {
       path: '/fonctionalities',
@@ -37,9 +31,9 @@ export default new Router({
       component: Sensibilisation
     },
     {
-      path: '/action',
-      name: 'Action',
-      component: Action
+      path: '/droit',
+      name: 'Droit',
+      component: Droit
     }
   ]
 })

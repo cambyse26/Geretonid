@@ -14,6 +14,7 @@ import Vuetify from 'vuetify'
 import { sync } from 'vuex-router-sync'
 import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
+
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false

@@ -1,6 +1,6 @@
 <!-- Team -->
 <template>
-  <section class="bg-light page-section" id="team">
+  <section class="page-section" id="team">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -56,11 +56,6 @@
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Depuis Décembre 2019</p>
         </div>
       </div>
     </div>
