@@ -20,23 +20,23 @@ export default {
               </div>
              <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Nom</label>
-                <input type="text" class="form-control" placeholder="Votre nom" id="Nom">
+                <input type="text" class="form-control" placeholder="Votre nom" id="Nom1">
               </div>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Prénom</label>
-                <input type="text" class="form-control" placeholder="Votre Prénom" id="Prenom">
+                <input type="text" class="form-control" placeholder="Votre Prénom" id="Prenom1">
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Adresse mail</label>
-                <input class="form-control" placeholder="Votre adresse mail"  id="Mail">
+                <input class="form-control" placeholder="Votre adresse mail"  id="Mail1">
               </div>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Code postal</label>
-                <input type="text" class="form-control" placeholder="Votre code postal"  id="Postal">
+                <input type="text" class="form-control" placeholder="Votre code postal"  id="Postal1">
               </div>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Ville</label>
-                <input type="text" class="form-control" placeholder="Votre ville" id="Ville" >
+                <input type="text" class="form-control" placeholder="Votre ville" id="Ville1" >
               </div>
             </form>
           <div class="modal-header">
@@ -44,19 +44,19 @@ export default {
           </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input class="form-control" placeholder="Nom de l'organisme"  id="Organisme">
+                <input class="form-control" placeholder="Nom de l'organisme"  id="Organisme1">
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Adresse mail</label>
-                <input class="form-control" placeholder="Adresse mail de l'organisme"  id="Mailorga">
+                <input class="form-control" placeholder="Adresse mail de l'organisme"  id="Mailorga1">
               </div>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Code postal</label>
-                <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga">
+                <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga1">
               </div>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Ville</label>
-                <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga">
+                <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga1">
               </div>
             </div>
           <div class="modal-footer">
@@ -70,15 +70,15 @@ export default {
   name: 'App',
   methods: {
     generatePDF () {
-      var Nom = document.getElementById('Nom').value
-      var Prenom = document.getElementById('Prenom').value
-      var Mail = document.getElementById('Mail').value
-      var Postal = document.getElementById('Postal').value
-      var Ville = document.getElementById('Ville').value
-      var Organisme = document.getElementById('Organisme').value
-      var Mailorga = document.getElementById('Mailorga').value
-      var Postalorga = document.getElementById('Postalorga').value
-      var Villeorga = document.getElementById('Villeorga').value
+      var Nom = document.getElementById('Nom1').value
+      var Prenom = document.getElementById('Prenom1').value
+      var Mail = document.getElementById('Mail1').value
+      var Postal = document.getElementById('Postal1').value
+      var Ville = document.getElementById('Ville1').value
+      var Organisme = document.getElementById('Organisme1').value
+      var Mailorga = document.getElementById('Mailorga1').value
+      var Postalorga = document.getElementById('Postalorga1').value
+      var Villeorga = document.getElementById('Villeorga1').value
       var Identifiant = document.getElementById('Identifiant').value
       var NP = Nom + ' ' + Prenom
       const doc = new Jspdf()
