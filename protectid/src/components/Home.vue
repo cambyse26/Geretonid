@@ -5,17 +5,17 @@
       <div class='container'>
         <div class='intro-text'>
           <img style=' width: 40%;' src='../../img/ProtectID_logo.png' alt>
-          <div class='intro-lead-in'>Bienvenue, Sélectionnez l'objet de votre courrier :</div>
+          <div class='intro-lead-in'>Bienvenue, Choisissez votre formulaire et envoyez-le à l'entreprise de votre choix :</div>
           <a
             class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
             data-toggle='modal'
             data-target='#accès'
-          >Exercer son droit d'accès</a>
+          >Droit d'accès</a>
           <a
             class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
             data-toggle='modal'
             data-target='#supprimer'
-          >Supprimer des données personnelles</a>
+          >Supprimer ses données personnelles</a>
           <a
             class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
             data-toggle='modal'
@@ -30,7 +30,7 @@
             class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
             data-toggle='modal'
             data-target='#prospec'
-          >S’opposer à la prospection commerciale</a>
+          >Stopper la prospection commerciale</a>
           <a
             class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
             data-toggle='modal'
@@ -48,22 +48,26 @@
             <h2
               class='section-heading text-uppercase'
               style='margin-bottom: 55px'
-            >Qu’est-ce que ProtectID?</h2>
+            >Que faire ?</h2>
             <h4>
-              ProtectID est une entreprise permettant de reprendre le contrôle de ses données afin de faire respecter votre vie privée facilement et rapidement.
+              Etape 1 : Choisissez le droit que vous voulez utiliser
               <br>
-              <br>Vos données personnelles représentent des informations importantes pour les sociétés, elles sont collectées lorsque vous êtes sur internet et que vous vous inscrivez, suite à ça elles sont stockées, analysées dans le but de vous cibler.
+              <br>Etape 2 : Sélectionnez l’entreprise à laquelle vous souhaitez envoyer votre demande
               <br>
-              <br>Le Règlement Général sur la Protection des Données (RGPD) vise à protéger vos données personnelles et faire valoir vos droits, vous pouvez éxiger un rapport détaillé de ce qu’une entreprise a récolté sur vous, savoir à quoi vos données ont servies et vous pouvez même éxiger la suppression de l’ensemble de vos données personnelles.
+              <br>Etape 3 : Générer le PDF et envoyez-le à l’entreprise
+               <br>
+              <br>L'entreprise a 1 mois pour vous répondre (Si elle justifie que la demande est complexe, elle peut obtenir un délai de 2 mois)
+               <br>
+              <br>Elle peut vous demander votre carte d'identité afin d'être sûr qu'il s'agit bien de vous
               <br>
-              <br>Les organismes sont obligés de vous répondre où ils s’exposent à de grave sanctions, nous vous invitons à découvrir les différentes demandes que vous pouvez réaliser :
+              <br>GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.
             </h4>
           </div>
           <router-link
             class='btn btn-primary btn-xl text-uppercase js-scroll-trigger' 
-            to='/fonctionalities'
+            to='/droit'
             style='margin: auto; background-color: #184abb'
-          >Fonctionnalités</router-link>
+          >Quel droit choisir ?</router-link>
         </div>
       </div>
     </section>
@@ -138,6 +142,7 @@
                   >Envoyez</button>
                 </div>
               </div>
+
             </form>
           </div>
         </div>

@@ -26,7 +26,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/matthieu-d-4991b8177/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>

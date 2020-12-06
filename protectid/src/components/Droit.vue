@@ -23,25 +23,25 @@
  <div class="row">
    <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit à l'oubli </div>
+  <div class="card-header" style="font-size: x-large">Droit d'accès </div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Mise en place d'une suppression de vos données, vous pouvez choisir de supprimer tout ou partie de vos données.</p>
+    <p class="card-text" style="font-size: large">Obtenir l’ensemble des données qu’une société a récolté sur vous, savoir comment elle les a récolté.</p>
   </div>
 </div>
    </div>
     <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit d'accès </div>
+  <div class="card-header" style="font-size: x-large">Suppression des données personnelles</div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Restituer les données à caractère personnel suite à la demande des personnes.</p>
+    <p class="card-text" style="font-size: large">Obliger une entreprise à supprimer toutes vos données personnelles.</p>
   </div>
 </div>
     </div>
    <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit d'information</div>
+  <div class="card-header" style="font-size: x-large">Ne plus recevoir de publicité</div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Restituer les informations demandées par les personnes sur ses données privées et les traitements effectués.</p>
+    <p class="card-text" style="font-size: large">Exiger la suppression de vos coordonnées des fichiers d’envois de publicités de l’entreprise.</p>
   </div>
 </div>
  </div>
@@ -49,31 +49,49 @@
   <div class="row">
     <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit à la limitation </div>
+  <div class="card-header" style="font-size: x-large">S'opposer à un traitement de données </div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large"> Pouvoir arrêter plusieurs ou tous les traitements sauf le stockage des DCP à la demande des personnes.</p>
+    <p class="card-text" style="font-size: large">Exiger d’une entreprise l'arrêt immédiat de l’analyse, la vente de vos données.
+<br>Tout traitement de vos données personnelles. De nombreux algorithmes analysent vos données personnelles récoltées afin de vous cibler, il y a de nombreuses entreprises qui revendent cette analyse à d’autres sociétés.</p>
   </div>
 </div>
  </div>
+ 
       <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit d'opposition à un traitement</div>
+  <div class="card-header" style="font-size: x-large">Stopper la prospection commerciale (par sms, mail ou courrier) </div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Pouvoir arrêter certains traitements à la demande des personnes (ex : opposition au profilage, aux sollicitations commerciales).</p>
+    <p class="card-text" style="font-size: large">Oblige une société à ne plus vous contacter, elle doit ainsi supprimer vos données dans leurs fichiers d’envois / de prospection et notifier leurs partenaires de cette modification. </p>
   </div>
 </div>
 </div>
    <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit à la rectification</div>
+  <div class="card-header" style="font-size: x-large">Rectifier des données inexactes </div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Pouvoir modifier les DCP suite à la demandes des personnes.</p>
+    <p class="card-text" style="font-size: large">Modifier des données inexactes vous concernant dans les fichiers d’une entreprise.</p>
   </div>
 </div>
    </div>
   </div>
     <div class="row">
-         <div class="col-sm 12" style="padding-left: 4vh">
+              <div class="col-sm 4" style="padding-left: 4vh">
+<div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
+  <div class="card-header" style="font-size: x-large">Droit à la portabilité</div>
+  <div class="card-body">
+    <p class="card-text" style="font-size: large">Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une  machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).</p>
+  </div>
+</div>
+</div>
+             <div class="col-sm 4" style="padding-left: 4vh">
+<div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
+  <div class="card-header" style="font-size: x-large">Droit à la portabilité</div>
+  <div class="card-body">
+    <p class="card-text" style="font-size: large">Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une  machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).</p>
+  </div>
+</div>
+</div>
+         <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
   <div class="card-header" style="font-size: x-large">Droit à la portabilité</div>
   <div class="card-body">
