@@ -34,6 +34,9 @@ export default {
                 <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga">
               </div>
             <form>
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
+          </div>
              <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Nom</label>
                 <input type="text" class="form-control" placeholder="Votre nom" id="Nom">
