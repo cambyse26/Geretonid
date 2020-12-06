@@ -1,3 +1,4 @@
+// Fix bug
 // vue.config.js
 module.exports = {
     devServer: {
