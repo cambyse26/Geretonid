@@ -13,7 +13,10 @@
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "jquery.easing": "^1.4.1",
+<<<<<<< HEAD
     "tape-async": "^2.3.0",
+=======
+>>>>>>> c83e2773db31fa32c28a70c73aff5c371fa022e1
     "vue": "^2.6.11",
     "vue-router": "^3.4.9",
     "vuetify": "^2.3.18",

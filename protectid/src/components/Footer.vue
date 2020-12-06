@@ -14,7 +14,7 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <span class="copyright" style="color: black">Copyright &copy; ProtectID 2020</span>
+          <span class="copyright" style="color: black">Copyright &copy; GeretonID 2020</span>
         </div>
         <div class="col-md-4">
           <ul class="list-inline social-buttons">
@@ -24,12 +24,12 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.linkedin.com/company/geretonid/?viewAsMember=true">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </li>
