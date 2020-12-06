@@ -2,6 +2,7 @@
 module.exports = {
     devServer: {
         proxy: 'https://api.geretonid.com/',
+        disableHostCheck: true,
     },
     configureWebpack: {
         resolve: {
