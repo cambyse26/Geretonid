@@ -5,7 +5,18 @@
       <div class='container'>
         <div class='intro-text'>
           <img style=' width: 40%;' src='../../img/ProtectID_logo.png' alt>
-          <div class='intro-lead-in'>Bienvenue, Choisissez votre formulaire et envoyez-le à l'entreprise de votre choix :</div>
+          <div class='intro-lead-in'>Bienvenue</div>
+            <h4>
+              Etape 1 : Choisissez le droit que vous voulez utiliser
+              <br>
+              <br>Etape 2 : Indiquez le nom de l'entreprise et vos informations
+              <br>
+              <br>Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée
+              <br>
+              <br>L'entreprise a 1 mois pour valider votre demande
+               
+              </h4>
+         
           <a
             class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
             data-toggle='modal'
@@ -51,26 +62,14 @@
       <div class='container'>
         <div class='row'>
           <div class='col-lg-12 text-center'>
-           
-          <br>
-          <br>
-          <br>
-            <h2
-              class='section-heading text-uppercase'
-              style='margin-bottom: 55px'
-            >Que faire ?</h2>
+          
             <h4>
-              Etape 1 : Choisissez le droit que vous voulez utiliser
-              <br>
-              <br>Etape 2 : Sélectionnez l’entreprise à laquelle vous souhaitez envoyer votre demande
-              <br>
-              <br>Etape 3 : Générer le PDF et envoyez-le à l’entreprise
-               <br>
-              <br>L'entreprise a 1 mois pour vous répondre (Si elle justifie que la demande est complexe, elle peut obtenir un délai de 2 mois)
-               <br>
-              <br>Elle peut vous demander votre carte d'identité afin d'être sûr qu'il s'agit bien de vous
+              
+              <br>L'entreprise peut vous demander un justificatif afin de vérifier votre identité
               <br>
               <br>GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.
+              <br>
+              <br>
             </h4>
           </div>
         </div>

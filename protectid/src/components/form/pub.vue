@@ -59,6 +59,7 @@ export default {
             </form>
             </div>
           <div class="modal-footer">
+          <p>Nous ne récupérons aucune donnée</p>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
             <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
           </div>
