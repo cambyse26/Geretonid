@@ -31,9 +31,9 @@
    </div>
     <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Suppression des données personnelles</div>
+  <div class="card-header" style="font-size: x-large">Supprimer ses données personnelles</div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Obliger une entreprise à supprimer toutes vos données personnelles.</p>
+    <p class="card-text" style="font-size: large">Obliger une entreprise à supprimer vos données personnelles.</p>
   </div>
 </div>
     </div>
@@ -49,7 +49,7 @@
   <div class="row">
     <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">S'opposer à un traitement de données </div>
+  <div class="card-header" style="font-size: x-large">S'opposer au traitement de données </div>
   <div class="card-body">
     <p class="card-text" style="font-size: large">Exiger d’une entreprise l'arrêt immédiat de l’analyse, la vente de vos données.
 <br>Tout traitement de vos données personnelles. De nombreux algorithmes analysent vos données personnelles récoltées afin de vous cibler, il y a de nombreuses entreprises qui revendent cette analyse à d’autres sociétés.</p>
@@ -77,15 +77,15 @@
     <div class="row">
               <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit à la portabilité</div>
+  <div class="card-header" style="font-size: x-large">Rectifier des données incomplètes</div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une  machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).</p>
+    <p class="card-text" style="font-size: large">Modifier des données incomplètes sur vous dans les fichiers d’une entreprise, celle-ci doit vous informer si ces données si vos données ont été communiquées à un tiers.</p>
   </div>
 </div>
 </div>
              <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit à la portabilité</div>
+  <div class="card-header" style="font-size: x-large">Clôturer un compte en ligne</div>
   <div class="card-body">
     <p class="card-text" style="font-size: large">Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une  machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).</p>
   </div>
@@ -93,9 +93,35 @@
 </div>
          <div class="col-sm 4" style="padding-left: 4vh">
 <div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
-  <div class="card-header" style="font-size: x-large">Droit à la portabilité</div>
+  <div class="card-header" style="font-size: x-large">Accéder à des images vidéos vous concernant</div>
   <div class="card-body">
-    <p class="card-text" style="font-size: large">Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une  machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).</p>
+    <p class="card-text" style="font-size: large">Exiger une copie des images vidéos qu’une entreprise a récolté sur vous.</p>
+  </div>
+</div>
+</div>
+    </div>
+    <div class="row">
+              <div class="col-sm 4" style="padding-left: 4vh">
+<div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
+  <div class="card-header" style="font-size: x-large">Connaître les informations détenues par un établissement financier</div>
+  <div class="card-body">
+    <p class="card-text" style="font-size: large">L’entreprise est obligée de fournir les informations récoltées, d’envoyer une copie claire de l’ensemble des données (les zones “bloc-notes” ou “commentaires) et décrire comment les données ont été récoltées.</p>
+  </div>
+</div>
+</div>
+             <div class="col-sm 4" style="padding-left: 4vh">
+<div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
+  <div class="card-header" style="font-size: x-large">Accéder à son dossier médical</div>
+  <div class="card-body">
+    <p class="card-text" style="font-size: large">Exiger d’obtenir l’ensemble des données qu’un établissement de santé détient.</p>
+  </div>
+</div>
+</div>
+         <div class="col-sm 4" style="padding-left: 4vh">
+<div class="card border-secondary mb-3" style="max-width: 35rem; min-height: 12rem;">
+  <div class="card-header" style="font-size: x-large">Voir les données de géolocalisation ou de contrôle d’accès (pas très clair)</div>
+  <div class="card-body">
+    <p class="card-text" style="font-size: large">Demander si des données sur vous sont présentés dans leurs fichiers.</p>
   </div>
 </div>
 </div>

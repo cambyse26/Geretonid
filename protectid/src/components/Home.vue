@@ -36,8 +36,14 @@
             data-toggle='modal'
             data-target='#site'
           >Supprimer des informations vous concernant d'un site internet</a>
+          
         </div>
       </div>
+       <router-link
+            class='btn btn-primary btn-xl text-uppercase js-scroll-trigger' 
+            to='/droit'
+            style='margin: auto; background-color: #184abb'
+          >Quel droit choisir ?</router-link>
     </header>
 
     <!-- Services -->
@@ -45,6 +51,10 @@
       <div class='container'>
         <div class='row'>
           <div class='col-lg-12 text-center'>
+           
+          <br>
+          <br>
+          <br>
             <h2
               class='section-heading text-uppercase'
               style='margin-bottom: 55px'
@@ -63,11 +73,6 @@
               <br>GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.
             </h4>
           </div>
-          <router-link
-            class='btn btn-primary btn-xl text-uppercase js-scroll-trigger' 
-            to='/droit'
-            style='margin: auto; background-color: #184abb'
-          >Quel droit choisir ?</router-link>
         </div>
       </div>
     </section>
