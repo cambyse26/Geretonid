@@ -13,7 +13,29 @@ export default {
             </button>
           </div>
           <div class="modal-body">
+           <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
+          </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Nom de l'organisme</label>
+                <input class="form-control" placeholder="Nom de l'organisme"  id="Organisme3">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Adresse mail</label>
+                <input class="form-control" placeholder="Adresse mail de l'organisme"  id="Mailorga3">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Code postal</label>
+                <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga3">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Ville</label>
+                <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga3">
+              </div>
             <form>
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
+          </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Urls précises sur lesquelles sont publiées les informations vous concernant</label>
                 <input class="form-control" id="Urls" placeholder="Exemple: ">
@@ -47,25 +69,6 @@ export default {
                 <input type="text" class="form-control" placeholder="Votre ville" id="Ville3" >
               </div>
             </form>
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
-          </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input class="form-control" placeholder="Nom de l'organisme"  id="Organisme3">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Adresse mail</label>
-                <input class="form-control" placeholder="Adresse mail de l'organisme"  id="Mailorga3">
-              </div>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Code postal</label>
-                <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga3">
-              </div>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Ville</label>
-                <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga3">
-              </div>
             </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
