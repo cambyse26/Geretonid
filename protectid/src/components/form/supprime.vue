@@ -7,7 +7,7 @@ export default {
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">SUPPRIMER DES DONNÉES PERSONNELLES</h5>
+            <h5 class="modal-title" id="exampleModalLabel">SUPPRIMER SES DONNÉES PERSONNELLES</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -38,11 +38,11 @@ export default {
           </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Informations à supprimer</label>
-                <input class="form-control" id="Info4" placeholder="Exemple: ">
+                <input class="form-control" id="Info4" placeholder="Exemple: Toutes mes données personnelles ">
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Motif de la suppression</label>
-                <input class="form-control" id="Motif4" placeholder="Exemple: ">
+                <input class="form-control" id="Motif4" placeholder="Exemple: Je ne veux plus que vous stockez mes informations personnelles ">
               </div>
              <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Nom</label>

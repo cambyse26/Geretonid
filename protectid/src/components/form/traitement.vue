@@ -37,8 +37,8 @@ export default {
             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
           </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Raison de la suppression des données</label>
-                <input class="form-control" id="Info5" placeholder="Exemple: ">
+                <label for="message-text" class="col-form-label">Raison de la demande</label>
+                <input class="form-control" id="Info5" placeholder="Exemple: Je veux que le traitement cesse ">
               </div>
              <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Nom</label>
