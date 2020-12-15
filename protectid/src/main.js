@@ -12,6 +12,9 @@ import '../bootstrap/js/bootstrap.bundle.min.js'
 import { sync } from 'vuex-router-sync'
 import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
+import DisableAutocomplete from 'vue-disable-autocomplete';
+
+Vue.use(DisableAutocomplete);
 
 Vue.use(Vuetify)
 

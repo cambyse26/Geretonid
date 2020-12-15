@@ -169,6 +169,9 @@ import Pub from './form/pub.vue'
 import Traitement from './form/traitement.vue'
 import Prospection from './form/prospection.vue'
 import Site from './form/site.vue'
+import Vue from 'vue'
+import DisableAutocomplete from 'vue-disable-autocomplete';
+Vue.use(DisableAutocomplete);
 
 export default {
   components: {

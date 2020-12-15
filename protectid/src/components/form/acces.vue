@@ -1,6 +1,8 @@
 <script>
 import Jspdf from 'jspdf'
-// import func from './vue-temp/vue-editor-bridge';
+import Vue from 'vue'
+import DisableAutocomplete from 'vue-disable-autocomplete';
+Vue.use(DisableAutocomplete);
 
 export default {
   template: `
@@ -17,9 +19,16 @@ export default {
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
           </div>
-              <div class="form-group">
+              <div class="form-group" autocomplete="off">
                 <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input class="form-control" placeholder="Nom de l'organisme"  id="Organisme">
+                <input type="email" name="email" class="form-control" placeholder="Nom de l'organisme"  id="Organisme" list="Orga" autocomplete="off">
+                <datalist id="Orga">
+                  <option data="" id="1"></option>
+                  <option data="" id="2"></option>
+                  <option data="" id="3"></option>
+                  <option data="" id="4"></option>
+                  <option data="" id="5"></option>
+                  </datalist>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Adresse mail</label>
@@ -114,23 +123,66 @@ export default {
     }
   },
   mounted () {
-  document.getElementById("Nom").onkeyup = function() {callapi()};
+    
+  document.getElementById("Organisme").onkeyup = function() {callapi()};
   function callapi(){
-    var Nom = document.getElementById('Nom').value
-    console.log(Nom);
+    var Nom = document.getElementById('Organisme').value
     var url = "http://localhost:8080/api/company/search";
     var xhr = new XMLHttpRequest();
+    var data = []
     xhr.open("POST", url);
-    xhr.setRequestHeader("Authorization", "token 8697ee0eddd2b219d7ae371cf9c9f135412284fb");
+    xhr.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
+      data = []
       console.log(xhr.status);
       console.log(xhr.responseText);
+      var parsedData = JSON.parse(xhr.responseText);
+      var length = parsedData.length;
+      console.log(length)
+      for(var i=0;i<length;i++){
+      console.log(parsedData[i].name + " ("  + parsedData[i].city + ")" + " " + parsedData[i].id);
+      console.log(parsedData[i].id);
+      document.getElementById(i + 1).value = parsedData[i].name + " (" + parsedData[i].city + ")";
+      document.getElementById(i + 1).data = parsedData[i].id;
+      data.push(parsedData[i].id)
+      console.log(data)
+    }
     }};
     var test = JSON.stringify({"name": Nom});
-    console.log(test);
     xhr.send(test);
+    var val = document.getElementById("Organisme").value;
+    var opts = document.getElementById('Orga').childNodes;
+    for (var i = 0; i < opts.length; i++) {
+      if (opts[i].value === val) {
+        // An item was selected from the list!
+        // yourCallbackHere()
+        // alert(opts[i].data);
+        console.log('CEST ICI')
+        console.log(opts[i].value)
+        console.log(data[i])
+        var url2 = "http://localhost:8080/api/company/get/" + opts[i].data;
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open("GET", url2);
+        xhr2.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");
+
+        xhr2.onreadystatechange = function () {
+        if (xhr2.readyState === 4) {
+          console.log(xhr2.status);
+          console.log(xhr2.responseText);
+          var parsedData2 = JSON.parse(xhr2.responseText);
+          document.getElementById("Mailorga").value = parsedData2.email;
+          document.getElementById("Postalorga").value = parsedData2.address.zip;
+          document.getElementById("Villeorga").value = parsedData2.address.city;
+
+        }};
+
+        xhr2.send();
+
+        break;
+      }
+    }
   }
   }
 }
