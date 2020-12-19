@@ -70,7 +70,6 @@ export default {
             </div>
           <div class="modal-footer">
           <p>Nous ne récupérons aucune donnée</p>
-         
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
             <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
           </div>
@@ -97,10 +96,10 @@ export default {
       doc.text(Mail, 10, 20)
       doc.text(Postal, 10, 25)
       doc.text(Ville, 10, 30)
-      doc.text(Organisme, 160, 35)
-      doc.text(Mailorga, 160, 40)
-      doc.text(Postalorga, 160, 45)
-      doc.text(Villeorga, 160, 50)
+      doc.text(Organisme, 10, 45)
+      doc.text(Mailorga, 10, 50)
+      doc.text(Postalorga, 10, 55)
+      doc.text(Villeorga, 10, 60)
       doc.setFont('helvetica', 'bold')
       doc.text('Objet: Droit d\'accès\n', 10, 70)
       doc.setFont('courier', 'normal')
@@ -127,7 +126,7 @@ export default {
   document.getElementById("Organisme").onkeyup = function() {callapi()};
   function callapi(){
     var Nom = document.getElementById('Organisme').value
-    var url = "https://api.geretonid.com/api/company/search";
+    var url = "http://localhost:8080/api/company/search";
     var xhr = new XMLHttpRequest();
     var data = []
     xhr.open("POST", url);
@@ -162,7 +161,7 @@ export default {
         console.log('CEST ICI')
         console.log(opts[i].value)
         console.log(data[i])
-        var url2 = "https://api.geretonid.com/api/company/get/" + opts[i].data;
+        var url2 = "http://localhost:8080/api/company/get/" + opts[i].data;
         var xhr2 = new XMLHttpRequest();
         xhr2.open("GET", url2);
         xhr2.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");
