@@ -126,7 +126,7 @@ export default {
   document.getElementById("Organisme").onkeyup = function() {callapi()};
   function callapi(){
     var Nom = document.getElementById('Organisme').value
-    var url = "http://localhost:8080/api/company/search";
+    var url = "https://api.geretonid.com/api/company/search";
     var xhr = new XMLHttpRequest();
     var data = []
     xhr.open("POST", url);
@@ -161,7 +161,7 @@ export default {
         console.log('CEST ICI')
         console.log(opts[i].value)
         console.log(data[i])
-        var url2 = "http://localhost:8080/api/company/get/" + opts[i].data;
+        var url2 = "https://api.geretonid.com/api/company/get/" + opts[i].data;
         var xhr2 = new XMLHttpRequest();
         xhr2.open("GET", url2);
         xhr2.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");

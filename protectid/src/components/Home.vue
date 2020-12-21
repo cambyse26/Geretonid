@@ -58,13 +58,11 @@
     </header>
 
     <!-- Services -->
-    <section class='page-section' id='services'>
+    <section class="text"  id='services'>
       <div class='container'>
         <div class='row'>
           <div class='col-lg-12 text-center'>
-          
             <h4>
-              
               <br>L'entreprise peut vous demander un justificatif afin de vérifier votre identité
               <br>
               <br>GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.
@@ -77,7 +75,7 @@
     </section>
 
     <!-- Contact -->
-    <section class='page-section' id='contact'>
+    <!-- <section class='page-section' id='contact'>
       <div class='container'>
         <div class='row'>
           <div class='col-lg-12 text-center'>
@@ -151,7 +149,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!--- POP-UP -->
     <Acces></Acces>
     <Supprimer></Supprimer>

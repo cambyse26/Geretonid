@@ -1,6 +1,6 @@
 <!-- Team -->
 <template>
-  <section class="page-section" id="team">
+  <section class="page-section" id="team" style="margin-bottom: 13vh">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -30,17 +30,7 @@
             <p class="text-muted">Co-fondateur/Développeur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/cambyse-daghigh-6a33b4163/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
@@ -54,17 +44,7 @@
             <p class="text-muted">Co-fondateur/Développeur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/matthieu-d-4991b8177/">
+                <a href="https://www.linkedin.com/in/baptiste-vandenborght/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
