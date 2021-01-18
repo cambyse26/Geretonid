@@ -6,10 +6,7 @@
          <div class="col-md-4">
           <ul class="list-inline quicklinks">
             <li class="list-inline-item">
-              <a href="" style="color: black">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="" style="color: black">Terms of Use</a>
+              <a href="/mention_legale" style="color: black">Mention légales</a>
             </li>
           </ul>
         </div>

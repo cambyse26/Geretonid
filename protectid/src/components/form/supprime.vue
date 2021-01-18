@@ -2,6 +2,7 @@
 import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
+import axios from "axios";
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -21,26 +22,25 @@ export default {
           </div>
               <div class="form-group" autocomplete="off">
                 <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input type="email" name="email" class="form-control" placeholder="Nom de l'organisme"  id="Organisme4" list="Orga" autocomplete="off">
-                <datalist id="Orga">
-                  <option data="" id="1"></option>
-                  <option data="" id="2"></option>
-                  <option data="" id="3"></option>
-                  <option data="" id="4"></option>
-                  <option data="" id="5"></option>
-                  </datalist>
+                <input type="text" v-model="organisme" @input="organismeChanged($event)" class="form-control" placeholder="Nom de l'organisme" list="dataListOrga" autocomplete="on">
+                <datalist id="dataListOrga">
+                  <option v-for="organisme in listOrganismes"
+                          v-bind:key="organisme.id">
+                    {{organisme.name_city}}
+                  </option>
+                </datalist>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Adresse mail</label>
-                <input class="form-control" placeholder="Adresse mail de l'organisme"  id="Mailorga4">
+                <input class="form-control" placeholder="Adresse mail de l'organisme" id="Mailorga4" v-model="email">
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label for="recipient-name" class="col-form-label">Code postal</label>
-                <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga4">
+                <input type="text" class="form-control" placeholder="Son code postal" id="Postalorga4" v-model="addressZip">
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label for="recipient-name" class="col-form-label">Ville</label>
-                <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga4">
+                <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga4" v-model="addressCity">
               </div>
             <form>
             <div class="modal-header">
@@ -85,14 +85,116 @@ export default {
       </div>
     </div>`,
   name: 'App',
+    data () {
+    return {
+      organisme: "",
+      listOrganismes: [],
+      email: "",
+      addressZip: "",
+      addressCity: ""
+    }
+  },
   methods: {
-    generatePDF () {
+
+    //
+    // gestion de la modification du <input id="Organisme">
+    // - maj des infos sur l'organisme selectionné dans la liste
+    // sinon
+    // - maj de la datalist (via listOrganismes)
+    //
+    organismeChanged: function(ev) {
+      
+      // recupere le valeur contenu dans le input id="Organisme">
+      const currentOrganisme = ev.target.value;
+
+      console.log("organismeChanged start. currentOrganisme=" + currentOrganisme + " inputCheckedAtDom:" + ev);
+
+      // clean other related inputs
+      this.email = "";
+      this.addressZip = "";
+      this.addressCity = "";
+
+      if (currentOrganisme.length > 0) {
+        if (this.validOrganisme(currentOrganisme) === false) {
+
+            // organisme inconnu: propose une nouvelle list
+            this.updateListOrganismes(currentOrganisme);
+        }
+      }
+
+      console.log("organismeChanged end");
+    },
+
+    //
+    // verifie si l'organisme present est valide (connu)
+    // - recuperation du id dans la liste pour obtenir les details (à revoir)
+    //
+    validOrganisme(currentOrganisme) {
+      // TODO verifier si c'est un organisme connu (il faut une requete http get par le nom)
+      // plutot que de faire un loop sur la liste dispo
+      var val = currentOrganisme;
+      console.log("search " + val + " in " + JSON.stringify(this.listOrganismes));
+      for (var i = 0; i < this.listOrganismes.length; i++) {
+        console.log("compare " + val + " with " + this.listOrganismes[i].name_city);
+        if (val === this.listOrganismes[i].name_city) {
+          this.updateOrganismeDetails(this.listOrganismes[i].id);
+          return true;
+        }
+      }
+      return false;
+    },
+
+    //
+    // recupere la liste des orgnismes candidats via un request http
+    //
+    updateListOrganismes(match) {
+      console.log("updateListOrganismes start");
+      const baseURI = 'https://api.geretonid.com/api/company/search';
+      const param = { name: match };
+      const headers = {
+        "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
+        "Content-Type": "application/json"
+      };
+      axios.post(baseURI, param, { headers })
+      .then((result) => {
+        console.log("updateListOrganismes result " + JSON.stringify(result.data));
+        var data = result.data;
+        for(var i=0; i<data.length; i++){
+          data[i].name_city = data[i].name + " (" + data[i].city + ")";
+        }
+        // maj listOrganismes (vue:data:listOrganismes) qui enclenche automatique la maj de la page
+        this.listOrganismes = data;
+      })
+      console.log("updateListOrganismes end");
+    },
+
+    //
+    // recupere le detail d'un orgnisme via un request http
+    // 
+    updateOrganismeDetails(id) {
+      console.log("updateOrganismeDetails start");
+      const baseURI = "https://api.geretonid.com/api/company/get/" + id;
+      const headers = {
+        headers : {
+          "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
+        } 
+      };
+      axios.get(baseURI, headers)
+      .then((result) => {
+        console.log("updateOrganismeDetails result:" + JSON.stringify(result.data));
+        this.email = result.data.email;
+        this.addressZip = result.data.address.zip;
+        this.addressCity = result.data.address.city;
+      })
+      console.log("updateOrganismeDetails end");
+    },
+    generatePDF (organismeChanged) {
+      const currentOrganisme = organismeChanged.target.value;
       var Nom = document.getElementById('Nom4').value
       var Prenom = document.getElementById('Prenom4').value
       var Mail = document.getElementById('Mail4').value
       var Postal = document.getElementById('Postal4').value
       var Ville = document.getElementById('Ville4').value
-      var Organisme = document.getElementById('Organisme4').value
       var Mailorga = document.getElementById('Mailorga4').value
       var Postalorga = document.getElementById('Postalorga4').value
       var Villeorga = document.getElementById('Villeorga4').value
@@ -106,7 +208,7 @@ export default {
       doc.text(Mail, 10, 20)
       doc.text(Postal, 10, 25)
       doc.text(Ville, 10, 30)
-      doc.text(Organisme, 10, 45)
+      doc.text(currentOrganisme, 10, 45)
       doc.text(Mailorga, 10, 50)
       doc.text(Postalorga, 10, 55)
       doc.text(Villeorga, 10, 60)
@@ -131,51 +233,7 @@ export default {
     }
   },
   mounted () {
-    
-  document.getElementById("Organisme4").onkeyup = function() {callapi()};
-  function callapi(){
-    var Nom = document.getElementById('Organisme4').value
-    var url = "https://api.geretonid.com/api/company/search";
-    var xhr = new XMLHttpRequest();
-    var data = []
-    xhr.open("POST", url);
-    xhr.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      data = []
-      var parsedData = JSON.parse(xhr.responseText);
-      var length = parsedData.length;
-      for(var i=0;i<length;i++){
-      document.getElementById(i + 1).value = parsedData[i].name + " (" + parsedData[i].city + ")";
-      document.getElementById(i + 1).data = parsedData[i].id;
-      data.push(parsedData[i].id)
-    }
-    }};
-    var test = JSON.stringify({"name": Nom});
-    xhr.send(test);
-    var val = document.getElementById("Organisme4").value;
-    var opts = document.getElementById('Orga').childNodes;
-    for (var i = 0; i < opts.length; i++) {
-      if (opts[i].value === val) {
-        var url2 = "https://api.geretonid.com/api/company/get/" + opts[i].data;
-        var xhr2 = new XMLHttpRequest();
-        xhr2.open("GET", url2);
-        xhr2.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");
-        xhr2.onreadystatechange = function () {
-        if (xhr2.readyState === 4) {
-          var parsedData2 = JSON.parse(xhr2.responseText);
-          document.getElementById("Mailorga4").value = parsedData2.email;
-          document.getElementById("Postalorga4").value = parsedData2.address.zip;
-          document.getElementById("Villeorga4").value = parsedData2.address.city;
-        }};
-
-        xhr2.send();
-
-        break;
-      }
-    }
-  }
+    this.updateListOrganismes("a");
   }
 }
 </script>

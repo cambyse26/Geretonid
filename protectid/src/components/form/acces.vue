@@ -34,11 +34,11 @@ export default {
                 <label for="message-text" class="col-form-label">Adresse mail</label>
                 <input class="form-control" placeholder="Adresse mail de l'organisme" id="Mailorga" v-model="email">
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label for="recipient-name" class="col-form-label">Code postal</label>
                 <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga" v-model="addressZip">
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label for="recipient-name" class="col-form-label">Ville</label>
                 <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga" v-model="addressCity">
               </div>
@@ -142,7 +142,7 @@ export default {
     //
     updateListOrganismes(match) {
       console.log("updateListOrganismes start");
-      const baseURI = 'http://localhost:8080/api/company/search';
+      const baseURI = 'https://api.geretonid.com/api/company/search';
       const param = { name: match };
       const headers = {
         "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -166,7 +166,7 @@ export default {
     // 
     updateOrganismeDetails(id) {
       console.log("updateOrganismeDetails start");
-      const baseURI = "http://localhost:8080/api/company/get/" + id;
+      const baseURI = "https://api.geretonid.com/api/company/get/" + id;
       const headers = {
         headers : {
           "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -182,13 +182,13 @@ export default {
       console.log("updateOrganismeDetails end");
     },
 
-    generatePDF () {
+    generatePDF (organismeChanged) {
+      const currentOrganisme = organismeChanged.target.value;
       var Nom = document.getElementById('Nom').value
       var Prenom = document.getElementById('Prenom').value
       var Mail = document.getElementById('Mail').value
       var Postal = document.getElementById('Postal').value
       var Ville = document.getElementById('Ville').value
-      var Organisme = document.getElementById('Organisme').value
       var Mailorga = document.getElementById('Mailorga').value
       var Postalorga = document.getElementById('Postalorga').value
       var Villeorga = document.getElementById('Villeorga').value
@@ -200,7 +200,7 @@ export default {
       doc.text(Mail, 10, 20)
       doc.text(Postal, 10, 25)
       doc.text(Ville, 10, 30)
-      doc.text(Organisme, 10, 45)
+      doc.text(currentOrganisme, 10, 45)
       doc.text(Mailorga, 10, 50)
       doc.text(Postalorga, 10, 55)
       doc.text(Villeorga, 10, 60)

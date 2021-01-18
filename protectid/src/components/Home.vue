@@ -183,3 +183,15 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+.modal {
+  width: 97vw !important;
+}
+
+.modal-content {
+  width: 100% !important;
+}
+
+</style>

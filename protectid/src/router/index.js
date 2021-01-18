@@ -5,10 +5,12 @@ import Fonctionalities from '@/components/Fonctionalities'
 import Us from '@/components/Us'
 import Sensibilisation from '@/components/Sensibilisation'
 import Droit from '@/components/Droit'
+import Mention from '@/components/Mention_legale'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -34,6 +36,11 @@ export default new Router({
       path: '/droit',
       name: 'Droit',
       component: Droit
-    }
+    },
+    {
+      path: '/mention_legale',
+      name: 'Mention',
+      component: Mention
+    } 
   ]
 })
