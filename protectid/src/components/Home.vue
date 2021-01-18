@@ -4,7 +4,7 @@
     <header class='masthead'>
       <div class='container'>
         <div class='intro-text'>
-          <img style=' width: 40%;' src='../../img/ProtectID_logo.png' alt>
+          <img style=' width: 25%; margin-top: 20px' src='../../img/ProtectID_logo.png' alt>
           <div class='intro-lead-in'>Bienvenue</div>
             <h4>
               Etape 1 : Choisissez le droit que vous voulez utiliser

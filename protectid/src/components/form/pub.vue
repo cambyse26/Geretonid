@@ -91,6 +91,7 @@ export default {
       var Villeorga = document.getElementById('Villeorga2').value
       var NP = Nom + ' ' + Prenom
       const doc = new Jspdf()
+      
       doc.setFontSize(9)
       doc.text(NP, 10, 15)
       doc.text(Mail, 10, 20)
@@ -126,18 +127,12 @@ export default {
     xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       data = []
-      console.log(xhr.status);
-      console.log(xhr.responseText);
       var parsedData = JSON.parse(xhr.responseText);
       var length = parsedData.length;
-      console.log(length)
       for(var i=0;i<length;i++){
-      console.log(parsedData[i].name + " ("  + parsedData[i].city + ")" + " " + parsedData[i].id);
-      console.log(parsedData[i].id);
       document.getElementById(i + 1).value = parsedData[i].name + " (" + parsedData[i].city + ")";
       document.getElementById(i + 1).data = parsedData[i].id;
       data.push(parsedData[i].id)
-      console.log(data)
     }
     }};
     var test = JSON.stringify({"name": Nom});
@@ -146,26 +141,16 @@ export default {
     var opts = document.getElementById('Orga').childNodes;
     for (var i = 0; i < opts.length; i++) {
       if (opts[i].value === val) {
-        // An item was selected from the list!
-        // yourCallbackHere()
-        // alert(opts[i].data);
-        console.log('CEST ICI')
-        console.log(opts[i].value)
-        console.log(data[i])
         var url2 = "https://api.geretonid.com/api/company/get/" + opts[i].data;
         var xhr2 = new XMLHttpRequest();
         xhr2.open("GET", url2);
         xhr2.setRequestHeader("Authorization", "token 32ffef7a5e2682244a84fa2a68630da15bc6575b");
-
         xhr2.onreadystatechange = function () {
         if (xhr2.readyState === 4) {
-          console.log(xhr2.status);
-          console.log(xhr2.responseText);
           var parsedData2 = JSON.parse(xhr2.responseText);
           document.getElementById("Mailorga2").value = parsedData2.email;
           document.getElementById("Postalorga2").value = parsedData2.address.zip;
           document.getElementById("Villeorga2").value = parsedData2.address.city;
-
         }};
 
         xhr2.send();
