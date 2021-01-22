@@ -47,6 +47,36 @@
             data-toggle='modal'
             data-target='#site'
           >Supprimer des informations vous concernant d'un site internet</a>
+          <a
+            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+            data-toggle='modal'
+            data-target='#video'
+          >Accéder à des images vidéo vous concernant</a>
+          <a
+            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+            data-toggle='modal'
+            data-target='#compte'
+          >Clôturer un compte en ligne</a>
+          <a
+            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+            data-toggle='modal'
+            data-target='#incompletes'
+          >Rectifier des données incomplètes</a>
+          <a
+            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+            data-toggle='modal'
+            data-target='#inexactes'
+          >Rectifier des données inexactes</a>
+          <a
+            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+            data-toggle='modal'
+            data-target='#medical'
+          >Accéder à son dossier médical</a>
+          <a
+            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+            data-toggle='modal'
+            data-target='#financier'
+          >Connaître les informations détenues par un établissement financier</a>
           
         </div>
       </div>
@@ -157,17 +187,29 @@
     <Traitement></Traitement>
     <Prospection></Prospection>
     <Site></Site>
+    <Video></Video>
+    <Compte></Compte>
+    <Incompletes></Incompletes>
+    <Inexactes></Inexactes>
+    <Medical></Medical>
+    <Financier></Financier>
   </div>
 </template>
 
 <script>
-import Supprimer from './form/supprime.vue'
-import Acces from './form/acces.vue'
-import Pub from './form/pub.vue'
-import Traitement from './form/traitement.vue'
-import Prospection from './form/prospection.vue'
-import Site from './form/site.vue'
-import Vue from 'vue'
+import Supprimer from './form/supprime.vue';
+import Acces from './form/acces.vue';
+import Pub from './form/pub.vue';
+import Traitement from './form/traitement.vue';
+import Prospection from './form/prospection.vue';
+import Site from './form/site.vue';
+import Video from './form/video.vue';
+import Compte from './form/compte.vue';
+import Incompletes from './form/incompletes.vue';
+import Inexactes from './form/inexactes.vue';
+import Medical from './form/medical.vue';
+import Financier from './form/financier.vue';
+import Vue from 'vue';
 import DisableAutocomplete from 'vue-disable-autocomplete';
 Vue.use(DisableAutocomplete);
 
@@ -178,7 +220,13 @@ export default {
     Pub,
     Traitement,
     Prospection,
-    Site
+    Site,
+    Video,
+    Compte,
+    Incompletes,
+    Inexactes,
+    Financier,
+    Medical,
   }
 }
 

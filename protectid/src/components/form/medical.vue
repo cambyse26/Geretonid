@@ -7,78 +7,77 @@ Vue.use(DisableAutocomplete);
 
 export default {
   template: `
-   <div class="modal fade" id="accès" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">EXERCER SON DROIT D'ACCÈS</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
-          </div>
-              <div class="form-group" autocomplete="off">
-                <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input type="text" v-model="organisme" @input="organismeChanged($event)" class="form-control" placeholder="Nom de l'organisme" list="dataListOrga" autocomplete="on">
-                <datalist id="dataListOrga">
-                  <option v-for="organisme in listOrganismes"
-                          v-bind:key="organisme.id">
-                    {{organisme.name_city}}
-                  </option>
-                </datalist>
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Adresse mail</label>
-                <input class="form-control" placeholder="Adresse mail de l'organisme" id="Mailorga" v-model="email">
-              </div>
-              <!--
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Code postal</label>
-                  <input type="text" class="form-control" placeholder="Son code postal"  id="Postalorga" v-model="addressZip">
+    <div class="modal fade" id="medical" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ACCÉDER À SON DOSSIER MÉDICAL</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Ville</label>
-                  <input type="text" class="form-control" placeholder="Sa ville" id="Villeorga" v-model="addressCity">
+                <div class="modal-body">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
+                    </div>
+                    <div class="form-group">
+                        <label for="civilite">Civilité</label>
+                        <select name="civlite" id="cicvilite" class="form-select custom-select">
+                            <option value="default" name="default">Civilité</option>
+                            <option value="mr" name="default">Mr</option>
+                            <option value="mme" name="default">Mme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Nom du médecin ou de l'établissement de santé</label>
+                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire" v-model="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Adresse mail</label>
+                        <input class="form-control" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email">
+                    </div>
+                    <form>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Informations complémentaires</h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-informations" class="col-form-label">Informations complémentaires</label>
+                            <textarea name="informations" rows="4" class="form-control">Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : </textarea>
+                        </div>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Nom</label>
+                            <input type="text" class="form-control" placeholder="Votre nom" id="Nom10">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Prénom</label>
+                            <input type="text" class="form-control" placeholder="Votre Prénom" id="Prenom10">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Adresse mail</label>
+                            <input class="form-control" placeholder="Votre adresse mail"  id="Mail10">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Code postal</label>
+                            <input type="text" class="form-control" placeholder="Votre code postal" id="Postal10">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Ville</label>
+                            <input type="text" class="form-control" placeholder="Votre ville" id="Ville10" >
+                        </div>
+                    </form>
                 </div>
-              -->
-            <form>
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
-          </div>
-             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Nom</label>
-                <input type="text" class="form-control" placeholder="Votre nom" id="Nom">
-              </div>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Prénom</label>
-                <input type="text" class="form-control" placeholder="Votre Prénom" id="Prenom">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Adresse mail</label>
-                <input class="form-control" placeholder="Votre adresse mail"  id="Mail">
-              </div>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Code postal</label>
-                <input type="text" class="form-control" placeholder="Votre code postal"  id="Postal">
-              </div>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Ville</label>
-                <input type="text" class="form-control" placeholder="Votre ville" id="Ville" >
-              </div>
-            </form>
+                <div class="modal-footer">
+                    <p>Nous ne récupérons aucune donnée</p>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
+                </div>
             </div>
-          <div class="modal-footer">
-          <p>Nous ne récupérons aucune donnée</p>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-          </div>
         </div>
-      </div>
     </div>
- `,
+`,
   name: 'App',
     data () {
     return {
@@ -144,7 +143,7 @@ export default {
     //
     updateListOrganismes(match) {
       console.log("updateListOrganismes start");
-      const baseURI = 'http://localhost:8080/api/company/search';
+      const baseURI = 'https://api.geretonid.com/api/company/search';
       const param = { name: match };
       const headers = {
         "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -168,7 +167,7 @@ export default {
     // 
     updateOrganismeDetails(id) {
       console.log("updateOrganismeDetails start");
-      const baseURI = "http://localhost:8080/api/company/get/" + id;
+      const baseURI = "https://api.geretonid.com/api/company/get/" + id;
       const headers = {
         headers : {
           "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -184,24 +183,25 @@ export default {
       console.log("updateOrganismeDetails end");
     },
 
-    generatePDF () {
-      var Nom = document.getElementById('Nom').value
-      var Prenom = document.getElementById('Prenom').value
-      var Mail = document.getElementById('Mail').value
-      var Postal = document.getElementById('Postal').value
-      var Ville = document.getElementById('Ville').value
-      var Organisme = document.getElementById('Organisme').value
-      var Mailorga = document.getElementById('Mailorga').value
-      var Postalorga = document.getElementById('Postalorga').value
-      var Villeorga = document.getElementById('Villeorga').value
-      var NP = Nom + ' ' + Prenom
+    generatePDF (organismeChanged) {
+      const currentOrganisme = organismeChanged.target.value;
+      var Nom = document.getElementById('Nom10').value
+      var Prenom = document.getElementById('Prenom10').value
+      var Mail = document.getElementById('Mail10').value
+      var Postal = document.getElementById('Postal10').value
+      var Ville = document.getElementById('Ville10').value
+      var Mailorga = document.getElementById('Mailorga10').value
+      var Postalorga = document.getElementById('Postalorga10').value
+      var Villeorga = document.getElementById('Villeorga10').value
+      var NP = `${Nom} ${Prenom}`
       const doc = new Jspdf()
+      
       doc.setFontSize(9)
       doc.text(NP, 10, 15)
       doc.text(Mail, 10, 20)
       doc.text(Postal, 10, 25)
       doc.text(Ville, 10, 30)
-      doc.text(Organisme, 10, 45)
+      doc.text(currentOrganisme, 10, 45)
       doc.text(Mailorga, 10, 50)
       doc.text(Postalorga, 10, 55)
       doc.text(Villeorga, 10, 60)
