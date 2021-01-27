@@ -22,8 +22,8 @@ export default {
           </div>
               <div class="form-group" autocomplete="off">
                 <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input type="text" v-model="organisme" @input="organismeChanged($event)" class="form-control" placeholder="Nom de l'organisme" list="dataListOrga" autocomplete="on">
-                <datalist id="dataListOrga">
+                <input type="text" v-model="organisme" @input="organismeChanged($event)" class="form-control" placeholder="Nom de l'organisme" list="dataListOrga1" autocomplete="on">
+                <datalist id="dataListOrga1">
                   <option v-for="organisme in listOrganismes"
                           v-bind:key="organisme.id">
                     {{organisme.name_city}}
@@ -62,11 +62,11 @@ export default {
                 <label for="message-text" class="col-form-label">Adresse mail</label>
                 <input class="form-control" placeholder="Votre adresse mail"  id="Mail1">
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label for="recipient-name" class="col-form-label">Code postal</label>
                 <input type="text" class="form-control" placeholder="Votre code postal"  id="Postal1">
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label for="recipient-name" class="col-form-label">Ville</label>
                 <input type="text" class="form-control" placeholder="Votre ville" id="Ville1" >
               </div>
@@ -225,9 +225,6 @@ export default {
       doc.text(NP, 10, 165)
       doc.save('Prospection.pdf')
     }
-  },
-  mounted () {
-    this.updateListOrganismes("a");
   }
 }
 </script>

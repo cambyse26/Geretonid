@@ -21,7 +21,7 @@ export default {
                         <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
                     </div>
                     <div class="form-group">
-                        <label for="civilite">Civilité</label>
+                        <label class="col-form-label" for="civilite">Civilité</label>
                         <select name="civlite" id="cicvilite" class="form-select custom-select">
                             <option value="default" name="default">Civilité</option>
                             <option value="mr" name="default">Mr</option>
@@ -30,7 +30,7 @@ export default {
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Nom du médecin ou de l'établissement de santé</label>
-                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire" v-model="email">
+                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire" v-model="organisme">
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Adresse mail</label>
@@ -59,11 +59,11 @@ export default {
                             <label for="message-text" class="col-form-label">Adresse mail</label>
                             <input class="form-control" placeholder="Votre adresse mail"  id="Mail10">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Code postal</label>
                             <input type="text" class="form-control" placeholder="Votre code postal" id="Postal10">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Ville</label>
                             <input type="text" class="form-control" placeholder="Votre ville" id="Ville10" >
                         </div>
@@ -225,10 +225,6 @@ export default {
       doc.text(NP, 10, 195)
       doc.save('Droit_acces.pdf')
     }
-  },
-
-  mounted () {
-    this.updateListOrganismes("a");
   }
 }
 </script>

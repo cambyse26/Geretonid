@@ -5,7 +5,7 @@
       <div class='container'>
         <div class='intro-text'>
           <img style=' width: 25%; margin-top: 20px' src='../../img/ProtectID_logo.png' alt>
-          <div class='intro-lead-in'>Bienvenue</div>
+          <!--<div class='intro-lead-in'>Bienvenue</div>-->
             <h4>
               Etape 1 : Choisissez le droit que vous voulez utiliser
               <br>
@@ -13,7 +13,6 @@
               <br>
               <br>Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée
               <br>
-              <br>L'entreprise a 1 mois pour valider votre demande
                
               </h4>
          
@@ -93,7 +92,7 @@
         <div class='row'>
           <div class='col-lg-12 text-center'>
             <h4>
-              <br>L'entreprise peut vous demander un justificatif afin de vérifier votre identité
+              <br>L'entreprise a 1 mois pour valider votre demande et peut vous demander un justificatif afin de vérifier votre identité.
               <br>
               <br>GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.
               <br>
@@ -231,15 +230,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-
-.modal {
-  width: 97vw !important;
-}
-
-.modal-content {
-  width: 100% !important;
-}
-
-</style>

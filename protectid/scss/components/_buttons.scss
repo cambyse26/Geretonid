@@ -1,3 +1,22 @@
+// modal changes
+.modal {
+  width: 97vw !important;
+}
+
+.modal-content {
+  width: 100% !important;
+}
+
+.modal-footer {
+  align-self: center !important;
+  display: block !important;
+  padding-right: 3.75vh !important;
+  padding-left: 3.75vh !important; 
+}
+
+.modal-header {
+  padding: 0.6rem 0.6rem !important;
+}
 // Button Styles
 .btn {
   @include heading-font;
@@ -7,9 +26,12 @@
 .btn-form {
   font-size: 18px;
   padding: 20px 40px;
-  height: 25vh;
-  width: 23vh;
-  margin: 2vh;
+  height: 18vh;
+  width: 18vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh; 
+  margin-left: 4vh;
+  margin-right: 4vh;
   -webkit-justify-content: center;
   display: -webkit-inline-box;
   -webkit-box-pack: center;
