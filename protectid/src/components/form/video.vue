@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -48,16 +49,16 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-date" class="col-form-label">Date des images que vous souhaitez consulter</label>
-                            <input type="date" name="date" class="form-control">
+                            <input type="date" name="date" id="Date" class="form-control">
                         </div>
                         <div class="row">
                             <div class="form-group col">
                                 <label for="recipient-start" class="col-form-label">Heure de début</label>
-                                <input type="time" name="heure_debut" class="form-control">
+                                <input type="time" name="heure_debut" class="form-control" id="Heure_debut">
                             </div>
                             <div class="form-group col">
                                 <label for="recipient-end" class="col-form-label">Heure de fin</label>
-                                <input type="time" name="heure_fin" class="form-control">
+                                <input type="time" name="heure_fin" class="form-control" id="Heure_fin">
                             </div>
                         </div>
                         <div class="modal-header">
@@ -201,45 +202,36 @@ export default {
 
     generatePDF (organismeChanged) {
       const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom11').value
-      var Prenom = document.getElementById('Prenom11').value
-      var Mail = document.getElementById('Mail11').value
-      var Postal = document.getElementById('Postal11').value
-      var Ville = document.getElementById('Ville11').value
-      var Mailorga = document.getElementById('Mailorga11').value
-      var Postalorga = document.getElementById('Postalorga11').value
-      var Villeorga = document.getElementById('Villeorga11').value
-      var NP = Nom + ' ' + Prenom
+      let values = Forms.getValues('.form-control');
+      let NP = `${values.Nom11} ${values.Prenom11}`;
+
       const doc = new Jspdf()
       
       doc.setFontSize(9)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
+      doc.text(values.Mail11, 10, 20)
+      doc.text(values.Postal11, 10, 25)
+      doc.text(values.Ville11, 10, 30)
       doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
+      doc.text(values.Mailorga7, 105, 50)
+      doc.text(values.Postalorga7, 105, 55)
+      doc.text(values.Villeorga7, 105, 60)
       doc.setFont('helvetica', 'bold')
-      doc.text('Objet: Droit d\'accès\n', 10, 70)
+      doc.text('Objet: Demande d\'accès à des images me concernant issues de votre dispositif de vidéosurveillance\n', 10, 75)
       doc.setFont('courier', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans\n', 10, 100)
-      doc.text('vos fichiers informatisés ou manuels.\n', 10, 105)
-      doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces\n', 10, 115)
-      doc.text('données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »),\n', 10, 120)
-      doc.text('en application de l\'article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 135)
-      doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 150)
-      doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 155)
-      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 160)
-      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 170)
-      doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.\n', 10, 175)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
+      doc.text('Je vous prie de bien vouloir m’indiquer si des images me concernant figurent dans votre dispositif\n', 10, 100)
+      doc.text(`de vidéosurveillance pour la date du  ${values.Date} de à ${values.Heure_fin}. \n`, 10, 105)
+      doc.text('Dans l’affirmative, je vous demande de bien vouloir me donner l’accès à ces images, en application de\n', 10, 115)
+      doc.text('l’article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 120)
+      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un \n', 10, 130)
+      doc.text('délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 135)
+      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 145)
+      doc.textWithLink('https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant\n', 10, 150, {url: 'https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant'})
+      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 165)
       doc.text(NP, 10, 195)
-      doc.save('Droit_acces.pdf')
+      // doc.save('Images_Videos.pdf')
+      Forms.viewPdf(doc) 
     }
   }
 }

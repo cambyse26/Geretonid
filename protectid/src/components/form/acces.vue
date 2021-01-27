@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -183,27 +184,22 @@ export default {
     },
 
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom').value
-      var Prenom = document.getElementById('Prenom').value
-      var Mail = document.getElementById('Mail').value
-      var Postal = document.getElementById('Postal').value
-      var Ville = document.getElementById('Ville').value
-      var Mailorga = document.getElementById('Mailorga').value
-      var Postalorga = document.getElementById('Postalorga').value
-      var Villeorga = document.getElementById('Villeorga').value
-      var NP = Nom + ' ' + Prenom
+      let currentOrganisme = organismeChanged.target.value;
+      let values = Forms.getValues('.form-control');
+      let NP = `${values.Nom} ${values.Prenom}`;
       const doc = new Jspdf()
+
+      console.log(values.Prenom);
       
       doc.setFontSize(9)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
+      doc.text(values.Mail, 10, 20)
+      doc.text(values.Postal, 10, 25)
+      doc.text(values.Ville, 10, 30)
       doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
+      doc.text(values.Mailorga, 105, 50)
+      doc.text(values.Postalorga, 105, 55)
+      doc.text(values.Villeorga, 105, 60)
       doc.setFont('helvetica', 'bold')
       doc.text('Objet: Droit d\'accès\n', 10, 70)
       doc.setFont('courier', 'normal')

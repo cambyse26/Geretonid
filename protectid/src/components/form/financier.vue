@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -18,7 +19,7 @@ export default {
                 </div>
                 <div class="modal-body">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Informations sur l'établissement financier'</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Informations sur l'établissement financier</h5>
                     </div>
                     <div class="form-group" autocomplete="off">
                         <label for="message-text" class="col-form-label">Nom de l'organisme</label>
@@ -48,7 +49,7 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-compte" class="col-form-label">Identifiant client ou numéro de compte</label>
-                            <input type="text" name="compte" class="form-control" placeholder="Votre n° de compte">
+                            <input type="text" name="compte" id="Identifiant7" class="form-control" placeholder="Votre n° de compte">
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
@@ -191,45 +192,40 @@ export default {
 
     generatePDF (organismeChanged) {
       const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom7').value
-      var Prenom = document.getElementById('Prenom7').value
-      var Mail = document.getElementById('Mail7').value
-      var Postal = document.getElementById('Postal7').value
-      var Ville = document.getElementById('Ville7').value
-      var Mailorga = document.getElementById('Mailorga7').value
-      var Postalorga = document.getElementById('Postalorga7').value
-      var Villeorga = document.getElementById('Villeorga7').value
-      var NP = Nom + ' ' + Prenom
+      let values = Forms.getValues('.form-control');
+      var NP = `${values.Nom7} ${values.Prenom7}`;
       const doc = new Jspdf()
       
       doc.setFontSize(9)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
+      doc.text(values.Mail7, 10, 20)
+      doc.text(values.Postal7, 10, 25)
+      doc.text(values.Ville7, 10, 30)
       doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
+      doc.text(values.Mailorga7, 105, 50)
+      doc.text(values.Postalorga7, 105, 55)
+      doc.text(values.Villeorga7, 105, 60)
       doc.setFont('helvetica', 'bold')
       doc.text('Objet: Droit d\'accès\n', 10, 70)
+      doc.text(`Ref: ${values.Identifiant7}`,10, 75)
       doc.setFont('courier', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans\n', 10, 100)
-      doc.text('vos fichiers informatisés ou manuels.\n', 10, 105)
-      doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces\n', 10, 115)
-      doc.text('données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »),\n', 10, 120)
-      doc.text('en application de l\'article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 135)
-      doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 150)
-      doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 155)
-      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 160)
-      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 170)
-      doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.\n', 10, 175)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
-      doc.text(NP, 10, 195)
-      doc.save('Droit_acces.pdf')
+      doc.text('Conformément à l’article en application de l’article 15 du Règlement général sur la protection des \n', 10, 100)
+      doc.text('données (RGPD), je vous prie de bien vouloir m’indiquer si des informations me concernant figurent \n', 10, 105)
+      doc.text('figurent dans vos fichiers informatisés ou manuels.', 10, 110)
+      doc.text('Dans l’affirmative, je vous demande de me faire parvenir une copie, en langage clair, de l’ensemble,\n', 10, 120)
+      doc.text('de ces données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »).\n', 10, 125)
+      doc.text('Vous voudrez bien également me donner toute information disponible sur l’origine de ces données me concernant.\n', 10, 135)
+      // doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
+      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un\n', 10, 145)
+      doc.text('délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 150)
+      doc.text('Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.\n', 10, 160)
+      doc.text(NP, 10, 185)
+      doc.text('P.J :', 10, 200)      
+      doc.text('Copie d\'une pièce d\'identité', 10, 205)      
+
+      // doc.save('Droit_acces.pdf')
+      Forms.viewPdf(doc)
     }
   }
 }
