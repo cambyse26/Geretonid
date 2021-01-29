@@ -49,11 +49,11 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-infos_rectif" class="col-form-label">Informations à rectifier</label>
-                            <textarea name="infos_rectif" class="form-control" rows="4"></textarea>
+                            <textarea name="infos_rectif" class="form-control" id="Rectifier9" rows="4"></textarea>
                         </div>                        
                         <div class="form-group">
                             <label for="recipient-rectif_infos" class="col-form-label">Informations rectifiées</label>
-                            <textarea name="rectif_infos" class="form-control" rows="4"></textarea>
+                            <textarea name="rectif_infos" class="form-control" id="Rectifiees9" rows="4"></textarea>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
@@ -201,34 +201,34 @@ export default {
       
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
       doc.text(values.Mail9, 10, 20)
       doc.text(values.Postal9, 10, 25)
       doc.text(values.Ville9, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(values.Mailorga9, 105, 50)
-      doc.text(values.Postalorga9, 105, 55)
-      doc.text(values.Villeorga9, 105, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.text('Objet: Droit d\'accès\n', 10, 70)
-      doc.setFont('courier', 'normal')
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga9, 200, 50, null, null, "right");
+      doc.text(values.Postalorga9, 200, 55, null, null, "right");
+      doc.text(values.Villeorga9, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.text('Objet: Rectification de données me concernant\n', 10, 70)
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans\n', 10, 100)
-      doc.text('vos fichiers informatisés ou manuels.\n', 10, 105)
-      doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces\n', 10, 115)
-      doc.text('données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »),\n', 10, 120)
-      doc.text('en application de l\'article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 135)
-      doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 150)
-      doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 155)
-      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 160)
-      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 170)
-      doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.\n', 10, 175)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
-      doc.text(NP, 10, 195)
-      doc.save('Droit_acces.pdf')
+      doc.text('Les données suivantes me concernant qui figurent dans vos fichiers sont incomplètes : \n', 10, 100)
+      Forms.setLines(doc, values.Rectifier9, 105);
+      doc.text('Par conséquent, en application de l’article 16 du Règlement général sur la protection des\n', 10, 135)
+      doc.text('données (RGPD), je vous remercie de bien vouloir compléter votre fichier avec les données\n', 10, 140)
+      doc.text('ci-dessous utiles à votre traitement : \n', 10, 145)
+      Forms.setLines(doc, values.Rectifiees9, 150);
+      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 180)
+      doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 185)
+      doc.text('Je vous remercie également de notifier cette demande de rectification aux organismes que vous\n', 10, 195)
+      doc.text(' auriez rendus destinataires de mes données (article 19 du RGPD).\n', 10, 200)
+      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 210)
+      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 215)
+      doc.text(NP, 10, 230)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
+      doc.save('Donnees_inexactes.pdf')
     }
   }
 }

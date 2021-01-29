@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -22,15 +23,14 @@ export default {
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="civilite">Civilité</label>
-                        <select name="civlite" id="cicvilite" class="form-select custom-select">
-                            <option value="default" name="default">Civilité</option>
-                            <option value="mr" name="default">Mr</option>
-                            <option value="mme" name="default">Mme</option>
+                        <select name="civlite" id="Civilite10" class="form-select custom-select">
+                            <option value="Madame">Mme</option>
+                            <option value="Monsieur">Mr</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Nom du médecin ou de l'établissement de santé</label>
-                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire" v-model="organisme">
+                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire10" v-model="organisme">
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Adresse mail</label>
@@ -184,46 +184,37 @@ export default {
     },
 
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom10').value
-      var Prenom = document.getElementById('Prenom10').value
-      var Mail = document.getElementById('Mail10').value
-      var Postal = document.getElementById('Postal10').value
-      var Ville = document.getElementById('Ville10').value
-      var Mailorga = document.getElementById('Mailorga10').value
-      var Postalorga = document.getElementById('Postalorga10').value
-      var Villeorga = document.getElementById('Villeorga10').value
-      var NP = `${Nom} ${Prenom}`
+      let currentOrganisme = organismeChanged.target.value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
+      let NP = `${values.Nom10} ${values.Prenom10}`;
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.text('Objet: Droit d\'accès\n', 10, 70)
-      doc.setFont('courier', 'normal')
-      doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans\n', 10, 100)
-      doc.text('vos fichiers informatisés ou manuels.\n', 10, 105)
-      doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces\n', 10, 115)
-      doc.text('données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »),\n', 10, 120)
-      doc.text('en application de l\'article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 135)
-      doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 150)
-      doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 155)
-      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 160)
-      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 170)
-      doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.\n', 10, 175)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
-      doc.text(NP, 10, 195)
-      doc.save('Droit_acces.pdf')
+      doc.text(values.Mail10, 10, 20)
+      doc.text(values.Postal10, 10, 25)
+      doc.text(values.Ville10, 10, 30, null, null, "right");
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga10, 200, 50, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.text('Objet: Demande d’accès à mon dossier médical\n', 10, 70)
+      doc.setFont('Times-Roman', 'normal')
+      doc.text(`${values.Civilite10}, \n`, 10, 90)
+      doc.text('En application des dispositions de l’article L. 1111-7 du code de la santé publique, je vous \n', 10, 100)
+      doc.text('remercie de m’adresser l’ensemble des données que vous détenez sur ma santé, qu’elles soient \n', 10, 105)
+      doc.text('soient sous forme papier ou sur support informatique (ainsi que la signification des codes, \n', 10, 110)
+      doc.text('sigles ou abréviations éventuellement utilisés).,\n', 10, 115)
+      doc.text('Vous trouverez en pièce jointe un justificatif de mon identité.\n', 10, 125)
+      doc.text('Pour votre information, vous disposez d’un délai de huit jours pour satisfaire ma demande. Ce\n', 10, 135)
+      doc.text('délai est porté à deux mois lorsque les informations médicales datent de plus de cinq ans.\n', 10, 140)
+      doc.text('Je vous prie d’agréer, Monsieur,, l’expression de mes salutations distinguées.\n', 10, 150)
+      doc.text(NP, 10, 165)
+      doc.text('P.J :\n', 10, 180)
+      doc.text('Copie de pièce d\'identité \n', 10, 190)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
+      doc.save('Medical.pdf')
+      
+
     }
   }
 }

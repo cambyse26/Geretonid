@@ -6,76 +6,72 @@
         <div class='intro-text'>
           <img style=' width: 25%; margin-top: 20px' src='../../img/ProtectID_logo.png' alt>
           <!--<div class='intro-lead-in'>Bienvenue</div>-->
-            <h4>
-              Etape 1 : Choisissez le droit que vous voulez utiliser
-              <br>
-              <br>Etape 2 : Indiquez le nom de l'entreprise et vos informations
-              <br>
-              <br>Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée
-              <br>
-               
-              </h4>
-         
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#accès'
-          >Droit d'accès</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#supprimer'
-          >Supprimer ses données personnelles</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#pub'
-          >Ne plus recevoir de publicités</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#trait'
-          >S'opposer au traitement de données</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#prospec'
-          >Stopper la prospection commerciale</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#site'
-          >Supprimer des informations vous concernant d'un site internet</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#video'
-          >Accéder à des images vidéo vous concernant</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#compte'
-          >Clôturer un compte en ligne</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#incompletes'
-          >Rectifier des données incomplètes</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#inexactes'
-          >Rectifier des données inexactes</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#medical'
-          >Accéder à son dossier médical</a>
-          <a
-            class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
-            data-toggle='modal'
-            data-target='#financier'
-          >Connaître les informations détenues par un établissement financier</a>
+            <h1 class="h4 mb-3">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
+            <h2 class="h4 mb-3">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
+            <h3 class="h4 mb-3">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
+
+          <div class="droit-container">
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#accès'
+            >Droit d'accès</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#supprimer'
+            >Supprimer ses données personnelles</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#pub'
+            >Ne plus recevoir de publicités</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#trait'
+            >S'opposer au traitement de données</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#prospec'
+            >Stopper la prospection commerciale</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#site'
+            >Supprimer des informations vous concernant d'un site internet</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#video'
+            >Accéder à des images vidéo vous concernant</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#compte'
+            >Clôturer un compte en ligne</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#incompletes'
+            >Rectifier des données incomplètes</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#inexactes'
+            >Rectifier des données inexactes</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#medical'
+            >Accéder à son dossier médical</a>
+            <a
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              data-toggle='modal'
+              data-target='#financier'
+            >Connaître les informations détenues par un établissement financier</a>
+          </div>
           
         </div>
       </div>

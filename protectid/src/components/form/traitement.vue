@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -186,34 +187,26 @@ export default {
       console.log("updateOrganismeDetails end");
     },
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom5').value
-      var Prenom = document.getElementById('Prenom5').value
-      var Mail = document.getElementById('Mail5').value
-      var Postal = document.getElementById('Postal5').value
-      var Ville = document.getElementById('Ville5').value
-      var Mailorga = document.getElementById('Mailorga5').value
-      var Postalorga = document.getElementById('Postalorga5').value
-      var Villeorga = document.getElementById('Villeorga5').value
-      var Info = document.getElementById('Info5').value
-      var NP = Nom + ' ' + Prenom
+      let currentOrganisme = organismeChanged.target.value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
+      let NP = `${values.Nom10} ${values.Prenom10}`;
       const doc = new Jspdf()
 
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.setFont('courier', 'normal')
+      doc.text(values.Mail5, 10, 20)
+      doc.text(values.Postal5, 10, 25)
+      doc.text(values.Ville5, 10, 30)
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga5, 200, 50, null, null, "right");
+      doc.text(values.Postalorga5, 200, 55, null, null, "right");
+      doc.text(values.Villeorga5, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
       doc.text('En application de l\'article 21.1 du Règlement général sur la protection des données (RGPD),\n', 10, 100)
       doc.text('je m\'oppose au traitement de mes données à caractère personnel par votre organisme car :\n', 10, 105)
-      doc.text(Info, 10, 110)
+      doc.text(values.Info5, 10, 110)
       doc.text('Dès lors, vous voudrez bien :\n', 10, 120)
       doc.text('- supprimer mes données de vos fichiers et notifier ma demande aux organismes auxquels\n', 10, 125)
       doc.text('vous les auriez communiquées (articles 17.1.c. et 19 du RGPD) ;\n', 10, 130)
@@ -225,6 +218,7 @@ export default {
       doc.text('je saisirai la Commission nationale de l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 165)
       doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 175)
       doc.text(NP, 10, 185)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
       doc.save('Traitement.pdf')
     }
   }

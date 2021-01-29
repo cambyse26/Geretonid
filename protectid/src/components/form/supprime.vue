@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -189,46 +190,38 @@ export default {
       console.log("updateOrganismeDetails end");
     },
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom4').value
-      var Prenom = document.getElementById('Prenom4').value
-      var Mail = document.getElementById('Mail4').value
-      var Postal = document.getElementById('Postal4').value
-      var Ville = document.getElementById('Ville4').value
-      var Mailorga = document.getElementById('Mailorga4').value
-      var Postalorga = document.getElementById('Postalorga4').value
-      var Villeorga = document.getElementById('Villeorga4').value
-      var Info = document.getElementById('Info4').value
-      var Motif = document.getElementById('Motif4').value
-      var NP = Nom + ' ' + Prenom
+      let currentOrganisme = organismeChanged.target.value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
+      let NP = `${values.Nom4} ${values.Prenom4}`;
       const doc = new Jspdf()
 
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.setFont('courier', 'normal')
+      doc.text(values.Mail4, 10, 20)
+      doc.text(values.Postal4, 10, 25)
+      doc.text(values.Ville4, 10, 30)
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga4, 200, 50, null, null, "right");
+      doc.text(values.Postalorga4, 200, 55, null, null, "right");
+      doc.text(values.Villeorga4, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('En application de l\'article 17.1 du Règlement général sur la protection\n', 10, 100)
-      doc.text('je vous prie d\'effacer de vos fichiers les données personnelles suivantes me concernant:\n', 10, 105)
-      doc.text(Info, 10, 110)
+      doc.text('En application de l\'article 17.1 du Règlement général sur la protection des données, je \n', 10, 100)
+      doc.text('vous prie d\'effacer de vos fichiers les données personnelles suivantes me concernant:\n', 10, 105)
+      doc.text(values.Info4, 10, 110)
       doc.text('Je demande que ces informations soient supprimées car :\n', 10, 120)
-      doc.text(Motif, 10, 125)
-      doc.text('Vous voudrez bien également notifier cette demande d\'effacement de mes données aux organismes\n', 10, 135)
-      doc.text('auxquels vous les auriez communiquées (article 19 du RGPD).\n', 10, 140)
-      doc.text('Enfin, je vous prie de m\'informer de ces éléments dans les meilleurs délais et au plus tard\n', 10, 145)
-      doc.text('dans un délai d\'un mois à compter de la réception de ce courrier (article 12.3 du RGPD).\n', 10, 150)
-      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 155)
-      doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 160)
-      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 165)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 180)
-      doc.text(NP, 10, 190)
+      doc.text(values.Motif4, 10, 125)
+      doc.text('Vous voudrez bien également notifier cette demande d\'effacement de mes données aux organis-\n', 10, 135)
+      doc.text('mes auxquels vous les auriez communiquées (article 19 du RGPD).\n', 10, 140)
+      doc.text('Enfin, je vous prie de m\'informer de ces éléments dans les meilleurs délais et au plus tard\n', 10, 150)
+      doc.text('dans un délai d\'un mois à compter de la réception de ce courrier (article 12.3 du RGPD).\n', 10, 155)
+      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse incomplète,\n', 10, 165)
+      doc.text('je me réserve la possibilité de saisir la Commission nationale del\'informatique et des \n', 10, 170)
+      doc.text('libertés (CNIL) d\'une réclamation.\n', 10, 175)
+      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
+      doc.text(NP, 10, 195)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
       doc.save('Supprimer_données_personelles.pdf')
     }
   }

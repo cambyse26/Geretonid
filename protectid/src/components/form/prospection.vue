@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -186,43 +187,36 @@ export default {
       console.log("updateOrganismeDetails end");
     },
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom1').value
-      var Prenom = document.getElementById('Prenom1').value
-      var Mail = document.getElementById('Mail1').value
-      var Postal = document.getElementById('Postal1').value
-      var Ville = document.getElementById('Ville1').value
-      var Mailorga = document.getElementById('Mailorga1').value
-      var Postalorga = document.getElementById('Postalorga1').value
-      var Villeorga = document.getElementById('Villeorga1').value
-      var Identifiant = document.getElementById('Identifiant').value
-      var NP = Nom + ' ' + Prenom
+      let currentOrganisme = organismeChanged.target.value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
+      let NP = `${values.Nom1} ${values.Prenom1}`;
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.setFont('courier', 'normal')
+      doc.text(values.Mail1, 10, 20)
+      doc.text(values.Postal1, 10, 25)
+      doc.text(values.Ville1, 10, 30)
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga1, 200, 50, null, null, "right");
+      doc.text(values.Postalorga1, 200, 55, null, null, "right");
+      doc.text(values.Villeorga1, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('ref:',10, 80)
-      doc.text(Identifiant, 18, 80)
+      doc.text(values.Identifiant, 18, 80)
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous demande de noter que je m\'oppose à ce que mes coordonnées, figurant dans vos fichiers, soient\n', 10, 100)
-      doc.text('utilisées à des fins de prospection, en application de l\'article 21.2 du Règlement général sur la\n', 10, 105)
-      doc.text('protection des données (RGPD).\n', 10, 115)
+      doc.text('Je vous demande de noter que je m\'oppose à ce que mes coordonnées, figurant dans vos fichiers, \n', 10, 100)
+      doc.text('soient utilisées à des fins de prospection, en application de l\'article 21.2 du Règlement général \n', 10, 105)
+      doc.text('sur la protection des données (RGPD).\n', 10, 115)
       doc.text('Ainsi, je vous remercie de supprimer mes coordonnées de vos fichiers d\'envoi de prospection\n', 10, 120)
-      doc.text('(article 17.1 du RGPD) et de notifier cette demande de suppression aux partenaires que vous auriez\n', 10, 125)
-      doc.text('rendus destinataires de mes données (article 19 du RGPD).\n', 10, 135)
-      doc.text('Je vous remercie de m\'informer des mesures prises à la suite de ma demande dans les meilleurs délais et\n', 10, 140)
-      doc.text('au plus tard dans un délai d\'un mois à compter de sa réception (article 12.3 du RGPD).\n', 10, 145)
+      doc.text('(article 17.1 du RGPD) et de notifier cette demande de suppression aux partenaires que vous \n', 10, 125)
+      doc.text('auriez rendus destinataires de mes données (article 19 du RGPD).\n', 10, 130)
+      doc.text('Je vous remercie de m\'informer des mesures prises à la suite de ma demande dans les meilleurs \n', 10, 140)
+      doc.text('délais et au plus tard dans un délai d\'un mois à compter de sa réception (article 12.3 du RGPD).\n', 10, 145)
       doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 155)
       doc.text(NP, 10, 165)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
       doc.save('Prospection.pdf')
     }
   }

@@ -196,36 +196,38 @@ export default {
       var NP = `${values.Nom7} ${values.Prenom7}`;
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
       doc.text(values.Mail7, 10, 20)
       doc.text(values.Postal7, 10, 25)
       doc.text(values.Ville7, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(values.Mailorga7, 105, 50)
-      doc.text(values.Postalorga7, 105, 55)
-      doc.text(values.Villeorga7, 105, 60)
-      doc.setFont('helvetica', 'bold')
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga7, 200, 50, null, null, "right");
+      doc.text(values.Postalorga7, 200, 55, null, null, "right");
+      doc.text(values.Villeorga7, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
       doc.text('Objet: Droit d\'accès\n', 10, 70)
       doc.text(`Ref: ${values.Identifiant7}`,10, 75)
-      doc.setFont('courier', 'normal')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Conformément à l’article en application de l’article 15 du Règlement général sur la protection des \n', 10, 100)
-      doc.text('données (RGPD), je vous prie de bien vouloir m’indiquer si des informations me concernant figurent \n', 10, 105)
-      doc.text('figurent dans vos fichiers informatisés ou manuels.', 10, 110)
-      doc.text('Dans l’affirmative, je vous demande de me faire parvenir une copie, en langage clair, de l’ensemble,\n', 10, 120)
-      doc.text('de ces données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »).\n', 10, 125)
-      doc.text('Vous voudrez bien également me donner toute information disponible sur l’origine de ces données me concernant.\n', 10, 135)
-      // doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un\n', 10, 145)
-      doc.text('délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 150)
-      doc.text('Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.\n', 10, 160)
-      doc.text(NP, 10, 185)
-      doc.text('P.J :', 10, 200)      
-      doc.text('Copie d\'une pièce d\'identité', 10, 205)      
+      doc.text('Conformément à l’article en application de l’article 15 du Règlement général sur la protection \n', 10, 100)
+      doc.text('des données (RGPD), je vous prie de bien vouloir m’indiquer si des informations me concernant\n', 10, 105)
+      doc.text('figurent figurent dans vos fichiers informatisés ou manuels.', 10, 110)
+      doc.text('Dans l’affirmative, je vous demande de me faire parvenir une copie, en langage clair, de \n', 10, 120)
+      doc.text('l’ensemble,de ces données (y compris celles figurant dans les zones « blocs-notes » ou \n', 10, 125)
+      doc.text('« commentaires »).', 10, 130)
+      doc.text('Vous voudrez bien également me donner toute information disponible sur l’origine de ces \n', 10, 140)
+      doc.text("données me concernant.", 10, 145)
+      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans \n', 10, 155)
+      doc.text('un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 160)
+      doc.text('Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.\n', 10, 170)
+      doc.text(NP, 10, 190)
+      doc.text('P.J :', 10, 205)      
+      doc.text('Copie d\'une pièce d\'identité', 10, 210)      
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
 
-      // doc.save('Droit_acces.pdf')
-      Forms.viewPdf(doc)
+      doc.save('Droit_acces.pdf')
+      
     }
   }
 }

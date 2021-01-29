@@ -7,9 +7,18 @@ export default {
         });
         return values;
     },
-    viewPdf (doc) {
-        let dataSrc = doc.output("datauristring");
-        let win = window.open("", "myWindow");
-        win.document.write("<html><head><title>jsPDF</title></head><body><embed src=" + dataSrc + " style=\"height: 100vh; width: 100%;\"></embed></body></html>");
+    setLines(doc, text, line) {
+        const start = 0;
+        // Nombre de caractères par lignes
+        const delimiter = 90;
+        // Calcul le nombre  de lignes
+        const loops = Math.ceil( parseInt(text.length) / delimiter );
+
+        for (let i = 0; i < loops; i++) {
+            let textLine = text.substr(start, delimiter);
+            doc.text(`${textLine}\n`, 10, line);
+            text = text.replace(textLine, '');
+            line = line + 5;
+        }
     },
 };

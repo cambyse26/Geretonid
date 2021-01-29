@@ -209,43 +209,35 @@ export default {
       
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
       doc.text(values.Mail6, 10, 20)
       doc.text(values.Postal6, 10, 25)
       doc.text(values.Ville6, 10, 30)
-      doc.text(currentOrganisme, 105, 45)
-      doc.text(values.Mailorga6, 105, 50)
-      doc.text(values.Postalorga6, 105, 55)
-      doc.text(values.Villeorga6, 105, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.text('Objet: Objet : Demande de clôture de compte et de suppression de données personnelles me concernant\n', 10, 75)
-      doc.setFont('courier', 'normal')
+      doc.text(currentOrganisme, 200, 40, null, null, "right");
+      doc.text(values.Mailorga6, 200, 45, null, null, "right");
+      doc.text(values.Postalorga6, 200, 50, null, null, "right");
+      doc.text(values.Villeorga6, 200, 55, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.text('Objet : Demande de clôture de compte et de suppression de données personnelles me\n', 10, 75)
+      doc.text('concernant', 10, 80)
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 105)
-      doc.text(`Je suis titulaire du compte ${values.Identifiant6} sur ${values.Reseau_Social}, qui diffuse des informations me ,\n`, 10, 115)
-      doc.text(` concernant à la page: ${values.Url}\n`, 10, 125)
+      doc.text(`Je suis titulaire du compte ${values.Identifiant6} sur ${values.Reseau_Social}, qui diffuse des informations me \n`, 10, 120)
+      doc.text(`concernant à la page: ${values.Url}\n`, 10, 125)
       doc.text('Je souhaite obtenir la clôture de mon compte et vous demande, en application de l’article 17.1\n', 10, 135)
-      doc.text('Ainsi, je vous remercie de supprimer mes coordonnées de vos fichiers d’envoi de prospection\n', 10, 145)
-      doc.text('(article 17.1 du RGPD) et de notifier cette demande de suppression aux partenaires que  vous\n', 10, 155)
-      doc.text('auriez rendus destinataires de mes données (article 19 du RGPD).\n', 10, 165)
-      doc.text('Je vous remercie de m’informer des mesures prises à la suite de ma demande dans les meilleurs\n', 10, 175)
-      doc.text('délais et au plus tard dans un délai d’un mois à compter de sa réception (article 12.3 du RGPD).\n', 10, 185)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n', 10, 205)
-      // doc.text('vos fichiers informatisés ou manuels.\n', 10, 105)
-      // doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces\n', 10, 115)
-      // doc.text('données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »),\n', 10, 120)
-      // doc.text('en application de l\'article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
-      // doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 135)
-      // doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      // doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 150)
-      // doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 155)
-      // doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 160)
-      // doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 170)
-      // doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.\n', 10, 175)
-      // doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
-      doc.text(NP, 10, 195)
-      // doc.save('Cloture_compte.pdf')
-      Forms.viewPdf(doc)
+      doc.text('du Règlement général sur la protection des données (RGPD),  de supprimer l’ensemble de \n', 10, 140)
+      doc.text('mes données personnelles qui lui sont rattachées, à savoir :\n', 10, 145)
+      Forms.setLines(doc, values.Delete_Infos, 150)
+      doc.text('Je vous remercie de bien vouloir m\'informer des mesures prises à la suite de ma demande dans\n', 10, 180)
+      doc.text('les meilleurs délais et au plus tard dans un délai d’un mois à compter de sa réception \n', 10, 185)
+      doc.text('(article 12.3 du RGPD).\n', 10, 190)
+      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n', 10, 200)
+      doc.text(NP, 10, 215)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
+
+      doc.save('Cloture_compte.pdf')
+      
     }
   }
 }

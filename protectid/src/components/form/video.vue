@@ -207,31 +207,32 @@ export default {
 
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
       doc.text(values.Mail11, 10, 20)
       doc.text(values.Postal11, 10, 25)
       doc.text(values.Ville11, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(values.Mailorga7, 105, 50)
-      doc.text(values.Postalorga7, 105, 55)
-      doc.text(values.Villeorga7, 105, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.text('Objet: Demande d\'accès à des images me concernant issues de votre dispositif de vidéosurveillance\n', 10, 75)
-      doc.setFont('courier', 'normal')
-      doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous prie de bien vouloir m’indiquer si des images me concernant figurent dans votre dispositif\n', 10, 100)
-      doc.text(`de vidéosurveillance pour la date du  ${values.Date} de à ${values.Heure_fin}. \n`, 10, 105)
-      doc.text('Dans l’affirmative, je vous demande de bien vouloir me donner l’accès à ces images, en application de\n', 10, 115)
-      doc.text('l’article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 120)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un \n', 10, 130)
-      doc.text('délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 135)
-      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 145)
-      doc.textWithLink('https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant\n', 10, 150, {url: 'https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant'})
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 165)
-      doc.text(NP, 10, 195)
-      // doc.save('Images_Videos.pdf')
-      Forms.viewPdf(doc) 
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga7, 200, 50, null, null, "right");
+      doc.text(values.Postalorga7, 200, 55, null, null, "right");
+      doc.text(values.Villeorga7, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.text('Objet: Demande d\'accès à des images me concernant issues de votre dispositif de \n', 10, 75)
+      doc.text('vidéosurveillance', 10, 80)
+      doc.setFont('Times-Roman', 'normal')
+      doc.text('Madame, Monsieur,\n', 10, 95)
+      doc.text('Je vous prie de bien vouloir m’indiquer si des images me concernant figurent dans votre dispositif\n', 10, 105)
+      doc.text(`de vidéosurveillance pour la date du  ${values.Date} de à ${values.Heure_fin}. \n`, 10, 110)
+      doc.text('Dans l’affirmative, je vous demande de bien vouloir me donner l’accès à ces images, en appli-\n', 10, 120)
+      doc.text('cation de l’article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
+      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans \n', 10, 135)
+      doc.text('un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
+      doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 150)
+      doc.textWithLink('https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant\n', 10, 155, {url: 'https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant'})
+      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 170)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
+      doc.text(NP, 10, 200)
+      doc.save('Images_Videos.pdf')
     }
   }
 }

@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -182,29 +183,22 @@ export default {
       console.log("updateOrganismeDetails end");
     },
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom2').value
-      var Prenom = document.getElementById('Prenom2').value
-      var Mail = document.getElementById('Mail2').value
-      var Postal = document.getElementById('Postal2').value
-      var Ville = document.getElementById('Ville2').value
-      var Mailorga = document.getElementById('Mailorga2').value
-      var Postalorga = document.getElementById('Postalorga2').value
-      var Villeorga = document.getElementById('Villeorga2').value
-      var NP = Nom + ' ' + Prenom
+      let currentOrganisme = organismeChanged.target.value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
+      let NP = `${values.Nom2} ${values.Prenom2}`;
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.setFont('courier', 'normal')
+      doc.text(values.Mail2, 10, 20)
+      doc.text(values.Postal2, 10, 25)
+      doc.text(values.Ville2, 10, 30)
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga2, 200, 50, null, null, "right");
+      doc.text(values.Postalorga2, 200, 55, null, null, "right");
+      doc.text(values.Villeorga2, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
       doc.text('Conformément aux dispositions de l\'article 21.2 du RGPD, je vous remercie de bien vouloir\n', 10, 100)
       doc.text('supprimer mes coordonnées de vos fichiers d\'envoi de publicités.\n', 10, 105)
@@ -212,6 +206,7 @@ export default {
       doc.text('courrier pour répondre à ma demande, conformément à l\'article 12.3 du RGPD.\n', 10, 120)
       doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 130)
       doc.text(NP, 10, 140)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
       doc.save('Pub.pdf')
     }
   }

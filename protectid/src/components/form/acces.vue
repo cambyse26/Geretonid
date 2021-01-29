@@ -143,7 +143,7 @@ export default {
     //
     updateListOrganismes(match) {
       console.log("updateListOrganismes start");
-      const baseURI = 'https://api.geretonid.com/api/company/search';
+      const baseURI = `${window.location.protocol}//${window.location.host}/api/company/search`;
       const param = { name: match };
       const headers = {
         "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -167,7 +167,7 @@ export default {
     // 
     updateOrganismeDetails(id) {
       console.log("updateOrganismeDetails start");
-      const baseURI = "https://api.geretonid.com/api/company/get/" + id;
+      const baseURI = `${window.location.protocol}//${window.location.host}/api/company/get/${id}`;
       const headers = {
         headers : {
           "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -183,41 +183,44 @@ export default {
       console.log("updateOrganismeDetails end");
     },
 
-    generatePDF (organismeChanged) {
-      let currentOrganisme = organismeChanged.target.value;
-      let values = Forms.getValues('.form-control');
+    generatePDF (ev) {
+
+      let currentOrganisme = ev.target.value;
+      console.log('cici');
+      console.warn(currentOrganisme);
+      let values = { ...Forms.getValues('.form-control'), currentOrganisme }
       let NP = `${values.Nom} ${values.Prenom}`;
       const doc = new Jspdf()
 
-      console.log(values.Prenom);
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
       doc.text(values.Mail, 10, 20)
       doc.text(values.Postal, 10, 25)
       doc.text(values.Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(values.Mailorga, 105, 50)
-      doc.text(values.Postalorga, 105, 55)
-      doc.text(values.Villeorga, 105, 60)
-      doc.setFont('helvetica', 'bold')
+      doc.text(currentOrganisme, 200, 45, null, null, "right")
+      doc.text(values.Mailorga6, 200, 50, null, null, "right");
+      doc.text(values.Postalorga, 200, 55, null, null, "right");
+      doc.text(values.Villeorga, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
       doc.text('Objet: Droit d\'accès\n', 10, 70)
-      doc.setFont('courier', 'normal')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans\n', 10, 100)
-      doc.text('vos fichiers informatisés ou manuels.\n', 10, 105)
-      doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces\n', 10, 115)
+      doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans vos\n', 10, 100)
+      doc.text('fichiers informatisés ou manuels.\n', 10, 105)
+      doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces et\n', 10, 115)
       doc.text('données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires »),\n', 10, 120)
       doc.text('en application de l\'article 15 du Règlement général sur la protection des données (RGPD).\n', 10, 125)
-      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus\n', 10, 135)
-      doc.text('tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
-      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse\n', 10, 150)
-      doc.text('incomplète, je me réserve la possibilité de saisir la Commission nationale de\n', 10, 155)
-      doc.text('l\'informatique et des libertés (CNIL) d\'une réclamation.\n', 10, 160)
+      doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard \n', 10, 135)
+      doc.text('dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 140)
+      doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse incomplète\n', 10, 150)
+      doc.text('je me réserve la possibilité de saisir la Commission nationale de l\'informatique et des \n', 10, 155)
+      doc.text('libertés (CNIL) d\'une réclamation.\n', 10, 160)
       doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL :\n', 10, 170)
       doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.\n', 10, 175)
       doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
       doc.text(NP, 10, 195)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
       doc.save('Droit_acces.pdf')
     }
   }

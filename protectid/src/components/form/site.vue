@@ -3,6 +3,7 @@ import Jspdf from 'jspdf'
 import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
+import Forms from '@/services/Forms';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -194,46 +195,39 @@ export default {
       console.log("updateOrganismeDetails end");
     },
     generatePDF (organismeChanged) {
-      const currentOrganisme = organismeChanged.target.value;
-      var Nom = document.getElementById('Nom3').value
-      var Prenom = document.getElementById('Prenom3').value
-      var Mail = document.getElementById('Mail3').value
-      var Postal = document.getElementById('Postal3').value
-      var Ville = document.getElementById('Ville3').value
-      var Mailorga = document.getElementById('Mailorga3').value
-      var Postalorga = document.getElementById('Postalorga3').value
-      var Villeorga = document.getElementById('Villeorga3').value
-      var Urls = document.getElementById('Urls').value
-      var Info = document.getElementById('Info').value
-      var Motif = document.getElementById('Motif').value
-      var NP = Nom + ' ' + Prenom
+      let currentOrganisme = organismeChanged.target.value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
+      let NP = `${values.Nom3} ${values.Prenom3}`;
       const doc = new Jspdf()
       
-      doc.setFontSize(9)
+      doc.setFontSize(14)
       doc.text(NP, 10, 15)
-      doc.text(Mail, 10, 20)
-      doc.text(Postal, 10, 25)
-      doc.text(Ville, 10, 30)
-      doc.text(currentOrganisme, 10, 45)
-      doc.text(Mailorga, 10, 50)
-      doc.text(Postalorga, 10, 55)
-      doc.text(Villeorga, 10, 60)
-      doc.setFont('helvetica', 'bold')
-      doc.setFont('courier', 'normal')
+      doc.text(values.Mail3, 10, 20)
+      doc.text(values.Postal3, 10, 25)
+      doc.text(values.Ville3, 10, 30)
+      doc.text(currentOrganisme, 200, 45, null, null, "right");
+      doc.text(values.Mailorga3, 200, 50, null, null, "right");
+      doc.text(values.Postalorga3, 200, 55, null, null, "right");
+      doc.text(values.Villeorga3, 200, 60, null, null, "right");
+      doc.setFont('Times-Roman', 'bold')
+      doc.setFont('Times-Roman', 'normal')
       doc.text('Madame, Monsieur,\n', 10, 90)
-      doc.text('Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n', 10, 100)
-      doc.text(Urls, 10, 105)
-      doc.text('Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données\n', 10, 115)
-      doc.text('(RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n', 10, 120)
-      doc.text(Info, 10, 125)
-      doc.text('Je souhaite que ces informations soient supprimées car :\n', 10, 135)
-      doc.text(Motif, 10, 140)
-      doc.text('Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les\n', 10, 150)
-      doc.text('moteurs de recherche (article 17.2 du RGPD).\n', 10, 155)
-      doc.text('Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai\n', 10, 160)
-      doc.text('d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 170)
-      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 185)
-      doc.text(NP, 10, 195)
+      doc.text('Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages\n', 10, 100)
+      doc.text(' suivantes :', 10, 105)
+      doc.text(values.Urls, 10, 110)
+      doc.text('Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des \n', 10, 120)
+      doc.text('données (RGPD), je vous remercie de supprimer les données personnelles suivantes me\n', 10, 125)
+      doc.text('concernant :', 10, 130)
+      doc.text(values.Info, 10, 135)
+      doc.text('Je souhaite que ces informations soient supprimées car :\n', 10, 145)
+      doc.text(values.Motif, 10, 150)
+      doc.text('Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées\n', 10, 160)
+      doc.text('par les moteurs de recherche (article 17.2 du RGPD).\n', 10, 165)
+      doc.text('Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans \n', 10, 175)
+      doc.text('un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n', 10, 180)
+      doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 200)
+      doc.text(NP, 10, 210)
+      doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
       doc.save('Site.pdf')
     }
   }
