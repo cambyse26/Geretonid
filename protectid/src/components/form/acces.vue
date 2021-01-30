@@ -187,7 +187,7 @@ export default {
 
       let currentOrganisme = ev.target.value;
       console.log('cici');
-      console.warn(currentOrganisme);
+      console.log(currentOrganisme);
       let values = { ...Forms.getValues('.form-control'), currentOrganisme }
       let NP = `${values.Nom} ${values.Prenom}`;
       const doc = new Jspdf()
@@ -199,7 +199,7 @@ export default {
       doc.text(values.Postal, 10, 25)
       doc.text(values.Ville, 10, 30)
       doc.text(currentOrganisme, 200, 45, null, null, "right")
-      doc.text(values.Mailorga6, 200, 50, null, null, "right");
+      doc.text(values.Mailorga, 200, 50, null, null, "right");
       doc.text(values.Postalorga, 200, 55, null, null, "right");
       doc.text(values.Villeorga, 200, 60, null, null, "right");
       doc.setFont('Times-Roman', 'bold')
