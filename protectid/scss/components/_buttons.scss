@@ -1,4 +1,9 @@
 // modal changes
+.center-text {
+  padding-left: 6.5vh !important;
+  padding-bottom: 0.5vh !important;
+}
+
 .modal {
   width: 97vw !important;
 }
@@ -11,7 +16,11 @@
   align-self: center !important;
   display: block !important;
   padding-right: 3.75vh !important;
-  padding-left: 3.75vh !important; 
+  padding-left: 3.75vh !important;
+}
+
+.modal-footer>* {
+  margin: 0.2vh !important;
 }
 
 .modal-header {
