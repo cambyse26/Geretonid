@@ -73,6 +73,7 @@ export default {
                     <p>Nous ne récupérons aucune donnée</p>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                     <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
+                    <a href="mailto: bcc=bonplanmat@gmail.com" type="button" class="btn btn-primary">Envoyer par mail</a>          
                 </div>
             </div>
         </div>
@@ -183,8 +184,8 @@ export default {
       console.log("updateOrganismeDetails end");
     },
 
-    generatePDF (organismeChanged) {
-      let currentOrganisme = organismeChanged.target.value;
+    generatePDF () {
+      let currentOrganisme = document.getElementById('organisme10').value
       const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select')};
       let NP = `${values.Nom10} ${values.Prenom10}`;
       const doc = new Jspdf()

@@ -23,7 +23,7 @@ export default {
           </div>
               <div class="form-group" autocomplete="off">
                 <label for="message-text" class="col-form-label">Nom de l'organisme</label>
-                <input type="text" v-model="organisme" @input="organismeChanged($event)" class="form-control" placeholder="Nom de l'organisme" list="dataListOrga" autocomplete="on">
+                <input type="text" id="organisme" v-model="organisme" @input="organismeChanged($event)" class="form-control" placeholder="Nom de l'organisme" list="dataListOrga" autocomplete="on">
                 <datalist id="dataListOrga">
                   <option v-for="organisme in listOrganismes"
                           v-bind:key="organisme.id">
@@ -70,10 +70,11 @@ export default {
             </form>
             </div>
           <div class="modal-footer">
-          <p>Nous ne récupérons aucune donnée</p>
+          <p class="center-text">Nous ne récupérons aucune donnée</p>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
             <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-          </div>
+            <a href="mailto: bcc=bonplanmat@gmail.com" type="button" class="btn btn-primary">Envoyer par mail</a>          
+            </div>
         </div>
       </div>
     </div>
@@ -183,9 +184,13 @@ export default {
       console.log("updateOrganismeDetails end");
     },
 
-    generatePDF (ev) {
+    Mail: function () {
+       document.getElementById('Mail').value;
+    },
 
-      let currentOrganisme = ev.target.value;
+    generatePDF () {
+
+      let currentOrganisme = document.getElementById('organisme').value
       console.log('cici');
       console.log(currentOrganisme);
       let values = { ...Forms.getValues('.form-control'), currentOrganisme }
