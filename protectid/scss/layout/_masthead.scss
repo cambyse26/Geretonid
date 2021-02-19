@@ -7,8 +7,8 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  .intro-text {
-    padding-top: 60px;
+  .intro-text {    
+    padding: 1.5rem 0;
     .intro-lead-in {
       font-size: 22px;
       font-style: italic;
@@ -23,6 +23,29 @@ header.masthead {
       margin-bottom: 25px;
       @include heading-font;
     }
+  }  
+  .step {
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-name: show;
+    opacity: 0;
+    position: relative;
+    bottom: -15px;
+  }
+  .step.first{
+    animation-delay: 500ms;
+  }
+  .step.second{
+    animation-delay: 1000ms;
+  }
+  .step.third{
+    animation-delay: 1500ms;
+  }
+  .step.forth{
+    animation-delay: 2000ms;
   }
 }
 @media(min-width:768px) {
@@ -43,5 +66,16 @@ header.masthead {
         @include heading-font;
       }
     }
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 1;
+    bottom: -15px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
   }
 }

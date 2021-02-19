@@ -4,6 +4,7 @@ import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
 import Forms from '@/services/Forms';
+import PDF from '@/services/PDF';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -23,18 +24,18 @@ export default {
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="civilite">Civilité</label>
-                        <select name="civlite" id="Civilite10" class="form-select custom-select">
+                        <select name="civlite" id="Civilite10" @change="preview" class="form-select custom-select">
                             <option value="Madame">Mme</option>
                             <option value="Monsieur">Mr</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Nom du médecin ou de l'établissement de santé</label>
-                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire10" v-model="organisme">
+                        <input class="form-control" @change="preview" placeholder="Nom du destinataire" id="organisme10" v-model="organisme">
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Adresse mail</label>
-                        <input class="form-control" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email">
+                        <input class="form-control" @change="preview" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email">
                     </div>
                     <form>
                         <div class="modal-header">
@@ -42,30 +43,30 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-informations" class="col-form-label">Informations complémentaires</label>
-                            <textarea name="informations" rows="4" class="form-control">Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : </textarea>
+                            <textarea name="informations" id="informations_complementaires" @change="preview" rows="4" class="form-control">Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : </textarea>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nom</label>
-                            <input type="text" class="form-control" placeholder="Votre nom" id="Nom10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre nom" id="Nom10">
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Prénom</label>
-                            <input type="text" class="form-control" placeholder="Votre Prénom" id="Prenom10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre Prénom" id="Prenom10">
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Adresse mail</label>
-                            <input class="form-control" placeholder="Votre adresse mail"  id="Mail10">
+                            <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="Mail10">
                         </div>
                         <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Code postal</label>
-                            <input type="text" class="form-control" placeholder="Votre code postal" id="Postal10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre code postal" id="Postal10">
                         </div>
                         <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Ville</label>
-                            <input type="text" class="form-control" placeholder="Votre ville" id="Ville10" >
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre ville" id="Ville10" >
                         </div>
                     </form>
                 </div>
@@ -77,7 +78,8 @@ export default {
                 </div>
             </div>
         </div>
-    </div>
+    <div id="preview-medical-pdf"></div>
+  </div>
 `,
   name: 'App',
     data () {
@@ -144,7 +146,7 @@ export default {
     //
     updateListOrganismes(match) {
       console.log("updateListOrganismes start");
-      const baseURI = 'https://api.geretonid.com/api/company/search';
+      const baseURI = 'http://localhost:8080/api/company/search';
       const param = { name: match };
       const headers = {
         "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -168,7 +170,7 @@ export default {
     // 
     updateOrganismeDetails(id) {
       console.log("updateOrganismeDetails start");
-      const baseURI = "https://api.geretonid.com/api/company/get/" + id;
+      const baseURI = "http://localhost:8080/api/company/get/" + id;
       const headers = {
         headers : {
           "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -213,10 +215,13 @@ export default {
       doc.text('P.J :\n', 10, 180)
       doc.text('Copie de pièce d\'identité \n', 10, 190)
       doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
-      doc.save('Medical.pdf')
-      
-
-    }
-  }
+      doc.save('Medical.pdf')     
+    }, 
+    preview () {
+      let currentOrganisme = document.getElementById('organisme10').value;
+      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
+      PDF.previewMedical(values, "#preview-medical-pdf");
+    },
+  },
 }
 </script>

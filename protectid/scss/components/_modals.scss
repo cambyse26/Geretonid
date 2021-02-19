@@ -1,0 +1,29 @@
+.modal-dialog {
+    margin: .5rem !important;
+}
+
+.modal-open .modal.show {
+    overflow-y: hidden !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+    height: auto;
+    max-height: 78vh;
+}
+
+#preview-modal-pdf, #preview-medical-pdf {
+    width: auto;
+    height: auto;
+    color: #ffffff;
+    opacity: 1;
+    z-index: 1050;
+    position:relative;
+    top: 5px;
+}
