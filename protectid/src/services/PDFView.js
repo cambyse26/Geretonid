@@ -16,13 +16,14 @@ export default class PdfView {
             container.innerHTML = '';
         }
         
-        let zoom = this.width > 1500 ? 70 : 60;
+        const zoom = this.width > 1500 ? 70 : 60;
 
         iframe = document.createElement('iframe');
+        iframe.setAttribute('allowfullscreen', 'true');
         iframe.setAttribute('type', 'application/pdf');
         iframe.setAttribute('src', `${this.url}#zoom=${zoom}`);
         iframe.setAttribute('frameborder', '0')
-        this.setOptions(iframe);        
+        this.setCSS(iframe);        
 
         console.warn({iframe, url: this.url});
         
@@ -30,7 +31,7 @@ export default class PdfView {
 
     }
 
-    setOptions (tag) {
+    setCSS (tag) {
         let style = '';
         for (let option in this.options ) {
             style += `${option}: ${this.options[option]};`;

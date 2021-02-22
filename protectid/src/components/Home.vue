@@ -6,13 +6,13 @@
         <div class='intro-text'>
           <!-- <img style=' width: 25%; margin-top: 20px' src='../../img/ProtectID_logo.png' alt> -->
           <!--<div class='intro-lead-in'>Bienvenue</div>-->
-            <h1 class="h4 mb-3">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
-            <h2 class="h4 mb-3 step first">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
-            <h3 class="h4 mb-3 step second">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
+            <h1 class="h4 mb-3 step first">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
+            <h2 class="h4 mb-3 step second">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
+            <h3 class="h4 mb-3 step third">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
 
-          <div class="droit-container step third">
+          <div class="droit-container">
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="acces"
@@ -20,7 +20,7 @@
               @click="addFields"
             >Droit d'accès</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="supprime"
@@ -28,7 +28,7 @@
               @click="addFields"
             >Supprimer ses données personnelles</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="pub"
@@ -36,7 +36,7 @@
               @click="addFields"
             >Ne plus recevoir de publicités</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="traitement"
@@ -44,7 +44,7 @@
               @click="addFields"
             >S'opposer au traitement de données</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="prospection"
@@ -52,7 +52,7 @@
               @click="addFields"
             >Stopper la prospection commerciale</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="site"
@@ -60,7 +60,7 @@
               @click="addFields"
             >Supprimer des informations vous concernant d'un site internet</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="video"
@@ -68,7 +68,7 @@
               @click="addFields"
             >Accéder à des images vidéo vous concernant</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' 
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
               data-toggle='modal'
               data-target='#modal'
               data-form="compte"
@@ -76,7 +76,7 @@
               @click="addFields"
             >Clôturer un compte en ligne</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger' style='background-color: #184abb; display: -webkit-inline-box'
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
               data-toggle='modal'
               data-target='#modal'
               data-form="rectifier"
@@ -84,7 +84,7 @@
               @click="addFields"
             >Rectifier des données incomplètes</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger'
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
               data-toggle='modal'
               data-target='#modal'
               data-form="rectifier"
@@ -92,13 +92,13 @@
               @click="addFields"
             >Rectifier des données inexactes</a>
             <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger'
+              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
               data-toggle='modal'
               data-target='#medical'
               @click="preview"
             >Accéder à son dossier médical</a>
             <a
-              class='btn btn-form text-uppercase js-scroll-trigger'
+              class='btn btn-form text-uppercase js-scroll-trigger step forth'
               data-toggle='modal'
               data-target='#modal'
               data-form="financier"
@@ -110,7 +110,7 @@
         </div>
       </div>
        <router-link
-            class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step forth' 
+            class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step fifth' 
             to='/droit'
             style='margin: auto; background-color: #184abb'
           >Quel droit choisir ?</router-link>
@@ -121,13 +121,8 @@
       <div class='container'>
         <div class='row'>
           <div class='col-lg-12 text-center'>
-            <h4>
-              <br>L'entreprise a 1 mois pour valider votre demande et peut vous demander un justificatif afin de vérifier votre identité.
-              <br>
-              <br>GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.
-              <br>
-              <br>
-            </h4>
+            <h4 class="step sixth">L'entreprise a 1 mois pour valider votre demande et peut vous demander un justificatif afin de vérifier votre identité.</h4>
+            <h4 class="step sixth">GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.</h4>
           </div>
         </div>     
       </div>
