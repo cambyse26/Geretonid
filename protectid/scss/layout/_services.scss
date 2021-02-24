@@ -1,5 +1,15 @@
 // Styling for the services section
 .service-heading {
-  margin: 15px 0;
-  text-transform: none;
+    margin: 15px 0;
+    text-transform: none;
+}
+
+#services {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    #services {
+        text-align: unset;
+    }
 }

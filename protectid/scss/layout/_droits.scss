@@ -2,6 +2,7 @@
     display: none;
 }
 
+
 /* Accordion CSS */
 
 .accordion {
@@ -10,8 +11,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-
     .accordion-droit {
+        box-sizing: content-box;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -21,63 +22,68 @@
         height: auto;
         color: #212529;
         background-color: #f9f9f9;
+        border: 1px solid #f8f8f8;
         font-size: 1.2rem;
         font-weight: 500;
         transition: all 300ms ease-in-out;
-        border-radius: 10px;
+        border-radius: 5px;
         margin-bottom: 5px;
         min-height: 45px;
         height: auto;
-
         p {
             margin: 0;
         }
-        
         i.fas {
             transform: rotate(0deg);
             transition: all 300ms ease-in-out;
+            margin-left: 10px;
+            &.rotate {
+                transform: rotate(180deg);
+            }
         }
     }
-    
-    .accordion-droit:hover, .accordion-droit.active {
+    .accordion-droit:hover,
+    .accordion-droit.active {
         background-color: #007bff;
         color: #f9f9f9;
     }
-    
     .accordion-droit:hover {
         cursor: pointer;
     }
-    
     .accordion-panel {
-        padding: .75rem;
         text-align: justify;
         font-size: 1.09rem;
         background-color: #ffffff;
         height: 0;
-        border-radius: 10px;
+        border-radius: 5px;
         animation-duration: 600ms;
         animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         animation-fill-mode: forwards;
         animation-iteration-count: unset;
         animation-direction: normal;
-        margin-bottom: .75vh;
         box-shadow: .1rem .1rem 1rem 0 rgba(0, 0, 0, 0.2);
-    }
-    
-    .accordion-panel.hidden {
-        animation-name: hide;
-    }
-    
-    .accordion-panel.show {
-        animation-name: show;
+        &.show {
+            padding: .75rem;
+            margin-bottom: 10px;
+            animation-name: show;
+        }
     }
 }
 
-
 @keyframes show {
-    from { height: 0; } to { height: auto; }
+    from {
+        height: 0;
+    }
+    to {
+        height: auto;
+    }
 }
 
 @keyframes hide {
-    from { height: auto; } to { height: 0; }
+    from {
+        height: auto;
+    }
+    to {
+        height: 0;
+    }
 }

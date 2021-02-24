@@ -1,22 +1,39 @@
 // Global styling for this template
 body {
-  overflow-x: hidden;
-  @include body-font;
+    overflow: hidden;
+    padding: 0;
+    width: 100vw;
+    @include body-font;
+}
+
+.container {
+    padding: 1rem !important;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 p {
-  line-height: 1.75;
+    line-height: 1.75;
 }
 
 a {
-  color: $primary;
-  &:hover {
-    color: darken($primary, 10%);
-  }
+    color: $primary;
+    &:hover {
+        color: darken($primary, 10%);
+    }
 }
 
 .text-primary {
-  color: $primary !important;
+    color: $primary !important;
 }
 
 h1,
@@ -25,47 +42,48 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  @include heading-font;
+    font-weight: 700;
+    @include heading-font;
 }
 
 .page-section {
-  padding-top: 2rem;
-  h2.section-heading {
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  h3.section-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    margin-bottom: 75px;
-    text-transform: none;
-    @include serif-font;
-  }
+    padding-top: 2rem;
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 75px;
+        text-transform: none;
+        @include serif-font;
+    }
 }
+
 @media(min-width:768px) {
-  section {
-    padding: 0px 0;
-  }
+    section {
+        padding: 0px 0;
+    }
 }
 
 // Highlight color customization
 ::-moz-selection {
-  background: $primary;
-  text-shadow: none;
+    background: $primary;
+    text-shadow: none;
 }
 
 ::selection {
-  background: $primary;
-  text-shadow: none;
+    background: $primary;
+    text-shadow: none;
 }
 
 img::selection {
-  background: transparent;
+    background: transparent;
 }
 
 img::-moz-selection {
-  background: transparent;
+    background: transparent;
 }

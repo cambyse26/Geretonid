@@ -112,7 +112,7 @@
        <router-link
             class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step fifth' 
             to='/droit'
-            style='margin: auto; background-color: #184abb'
+            style='margin: auto; background-color: #184abb; margin-bottom: 1rem;'
           >Quel droit choisir ?</router-link>
     </header>
 
@@ -120,7 +120,7 @@
     <section class="text"  id='services'>
       <div class='container'>
         <div class='row'>
-          <div class='col-lg-12 text-center'>
+          <div class='col-lg-12'>
             <h4 class="step sixth">L'entreprise a 1 mois pour valider votre demande et peut vous demander un justificatif afin de vérifier votre identité.</h4>
             <h4 class="step sixth">GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.</h4>
           </div>

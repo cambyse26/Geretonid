@@ -1,42 +1,103 @@
 // Styling for the footer
 .footer {
-  text-align: center;
-  span.copyright {
-    font-size: 90%;
-    line-height: 40px;
-    text-transform: none;
-    @include heading-font;
-  }
-  ul.quicklinks {
-    font-size: 90%;
-    line-height: 40px;
-    margin-bottom: 0;
-    text-transform: none;
-    @include heading-font;
-  }
+    text-align: center;
+    background-color: #eeeeee;
+    border-top: 1px solid rgba(0, 0, 0, .107);
+    margin-top: 2rem;
+    width: 100vw;
+    height: auto;
+    min-height: 10vh;
+    color: #212529;
+    font-size: 1.15rem;
+    .footer-container {
+        max-width: 950px;
+        width: 100%;
+        padding: .75rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        .footer-menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: .95rem;
+            * {
+                padding: .4rem;
+            }
+            .social-link {
+                color: #212529;
+                &:active,
+                &:focus,
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+        .footer-link {
+            color: #212529;
+        }
+    }
+    span.copyright {
+        font-size: 90%;
+        line-height: 40px;
+        text-transform: none;
+        @include heading-font;
+    }
+    ul.quicklinks {
+        font-size: 90%;
+        line-height: 40px;
+        margin-bottom: 0;
+        text-transform: none;
+        @include heading-font;
+    }
 }
 
 ul.social-buttons {
-  margin-bottom: 0;
-  li {
-    a {
-      font-size: 20px;
-      line-height: 50px;
-      display: block;
-      width: 50px;
-      height: 50px;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
-      color: white;
-      border-radius: 100%;
-      outline: none;
-      background-color: $gray-900;
-      &:active,
-      &:focus,
-      &:hover {
-        background-color: $primary;
-      }
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    li {
+        a {
+            font-size: 20px;
+            line-height: 50px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            color: #212529;
+            border-radius: 100%;
+            outline: none;
+            &:active,
+            &:focus,
+            &:hover {
+                background-color: $primary;
+            }
+        }
     }
-  }
+}
+
+@media screen and (max-width: 576px) {
+    .footer {
+        font-size: 1rem;
+        .footer-container {
+            padding: 1rem .5rem;
+            .footer-menu {
+                padding: .5rem;
+                .social-link {
+                    font-size: 1.5rem;
+                }
+                .social-contact {
+                    display: none;
+                }
+            }
+        }
+    }
 }

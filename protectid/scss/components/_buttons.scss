@@ -1,95 +1,105 @@
 // modal changes
 .center-text {
-  padding-left: 6.5vh !important;
-  padding-bottom: 0.5vh !important;
+    padding-left: 6.5vh !important;
+    padding-bottom: 0.5vh !important;
 }
 
 .modal {
-  width: 97vw !important;
+    width: 97vw !important;
 }
 
 .modal-content {
-  width: 100% !important;
+    width: 100% !important;
 }
 
 .modal-footer {
-  align-self: center !important;
-  display: block !important;
-  padding-right: 3.75vh !important;
-  padding-left: 3.75vh !important;
+    align-self: center !important;
+    display: block !important;
+    padding-right: 3.75vh !important;
+    padding-left: 3.75vh !important;
 }
 
 .modal-footer>* {
-  margin: 0.2vh !important;
+    margin: 0.2vh !important;
 }
 
 .modal-header {
-  padding: 0.6rem 0.6rem !important;
+    padding: 0.6rem !important;
 }
+
 // Button Styles
 .btn {
-  @include heading-font;
-  font-weight: 700;
-}
-
-.droit-container .btn-form {
-  font-size: 1.09rem;
-  font-weight: 500;
-  width: 175px;
-  height: 175px;
-  line-height: 1;
-  padding: .5rem;
-  margin: .5rem;
-  color: #ffffff;
-  -webkit-justify-content: center;
-  display: -webkit-inline-box;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  background-color: #184abb; 
-  display: -webkit-inline-box;
-}
-
-.droit-container .btn-form:hover {
-  color: #ffffff;
-  text-decoration: none;
+    @include heading-font;
+    font-weight: 700;
 }
 
 .droit-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    .btn-form {
+        font-size: 1.09rem;
+        font-weight: 500;
+        width: 175px;
+        height: 175px;
+        line-height: 1.15;
+        padding: .5rem;
+        margin: .5rem;
+        color: #ffffff;
+        -webkit-justify-content: center;
+        display: -webkit-inline-box;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        background-color: #184abb;
+        display: -webkit-inline-box;
+    }
+    .btn-form:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
 }
 
 @media screen and (max-width: 950px) {
-  .droit-container {
-    align-items: center;
-    justify-content: center;
-  }
+    .droit-container {
+        align-items: center;
+        justify-content: center;
+    }
+}
 
+@media screen and (max-width: 450px) {
+    .droit-container {
+        .btn-form {
+            font-size: 1.05rem;
+            font-weight: 400;
+            width: 150px;
+            height: 150px;
+            line-height: 1.05;
+        }
+    }
 }
 
 .btn-xl {
-  font-size: 18px;
-  padding: 20px 40px;
+    font-size: 18px;
+    padding: 20px 40px;
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: #184abb !important;
-    border-color: #184abb !important;
-    color: white;
-  }
-  &:active,
-  &:focus {
-    box-shadow: 0 0 0 0.2rem #184abb !important;
-  }
+    background-color: $primary;
+    border-color: $primary;
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: #184abb !important;
+        border-color: #184abb !important;
+        color: white;
+    }
+    &:active,
+    &:focus {
+        box-shadow: 0 0 0 0.2rem #184abb !important;
+    }
 }
