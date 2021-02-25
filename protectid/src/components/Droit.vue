@@ -1,7 +1,7 @@
 <template>
 
   <!-- Services -->
-  <section class="page-section" id="services" style="margin-bottom: 6vh">
+  <section class="page-section" id="services">
     
     <div class="container" style="margin-top: 20px;">
 
@@ -258,7 +258,6 @@
 
 </template>
 
-<script type="text/javascript" src="./fontawesome/js/all.min.js"></script>
 <script>
 
   export default {

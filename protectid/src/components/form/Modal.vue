@@ -58,9 +58,11 @@ export default {
                     </div>
                     <div class="modal-footer">
                         <p>Nous ne récupérons aucune donnée</p>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="button" id="generate-pdf" data-pdf="" class="btn btn-primary" v-on:click="generatePDF">Générer le PDF</button>
-                        <a href="mailto: " type="button" @click="changeEmail" class="btn btn-primary">Envoyer par mail</a>
+                        <div class="group-btn">
+                            <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
+                            <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>  
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        </div>        
                     </div>
                 </div>
             </div>
@@ -190,6 +192,15 @@ export default {
             
             console.log($this.srcElement);
         },
+
+        changeEmail(e) {
+            console.log(document.getElementById('btn-mail'))
+            const mail = document.getElementById('MailorgaModal').value;
+            if (mail === '') {
+                e.preventDefault();
+            }
+            return document.getElementById('btn-mail').href = `mailto:${mail}`;
+        }
     }
 
 }

@@ -71,10 +71,12 @@ export default {
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <p>Nous ne récupérons aucune donnée</p>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  <p>Nous ne récupérons aucune donnée</p>
+                  <div class="group-btn">
                     <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                    <a href="mailto: " type="button" class="btn btn-primary">Envoyer par mail</a>          
+                    <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>  
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  </div>        
                 </div>
             </div>
         </div>
@@ -221,6 +223,14 @@ export default {
       let currentOrganisme = document.getElementById('organisme10').value;
       const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
       PDF.previewMedical(values, "#preview-medical-pdf");
+    },
+    changeEmail(e) {
+      console.log(document.getElementById('btn-mail'))
+      const mail = document.getElementById('MailorgaModal').value;
+      if (mail === '') {
+          e.preventDefault();
+      }
+      return document.getElementById('btn-mail').href = `mailto:${mail}`;
     },
   },
 }

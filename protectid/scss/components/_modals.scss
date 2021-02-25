@@ -15,15 +15,28 @@
 .modal-body {
     overflow-y: auto;
     height: auto;
-    max-height: 78vh;
+    max-height: 570px;
 }
 
-#preview-modal-pdf, #preview-medical-pdf {
+#preview-modal-pdf,
+#preview-medical-pdf {
     width: auto;
     height: auto;
     color: #ffffff;
     opacity: 1;
     z-index: 1050;
-    position:relative;
+    position: relative;
     top: 5px;
+}
+
+.group-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &>[type=button] {
+        min-width: 120px;
+        padding: .45rem .85rem;
+        margin-top: 5px;
+    }
 }
