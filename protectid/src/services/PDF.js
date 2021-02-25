@@ -2,11 +2,11 @@ import jsPDF from 'jspdf';
 import PdfView from '@/services/PDFView';
 // import { embed } from 'pdfobject';
 
-export default{
+export default {
     generate(pdf, values) {
         const doc = new jsPDF();
         const NP = `${values.PrenomModal} ${values.NomModal}`
-        
+
         // PDF Header
         doc.setFontSize(14);
         doc.text(NP, 10, 15);
@@ -32,20 +32,20 @@ export default{
             orientation: 'p',
             unit: 'mm',
             format: 'a4',
-            putOnlyUsedFonts:true, 
+            putOnlyUsedFonts: true,
             userUnit: 1,
             precision: 2
         });
 
         const NP = `${values.PrenomModal} ${values.NomModal}`
-        
+
         // PDF Header
         doc.text(NP, 10, 20);
         doc.text(values.MailModal, 10, 26);
         // doc.text(values.PostalModal, 10, 25);
         // doc.text(values.VilleModal, 10, 30);
-        doc.text(values.MailorgaModal, 95, 36,{maxWidth:105});
-        doc.text(values.currentOrganisme, 95, 42, {maxWidth:105});
+        doc.text(values.MailorgaModal, 95, 36, { maxWidth: 105 });
+        doc.text(values.currentOrganisme, 95, 42, { maxWidth: 105 });
         // doc.text(values.PostalorgaModal, 200, 55, null, null, "right");
         // doc.text(values.VilleorgaModal, 200, 60, null, null, "right");
         doc.setFont('Times-Roman', 'bold');
@@ -63,11 +63,11 @@ export default{
         let height = window.innerHeight * .99;
         // créer une instance de PdfView
         let view = new PdfView(url, target, {
-            height: `${height}px`, 
+            height: `${height}px`,
             width: "auto",
             'min-width': '575px',
         });
-        
+
         // Afficher la preview
         view.view();
     },
@@ -75,7 +75,7 @@ export default{
         const doc = new jsPDF();
         const NP = `${values.Prenom10} ${values.Nom10}`
         console.log(target)
-        
+
         // PDF Header
         doc.setFontSize(14);
         doc.text(NP, 10, 15);
@@ -94,25 +94,25 @@ export default{
         // PDF Footer
         doc.text(NP, 10, 240);
         doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
-        
+
         // Url du blob du pdf
         let url = doc.output('bloburl');
 
         // créer une instance de PdfView
         let view = new PdfView(url, target, {
-            height: "calc(77vh + 190px)", 
+            height: "calc(77vh + 190px)",
             width: "auto",
             'min-width': '575px',
         });
-        
+
         // Afficher la preview
         view.view();
     },
     // Get the good content for the pdf
     getContent(pdf, doc, values) {
-        let maxWidth = {maxWidth: 190};
+        let maxWidth = { maxWidth: 190 };
         switch (pdf) {
-            case "acces": 
+            case "acces":
                 doc.text('Objet: Droit d\'accès', 10, 60, maxWidth);
                 doc.setFont('Times-Roman', 'normal')
                 doc.text('Madame, Monsieur,', 10, 70, maxWidth);
@@ -122,7 +122,7 @@ export default{
                 doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse incomplète je me réserve la possibilité de saisir la Commission nationale de l\'informatique et des libertés (CNIL) d\'une réclamation.', 10, 155, maxWidth);
                 doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL : ', 10, 178, maxWidth);
                 doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.', 10, 184, maxWidth);
-                doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 200, maxWidth);                
+                doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 200, maxWidth);
                 break;
 
             case "compte":
@@ -138,7 +138,7 @@ export default{
 
             case "financier":
                 doc.text('Objet: Droit d\'accès\n', 10, 60);
-                doc.text(`Ref: ${values.Identifiant}`,10, 68);
+                doc.text(`Ref: ${values.Identifiant}`, 10, 68);
                 doc.setFont('Times-Roman', 'normal');
                 doc.text('Madame, Monsieur,\n', 10, 80);
                 doc.text('Conformément à l’article en application de l’article 15 du Règlement général sur la protection des données (RGPD), je vous prie de bien vouloir m’indiquer si des informations me concernant figurent figurent dans vos fichiers informatisés ou manuels.\n', 10, 88, maxWidth);
@@ -160,7 +160,7 @@ export default{
                 doc.text('Je vous remercie également de notifier cette demande de rectification aux organismes que vous auriez rendus destinataires de mes données (article 19 du RGPD).\n', 10, 190, maxWidth);
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 215);
                 break;
-                
+
             case "inexactes":
                 doc.text('Objet: Rectification de données me concernant\n', 10, 60);
                 doc.setFont('Times-Roman', 'normal');
@@ -186,18 +186,18 @@ export default{
                 doc.text('P.J :\n', 10, 188);
                 doc.text('Copie de pièce d\'identité \n', 10, 195);
                 break;
-                
+
             case "prospection":
                 doc.text('Objet: Opposition à l’utilisation commerciale de mes coordonnées\n', 10, 60)
                 doc.setFont('Times-Roman', 'normal')
-                doc.text(`ref: ${values.Identifiant}`,10, 70)
+                doc.text(`ref: ${values.Identifiant}`, 10, 70)
                 doc.text('Madame, Monsieur,\n', 10, 80)
                 doc.text('Je vous demande de noter que je m\'oppose à ce que mes coordonnées, figurant dans vos fichiers, soient utilisées à des fins de prospection, en application de l\'article 21.2 du Règlement général sur la protection des données (RGPD).\n', 10, 100, maxWidth)
                 doc.text('Ainsi, je vous remercie de supprimer mes coordonnées de vos fichiers d\'envoi de prospection (article 17.1 du RGPD) et de notifier cette demande de suppression aux partenaires que vous auriez rendus destinataires de mes données (article 19 du RGPD).\n', 10, 128, maxWidth);
                 doc.text('Je vous remercie de m\'informer des mesures prises à la suite de ma demande dans les meilleurs délais et au plus tard dans un délai d\'un mois à compter de sa réception (article 12.3 du RGPD).\n', 10, 158, maxWidth)
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 180)
                 break;
-                    
+
             case "pub":
                 doc.text('Objet: Opposition à recevoir de la publicité\n', 10, 60)
                 doc.setFont('Times-Roman', 'normal')
@@ -206,14 +206,14 @@ export default{
                 doc.text('Je vous rappelle que vous disposez d\'un délai maximal d\'un mois suivant la réception de ce courrier pour répondre à ma demande, conformément à l\'article 12.3 du RGPD.\n', 10, 100, maxWidth)
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 128)
                 break;
-                
-            case "site":      
+
+            case "site":
                 doc.text('Objet: Rectification de données me concernant\n', 10, 60);
                 doc.setFont('Times-Roman', 'normal');
                 doc.text('Madame, Monsieur,\n', 10, 70);
                 doc.text('Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n', 10, 80, maxWidth);
                 doc.text(values.Urls, 10, 92, maxWidth);
-                doc.text('Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n', 10, 120,maxWidth);
+                doc.text('Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n', 10, 120, maxWidth);
                 doc.text(values.Info, 10, 138);
                 doc.text('Je souhaite que ces informations soient supprimées car :\n', 10, 160);
                 doc.text(values.Motif, 10, 166);
@@ -222,7 +222,7 @@ export default{
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 228)
                 break;
 
-            case "supprime":      
+            case "supprime":
                 doc.text('Objet: Suppression de données personnelles \n', 10, 60);
                 doc.setFont('Times-Roman', 'normal');
                 doc.text('Madame, Monsieur,\n', 10, 70);
@@ -236,7 +236,7 @@ export default{
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 226);
                 break;
 
-            case "traitement":      
+            case "traitement":
                 doc.text('Objet: Droit d\'opposition \n', 10, 60);
                 doc.setFont('Times-Roman', 'normal');
                 doc.text('Madame, Monsieur,\n', 10, 70);
@@ -250,7 +250,7 @@ export default{
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 210, maxWidth);
                 break;
 
-            case "video":    
+            case "video":
                 doc.text('Objet: Demande d\'accès à des images me concernant issues de votre dispositif de vidéosurveillance\n', 10, 60, maxWidth);
                 doc.setFont('Times-Roman', 'normal');
                 doc.text('Madame, Monsieur,\n', 10, 78);
@@ -261,6 +261,6 @@ export default{
                 doc.text('https://www.cnil.fr/modele/courrier/acceder-des-images-video-vous-concernant\n', 10, 168)
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 180)
                 break;
-            }
+        }
     },
 }

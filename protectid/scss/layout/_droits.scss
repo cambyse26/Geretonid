@@ -21,7 +21,7 @@
         padding: 0 .75rem;
         height: auto;
         color: #212529;
-        background-color: #f9f9f9;
+        background-color: rgba(220, 220, 220, .35);
         border: 1px solid #f8f8f8;
         font-size: 1.2rem;
         font-weight: 500;
@@ -30,6 +30,9 @@
         margin-bottom: 5px;
         min-height: 45px;
         height: auto;
+        &:hover {
+            text-decoration: none;
+        }
         p {
             margin: 0;
         }

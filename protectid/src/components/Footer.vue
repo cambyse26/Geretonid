@@ -8,9 +8,10 @@
         <router-link
           class="footer-link"
           to="/mention_legale"
-        > Mentions légales </router-link>
-        <small class="copyright" style="color: black">Copyright &copy; GeretonID 2020</small>
+        > Mentions légales </router-link>        
       </div>
+
+      <small class="copyright" style="color: black">Copyright &copy; GeretonID 2020</small>
       
       <div class="footer-menu">
 

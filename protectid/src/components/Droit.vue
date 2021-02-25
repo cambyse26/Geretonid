@@ -266,7 +266,7 @@
 
     data: function () {
       return {
-        activeItem: 'acces'
+        activeItem: ''
       }
     },
 

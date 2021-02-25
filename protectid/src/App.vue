@@ -1,8 +1,10 @@
 <template>
   <div>
-    <navbar/>
-    <router-view/>
-    <foot/>
+    <div class="wrapper">
+      <navbar/>
+      <router-view/>
+      <foot/>
+    </div>
   </div>
 </template>
 

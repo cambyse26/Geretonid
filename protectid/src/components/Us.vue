@@ -1,6 +1,6 @@
 <!-- Team -->
 <template>
-  <section class="page-section" id="team" style="margin-bottom: 13vh">
+  <section class="page-section" id="team">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
