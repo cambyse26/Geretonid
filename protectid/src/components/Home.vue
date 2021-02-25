@@ -4,7 +4,7 @@
     <header class='masthead'>
       <div class='container'>
         <div class='intro-text'>
-          <!-- <img style=' width: 25%; margin-top: 20px' src='../../img/ProtectID_logo.png' alt> -->
+          <!-- <img style=' width: 25%; margin-top: 20px; height: auto;' src='../../img/ProtectID_logo.png' alt="Logo GeretonID"> -->
           <!--<div class='intro-lead-in'>Bienvenue</div>-->
             <h1 class="h4 mb-3 step first">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
             <h2 class="h4 mb-3 step second">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
@@ -205,34 +205,12 @@
       </div>
     </section> -->
     <!--- POP-UP -->
-    <!-- <Acces></Acces>
-    <Supprimer></Supprimer>
-    <Pub></Pub>
-    <Traitement></Traitement>
-    <Prospection></Prospection>
-    <Site></Site>
-    <Video></Video>
-    <Compte></Compte>
-    <Incompletes></Incompletes>
-    <Inexactes></Inexactes>  
-    <Financier></Financier> -->
     <Medical></Medical>
     <Modal></Modal>
   </div>
 </template>
 
 <script>
-// import Supprimer from './form/supprime.vue';
-// import Acces from './form/acces.vue';
-// import Pub from './form/pub.vue';
-// import Traitement from './form/traitement.vue';
-// import Prospection from './form/prospection.vue';
-// import Site from './form/site.vue';
-// import Video from './form/video.vue';
-// import Compte from './form/compte.vue';
-// import Incompletes from './form/incompletes.vue';
-// import Inexactes from './form/inexactes.vue';
-// import Financier from './form/financier.vue';
 import Modal from './form/Modal.vue';
 import Medical from './form/medical.vue';
 import Forms from '@/services/Forms';
@@ -243,17 +221,6 @@ Vue.use(DisableAutocomplete);
 
 export default {
   components: {
-    // Supprimer,
-    // Acces,
-    // Pub,
-    // Traitement,
-    // Prospection,
-    // Site,
-    // Video,
-    // Compte,
-    // Incompletes,
-    // Inexactes,
-    // Financier,
     Medical,
     Modal,
   }, 

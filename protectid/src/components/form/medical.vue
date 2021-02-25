@@ -74,7 +74,7 @@ export default {
                     <p>Nous ne récupérons aucune donnée</p>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                     <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                    <a href="mailto: bcc=bonplanmat@gmail.com" type="button" class="btn btn-primary">Envoyer par mail</a>          
+                    <a href="mailto: " type="button" class="btn btn-primary">Envoyer par mail</a>          
                 </div>
             </div>
         </div>

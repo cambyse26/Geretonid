@@ -1,29 +1,25 @@
 <template>
-      <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
 
     <div class="footer-container">
       
       <div class="footer-menu">
-        <span>
-          <router-link
-            class="footer-link"
-            to="/mention_legale"
-          > Mentions légales </router-link>
-        </span>
-        <span class="copyright" style="color: black">Copyright &copy; GeretonID 2020</span>
+        <router-link
+          class="footer-link"
+          to="/mention_legale"
+        > Mentions légales </router-link>
+        <small class="copyright" style="color: black">Copyright &copy; GeretonID 2020</small>
       </div>
       
       <div class="footer-menu">
-        
-          <span class="social-contact"> Contacts: </span>
 
           <a 
             class="social-link" 
             href="mailto:geretonid@gmail.com" 
             title="Nous envoyer un email"
           >
-            <i class="far fa-envelope"></i>
+            <i class="far fa-envelope"></i> geretonid@gmail.com
           </a>
 
           <a 

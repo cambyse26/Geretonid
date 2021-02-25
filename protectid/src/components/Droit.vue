@@ -281,30 +281,6 @@
         this.activeItem = menuItem;
       },
 
-      // displayPanel ($this) {
-
-      //   let panel = $this.target;
-      //   const icon = panel.childNodes[1];  
-      //   const active = document.querySelector('.accordion-droit.active'); 
-        
-      //   if (panel === active) {
-      //     panel.classList.remove('active');
-      //     panel.childNodes[1].style.transform += 'rotate(180deg)';
-      //     return document.querySelector(`[data-panel=${panel.dataset.droit}]`).classList.replace('show', 'hidden');
-      //   }
-
-      //   if (active) {
-      //     document.querySelector(`[data-panel=${active.dataset.droit}]`).classList.replace('show', 'hidden');
-      //     active.classList.remove('active');
-      //     active.childNodes[1].style.transform += 'rotate(180deg)';
-      //   }
-
-      //   panel.classList.add('active');
-      //   icon.style.transform += 'rotate(180deg)';
-      //   return document.querySelector(`[data-panel=${panel.dataset.droit}]`).classList.replace('hidden', 'show');
-        
-      // },
-
     },
   }
 
