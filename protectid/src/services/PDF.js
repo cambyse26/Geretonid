@@ -8,17 +8,17 @@ var options = {
     'margin-top': "5px",
 };
 
-var doc = new jsPDF({
-    orientation: 'p',
-    unit: 'mm',
-    format: 'a4',
-    putOnlyUsedFonts: true,
-    userUnit: 1,
-    precision: 2
-});
-
 export default {
     generate(pdf, values) {
+
+        const doc = new jsPDF({
+            orientation: 'p',
+            unit: 'mm',
+            format: 'a4',
+            putOnlyUsedFonts: true,
+            userUnit: 1,
+            precision: 2
+        });
 
         const NP = `${values.PrenomModal} ${values.NomModal}`
 
@@ -39,6 +39,15 @@ export default {
         doc.save(`${pdf}.pdf`);
     },
     preview(pdf, values, target) {
+
+        const doc = new jsPDF({
+            orientation: 'p',
+            unit: 'mm',
+            format: 'a4',
+            putOnlyUsedFonts: true,
+            userUnit: 1,
+            precision: 2
+        });
 
         const NP = `${values.PrenomModal} ${values.NomModal}`
 
@@ -66,6 +75,15 @@ export default {
         view.view();
     },
     previewMedical(values, target) {
+
+        const doc = new jsPDF({
+            orientation: 'p',
+            unit: 'mm',
+            format: 'a4',
+            putOnlyUsedFonts: true,
+            userUnit: 1,
+            precision: 2
+        });
 
         const NP = `${values.Prenom10} ${values.Nom10}`
 

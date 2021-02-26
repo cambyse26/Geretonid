@@ -6,41 +6,46 @@ import Us from '@/components/Us'
 import Sensibilisation from '@/components/Sensibilisation'
 import Droit from '@/components/Droit'
 import Mention from '@/components/Mention_legale'
+import Blog from '@/components/Blog'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/fonctionalities',
-      name: 'Fonctionalities',
-      component: Fonctionalities
-    },
-    {
-      path: '/us',
-      name: 'Us',
-      component: Us
-    },
-    {
-      path: '/sensibilisation',
-      name: 'Sensibilisation',
-      component: Sensibilisation
-    },
-    {
-      path: '/droit',
-      name: 'Droit',
-      component: Droit
-    },
-    {
-      path: '/mention_legale',
-      name: 'Mention',
-      component: Mention
-    } 
-  ]
+    mode: 'history',
+    routes: [{
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/fonctionalities',
+            name: 'Fonctionalities',
+            component: Fonctionalities
+        },
+        {
+            path: '/us',
+            name: 'Us',
+            component: Us
+        },
+        {
+            path: '/sensibilisation',
+            name: 'Sensibilisation',
+            component: Sensibilisation
+        },
+        {
+            path: '/droit',
+            name: 'Droit',
+            component: Droit
+        },
+        {
+            path: '/mention_legale',
+            name: 'Mention',
+            component: Mention
+        },
+        {
+            path: '/blog',
+            name: 'Blog',
+            component: Blog
+        },
+    ]
 })
