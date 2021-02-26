@@ -1,5 +1,5 @@
 export default {
-    getValues (selector) {
+    getValues(selector) {
         let inputs = document.querySelectorAll(selector);
         let values = {};
         inputs.forEach(input => {
@@ -7,23 +7,8 @@ export default {
         });
         return values;
     },
-    setLines(doc, text, line) {
-        const start = 0;
-        // Nombre de caractères par lignes
-        const delimiter = 90;
-        // Calcul le nombre  de lignes
-        const loops = Math.ceil( parseInt(text.length) / delimiter );
-
-        for (let i = 0; i < loops; i++) {
-            let textLine = text.substr(start, delimiter);
-            doc.text(`${textLine}\n`, 10, line);
-            text = text.replace(textLine, '');
-            line = line + 5;
-        }
-        return;
-    },
     // Ajouter les bons champs dans la partie informations complémentaires
-    addModalFields({dataset}) {
+    addModalFields({ dataset }) {
         let fields = "";
         const title = `
             <div class="modal-header">
@@ -154,13 +139,13 @@ export default {
 
         return document.querySelector('#complementaires').innerHTML = fields;
     },
-    changeModalTitle({innerText}) {        
+    changeModalTitle({ innerText }) {
         return document.querySelector('#modal-title').innerText = innerText;
     },
-    changePdfButton({dataset}) {
+    changePdfButton({ dataset }) {
         return document.getElementById('generate-pdf').setAttribute('data-pdf', dataset.pdf);
     },
-    changePreview({dataset}) {
+    changePreview({ dataset }) {
         return document.getElementById('modal').setAttribute('preview', dataset.pdf);
     },
 };

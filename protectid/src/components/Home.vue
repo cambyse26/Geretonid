@@ -227,28 +227,34 @@ export default {
   methods: {
     addFields($this) {
       
-      Forms.changeModalTitle($this.srcElement);
-      Forms.addModalFields($this.srcElement);
-      Forms.changePdfButton($this.srcElement);
-      Forms.changePreview($this.srcElement);
+      Forms.changeModalTitle($this.srcElement); // Modifier le titre de la modal
+      Forms.addModalFields($this.srcElement); // Ajouter les champs complémentaires des modal
+      Forms.changePdfButton($this.srcElement); // Modifier le pdf à générer
+      Forms.changePreview($this.srcElement); // Modifier la preview à afficher 
 
+      // Récupère les valeurs du formulaire (pop-up)
       let values = { 
         ...Forms.getValues(`${$this.srcElement.dataset.target} .form-select`), 
         ...Forms.getValues(`${$this.srcElement.dataset.target} .form-control`), 
       };
+      //  Initialise les valeurs de l'organisme pour la preview 
       values['currentOrganisme'] = '';
       
+      // Affiche la preview si la fénêtre fait plus de 1000px en largueur
       if (window.innerWidth > 1000) {        
         PDF.preview($this.srcElement.dataset.pdf, values, "#preview-modal-pdf");
       }
     },
     preview($this) {
+      // Récupère les valeurs du formulaire (pop-up)
       let values = { 
         ...Forms.getValues(`${$this.srcElement.dataset.target} .form-select`), 
         ...Forms.getValues(`${$this.srcElement.dataset.target} .form-control`), 
       };
+      //  Initialise les valeurs de l'organisme pour la preview 
       values['currentOrganisme'] = '';
 
+      // Affiche la preview si la fénêtre fait plus de 1000px en largueur      
       if (window.innerWidth > 1000) {        
         PDF.previewMedical(values, "#preview-medical-pdf");
       }

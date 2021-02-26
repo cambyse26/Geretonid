@@ -1,22 +1,33 @@
 import jsPDF from 'jspdf';
 import PdfView from '@/services/PDFView';
-// import { embed } from 'pdfobject';
+
+var options = {
+    height: "calc(77vh + 150px)",
+    width: "auto",
+    'min-width': '575px',
+    'margin-top': "5px",
+};
+
+var doc = new jsPDF({
+    orientation: 'p',
+    unit: 'mm',
+    format: 'a4',
+    putOnlyUsedFonts: true,
+    userUnit: 1,
+    precision: 2
+});
 
 export default {
     generate(pdf, values) {
-        const doc = new jsPDF();
+
         const NP = `${values.PrenomModal} ${values.NomModal}`
 
         // PDF Header
         doc.setFontSize(14);
         doc.text(NP, 10, 15);
         doc.text(values.MailModal, 10, 20);
-        // doc.text(values.PostalModal, 10, 25);
-        // doc.text(values.VilleModal, 10, 30);
         doc.text(values.currentOrganisme, 200, 45, null, null, "right");
         doc.text(values.MailorgaModal, 200, 50, null, null, "right");
-        // doc.text(values.PostalorgaModal, 200, 55, null, null, "right");
-        // doc.text(values.VilleorgaModal, 200, 60, null, null, "right");
         doc.setFont('Times-Roman', 'bold');
 
         // PDF Content
@@ -28,26 +39,14 @@ export default {
         doc.save(`${pdf}.pdf`);
     },
     preview(pdf, values, target) {
-        const doc = new jsPDF({
-            orientation: 'p',
-            unit: 'mm',
-            format: 'a4',
-            putOnlyUsedFonts: true,
-            userUnit: 1,
-            precision: 2
-        });
 
         const NP = `${values.PrenomModal} ${values.NomModal}`
 
         // PDF Header
         doc.text(NP, 10, 20);
         doc.text(values.MailModal, 10, 26);
-        // doc.text(values.PostalModal, 10, 25);
-        // doc.text(values.VilleModal, 10, 30);
         doc.text(values.MailorgaModal, 95, 36, { maxWidth: 105 });
         doc.text(values.currentOrganisme, 95, 42, { maxWidth: 105 });
-        // doc.text(values.PostalorgaModal, 200, 55, null, null, "right");
-        // doc.text(values.VilleorgaModal, 200, 60, null, null, "right");
         doc.setFont('Times-Roman', 'bold');
 
         // PDF Content
@@ -60,32 +59,22 @@ export default {
         // Url du blob du pdf
         let url = doc.output('bloburl');
 
-        let height = window.innerHeight * .99;
         // créer une instance de PdfView
-        let view = new PdfView(url, target, {
-            height: `${height}px`,
-            width: "auto",
-            'min-width': '575px',
-        });
+        let view = new PdfView(url, target, options);
 
         // Afficher la preview
         view.view();
     },
     previewMedical(values, target) {
-        const doc = new jsPDF();
+
         const NP = `${values.Prenom10} ${values.Nom10}`
-        console.log(target)
 
         // PDF Header
         doc.setFontSize(14);
         doc.text(NP, 10, 15);
         doc.text(values.Mail10, 10, 20);
-        // doc.text(values.PostalModal, 10, 25);
-        // doc.text(values.VilleModal, 10, 30);
         doc.text(values.currentOrganisme, 200, 45, null, null, "right");
         doc.text(values.Mailorga10, 200, 50, null, null, "right");
-        // doc.text(values.PostalorgaModal, 200, 55, null, null, "right");
-        // doc.text(values.VilleorgaModal, 200, 60, null, null, "right");
         doc.setFont('Times-Roman', 'bold');
 
         // PDF Content
@@ -99,16 +88,12 @@ export default {
         let url = doc.output('bloburl');
 
         // créer une instance de PdfView
-        let view = new PdfView(url, target, {
-            height: "calc(77vh + 190px)",
-            width: "auto",
-            'min-width': '575px',
-        });
+        let view = new PdfView(url, target, options);
 
         // Afficher la preview
         view.view();
     },
-    // Get the good content for the pdf
+    // Afficher le contenu des pdf
     getContent(pdf, doc, values) {
         let maxWidth = { maxWidth: 190 };
         switch (pdf) {

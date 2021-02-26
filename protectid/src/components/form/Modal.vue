@@ -59,7 +59,7 @@ export default {
                     <div class="modal-footer">
                         <p>Nous ne récupérons aucune donnée</p>
                         <div class="group-btn">
-                            <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
+                            <button type="button" id="generate-pdf" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
                             <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>  
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                         </div>        
@@ -179,8 +179,6 @@ export default {
             let currentOrganisme = document.getElementById('organismeModal').value;
             const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
 
-            console.log({$this, Pdf, values})
-
             Pdf.generate($this.srcElement.dataset.pdf, values);
         },
         preview($this) {
@@ -194,7 +192,6 @@ export default {
         },
 
         changeEmail(e) {
-            console.log(document.getElementById('btn-mail'))
             const mail = document.getElementById('MailorgaModal').value;
             if (mail === '') {
                 e.preventDefault();

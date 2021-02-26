@@ -219,7 +219,7 @@
           href="#medical"
         >
           <p>Accéder à son dossier médical </p>
-          <i class="fas fa-chevron-down" :class="{ rotate: isActive('mediacal') }"></i>
+          <i class="fas fa-chevron-down" :class="{ rotate: isActive('medical') }"></i>
         </a>
         <div 
           class="accordion-panel fade" 
@@ -265,6 +265,7 @@
 
     data: function () {
       return {
+        // Onglet actif (droits)
         activeItem: ''
       }
     },
@@ -276,8 +277,8 @@
       },
 
       setActive (menuItem) {
-        console.log(menuItem)
-        this.activeItem = menuItem;
+        // Définir le champs actif sur l'évènement clic
+        return this.activeItem = menuItem === this.activeItem ? '' : menuItem;
       },
 
     },
