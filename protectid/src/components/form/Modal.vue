@@ -135,7 +135,7 @@ export default {
         //
         updateListOrganismes(match) {
             console.log("updateListOrganismes start");
-            const baseURI = 'http://localhost:8080/api/company/search';
+            const baseURI = `${this.getBaseUrl()}/api/company/search`;
             const param = { name: match };
             const headers = {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -160,7 +160,7 @@ export default {
         // 
         updateOrganismeDetails(id) {
             console.log("updateOrganismeDetails start");
-            const baseURI = "http://localhost:8080/api/company/get/" + id;
+            const baseURI = `${this.getBaseUrl()}/api/company/get/${id}`;
             const headers = {
                 headers : {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -182,13 +182,15 @@ export default {
             Pdf.generate($this.srcElement.dataset.pdf, values);
         },
         preview($this) {
-            let currentOrganisme = document.getElementById('organismeModal').value;
-            const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
-            const pdf = document.getElementById('modal').getAttribute('preview');
-
-            Pdf.preview(pdf, values, "#preview-modal-pdf");
-            
-            console.log($this.srcElement);
+            if (window.innerWidth > 1000) { 
+                let currentOrganisme = document.getElementById('organismeModal').value;
+                const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
+                const pdf = document.getElementById('modal').getAttribute('preview');
+    
+                Pdf.preview(pdf, values, "#preview-modal-pdf");
+                
+                console.log($this.srcElement);
+            }
         },
 
         changeEmail(e) {
@@ -197,6 +199,12 @@ export default {
                 e.preventDefault();
             }
             return document.getElementById('btn-mail').href = `mailto:${mail}`;
+        },
+
+        getBaseUrl() {
+            const protocol = window.location.protocol;
+            const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
+            return `${protocol}//${host}`;
         }
     }
 

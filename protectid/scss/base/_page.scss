@@ -125,3 +125,15 @@ img::selection {
 img::-moz-selection {
     background: transparent;
 }
+
+@media (min-width: 1264px) {
+    .container {
+        max-width: 1185px !important;
+    }
+}
+
+@media (min-width: 1904px) {
+    .container {
+        max-width: 1785px !important;
+    }
+}

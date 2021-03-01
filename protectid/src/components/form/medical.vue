@@ -148,7 +148,7 @@ export default {
     //
     updateListOrganismes(match) {
       console.log("updateListOrganismes start");
-      const baseURI = 'http://localhost:8080/api/company/search';
+      const baseURI = `${this.getBaseUrl()}/api/company/search`;
       const param = { name: match };
       const headers = {
         "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -172,7 +172,7 @@ export default {
     // 
     updateOrganismeDetails(id) {
       console.log("updateOrganismeDetails start");
-      const baseURI = "http://localhost:8080/api/company/get/" + id;
+      const baseURI = `${this.getBaseUrl()}/api/company/get/${id}`;
       const headers = {
         headers : {
           "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -220,9 +220,11 @@ export default {
       doc.save('Medical.pdf')     
     }, 
     preview () {
-      let currentOrganisme = document.getElementById('organisme10').value;
-      const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
-      PDF.previewMedical(values, "#preview-medical-pdf");
+      if (window.innerWidth > 1000) {
+        let currentOrganisme = document.getElementById('organisme10').value;
+        const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
+        PDF.previewMedical(values, "#preview-medical-pdf");
+      }
     },
     changeEmail(e) {
       console.log(document.getElementById('btn-mail'))
@@ -231,6 +233,11 @@ export default {
           e.preventDefault();
       }
       return document.getElementById('btn-mail').href = `mailto:${mail}`;
+    },
+    getBaseUrl() {
+      const protocol = window.location.protocol;
+      const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
+      return `${protocol}//${host}`;
     },
   },
 }
