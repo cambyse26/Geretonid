@@ -135,17 +135,18 @@ export default {
         //
         updateListOrganismes(match) {
             console.log("updateListOrganismes start");
-            const baseURI = `${this.getBaseUrl()}/api/company/search`;
+            const baseURI = "http://localhost:8080/api/company/search";
             const param = { name: match };
             const headers = {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json", 
+                "Clear-Site-Data": "*",
             };
             axios.post(baseURI, param, { headers })
             .then((result) => {
                 console.log("updateListOrganismes result " + JSON.stringify(result.data));
                 var data = result.data;
-                console.log({tt: 'ici', data:result.data})
+                console.log({tt: 'ici', data: result.data,})
                 for(var i=0; i< data.length; i++){
                     data[i].name_city = data[i].name + " (" + data[i].city + ")";
                 }
@@ -205,7 +206,7 @@ export default {
             const protocol = window.location.protocol;
             const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
             return `${protocol}//${host}`;
-        }
+        },
     }
 
 }
