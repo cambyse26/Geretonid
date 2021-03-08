@@ -11,7 +11,7 @@
         > Mentions légales </router-link>        
       </div>
 
-      <small class="copyright" style="color: black; padding-left: 11vh">Copyright &copy; GeretonID 2020</small>
+      <small class="copyright" style="color: black">Copyright &copy; GeretonID 2020</small>
       
       <div class="footer-menu">
 
