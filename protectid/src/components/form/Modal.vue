@@ -135,7 +135,7 @@ export default {
         //
         updateListOrganismes(match) {
             console.log("updateListOrganismes start");
-            const baseURI = "http://localhost:8080/api/company/search";
+            const baseURI = `${this.getBaseUrl()}/api/company/search`;
             const param = { name: match };
             const headers = {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
