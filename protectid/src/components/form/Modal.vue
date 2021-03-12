@@ -135,7 +135,7 @@ export default {
         //
         updateListOrganismes(match) {
             console.log("updateListOrganismes start");
-            const baseURI = `${this.getBaseUrl()}/api/company/search`;
+            const baseURI = 'https://api.geretonid.com/api/company/search';
             const param = { name: match };
             const headers = {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -161,7 +161,7 @@ export default {
         // 
         updateOrganismeDetails(id) {
             console.log("updateOrganismeDetails start");
-            const baseURI = `${this.getBaseUrl()}/api/company/get/${id}`;
+            const baseURI = `https://api.geretonid.com/api/company/get/${id}`;
             const headers = {
                 headers : {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -202,11 +202,11 @@ export default {
             return document.getElementById('btn-mail').href = `mailto:${mail}`;
         },
 
-        getBaseUrl() {
-            const protocol = window.location.protocol;
-            const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
-            return `${protocol}//${host}`;
-        },
+        // getBaseUrl() {
+        //     const protocol = window.location.protocol;
+        //     const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
+        //     return `${protocol}//${host}`;
+        // },
     }
 
 }
