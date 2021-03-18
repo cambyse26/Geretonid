@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- Axios Ajax library Js File -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <h1>Page de connexion</h1>
+
+        <form action="/api/file" method="post" enctype="multipart/form-data" onsubmit="handleRequest(this, event)">
+
+            <div class="custom-file mb-4">
+                <input id="my-input" class="custom-file-input" type="file" name="file">
+                <label for="my-input" class="custom-file-label">Text</label>
+            </div>
+
+            <button type="submit" class="btn btn-info">Envoyer</button>
+
+        </form>
+
+        <img style="
+            width:100%;
+            max-width:500px;
+            height:auto;
+            box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .2);
+            border-radius: .3rem;
+            margin: 20px auto;
+            " src="{{ url_for('static', filename='uploads/zepeto.jpg') }}" alt="Photo uploadé">
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script>
+        const getValues = selector => {
+            let object = {};
+            elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                object[element.name] = element.value;
+            });
+            return object;
+        }
+
+        const handleRequest = (form, e) => {
+            e.preventDefault();
+            const url = form.action;
+
+            const data = new FormData(form)
+
+            axios
+                .post(url, data)
+                .then(({
+                    data
+                }) => {
+                    console.log(data)
+                })
+                .catch(({
+                    response
+                }) => {
+                    console(response)
+                });
+            console.log({
+                data
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -6,7 +6,10 @@ import Us from '@/components/Us'
 import Sensibilisation from '@/components/Sensibilisation'
 import Droit from '@/components/Droit'
 import Mention from '@/components/Mention_legale'
-import Blog from '@/components/Blog'
+import Blog from '@/components/Blog/Blog'
+import FormBlog from '@/components/Admin/FormBlog'
+import Login from '@/components/Auth/Login'
+import Register from '@/components/Auth/Register'
 
 Vue.use(Router)
 
@@ -47,5 +50,20 @@ export default new Router({
             name: 'Blog',
             component: Blog
         },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login
+        },
+        {
+            path: '/register',
+            name: 'Register',
+            component: Register
+        },
+        {
+            path: '/admin/posts/new',
+            name: 'FormBlog',
+            component: FormBlog
+        }
     ]
 })
