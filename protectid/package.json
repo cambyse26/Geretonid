@@ -19,6 +19,7 @@
     "jquery.easing": "^1.4.1",
     "mailtoui": "^1.0.3",
     "save": "^2.4.0",
+    "serve": "^11.3.2",
     "tape-async": "^2.3.0",
     "vue": "^2.6.11",
     "vue-disable-autocomplete": "0.0.4",

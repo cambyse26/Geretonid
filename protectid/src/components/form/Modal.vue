@@ -9,6 +9,7 @@ import Pdf from '@/services/PDF';
 Vue.use(DisableAutocomplete);
 
 export default {
+
     template: `
         <div class="modal fade" id="modal" preview="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -20,6 +21,8 @@ export default {
                         </button>
                     </div>
                     <div class="modal-body">
+                    <!-- bouton allant sur la page droit -->
+                        <a href="/Droit" class="accordion-droit"><button type="button" class="btn btn-primary">Pour plus d'informations</button></a>
                         <div class="modal-header">
                             <h5 class="modal-title">Informations sur la société</h5>
                         </div>

@@ -5,7 +5,6 @@
   <div class="col-2"> <a href="/"><img style=" width: 20vh; height: auto;" src="../../img/ProtectID_logo.png" alt="Logo GeretonID"></a>
   </div>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -22,7 +21,9 @@
           <!-- <li class="nav-item">
             <router-link to="/Sensibilisation" class="nav-link js-scroll-trigger">Sensibilisation</router-link>
           </li> -->
-
+          <li class="nav-item">
+            <router-link to="/Bonne_pratique" class="nav-link js-scroll-trigger">Bonne Pratiques</router-link>
+          </li>
         <li class="nav-item">
             <router-link to="/us" class="nav-link js-scroll-trigger">Qui sommes-nous ?</router-link>
           </li>

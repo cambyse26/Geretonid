@@ -381,6 +381,10 @@ header.masthead .intro-text .intro-heading {
   background-color: #212529;
 }
 
+.modal-title, h5{
+  text-align: center;
+}
+
 .timeline {
   position: relative;
   padding: 0;

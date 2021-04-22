@@ -21,8 +21,9 @@ export default {
             case "compte":
                 fields = `
                     ${title}
+                   
                     <div class="form-group">
-                        <label for="Identifiant" class="col-form-label">Identifiant du compte concerté</label>
+                        <label for="Identifiant" class="col-form-label">Identifiant du compte concerné</label>
                         <input type="text" name="identifiant" onchange="preview()" id="Identifiant" class="form-control" placeholder="">
                     </div>
                     <div class="form-group">
@@ -87,7 +88,7 @@ export default {
                     </div>
                     <div class="form-group">
                         <label for="Motif" class="col-form-label">Précisez les raisons pour lesquelles vous souhaitez faire effacer ces données</label>
-                        <textarea rows="2" maxlength="150" class="form-control" id="Motif" onchange="preview()" placeholder="Exemple: "></textarea>
+                        <textarea rows="2" maxlength="150" class="form-control" id="Motif" onchange="preview" placeholder="Exemple: "></textarea>
                     </div>
                 `;
                 break;
@@ -111,7 +112,7 @@ export default {
                     ${title}
                     <div class="form-group">
                         <label for="Info" class="col-form-label">Raison de la demande</label>
-                        <textarea rows="2" maxlength="150" class="form-control" id="Info" onchange="preview()" placeholder="Exemple: Je veux que le traitement cesse "></textarea>
+                        <textarea rows="2" maxlength="150" class="form-control" id="Info" onchange="preview" placeholder="Exemple: Je veux que le traitement cesse "></textarea>
                     </div>
                 `;
                 break;
