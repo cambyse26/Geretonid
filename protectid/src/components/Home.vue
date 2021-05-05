@@ -11,100 +11,107 @@
             <h3 class="h4 mb-3 step third">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
 
           <div class="droit-container">
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="acces"
-              data-pdf="acces"
-              @click="addFields"
-            >Droit d'accès</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="supprime"
-              data-pdf="supprime"
-              @click="addFields"
-            >Supprimer ses données personnelles</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="pub"
-              data-pdf="pub"
-              @click="addFields"
-            >Ne plus recevoir de publicités</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="traitement"
-              data-pdf="traitement"
-              @click="addFields"
-            >S'opposer au traitement de données</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="prospection"
-              data-pdf="prospection"
-              @click="addFields"
-            >Stopper la prospection commerciale</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="site"
-              data-pdf="site"
-              @click="addFields"
-            >Supprimer des informations vous concernant d'un site internet</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="video"
-              data-pdf="video"
-              @click="addFields"
-            >Accéder à des images vidéo vous concernant</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="compte"
-              data-pdf="compte"
-              @click="addFields"
-            >Clôturer un compte en ligne</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="rectifier"
-              data-pdf="incompletes"
-              @click="addFields"
-            >Rectifier des données incomplètes</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="rectifier"
-              data-pdf="inexactes"
-              @click="addFields"
-            >Rectifier des données inexactes</a>
-            <a
-              class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
-              data-toggle='modal'
-              data-target='#medical'
-              @click="preview"
-            >Accéder à son dossier médical</a>
-            <a
-              class='btn btn-form text-uppercase js-scroll-trigger step forth'
-              data-toggle='modal'
-              data-target='#modal'
-              data-form="financier"
-              data-pdf="financier"
-              @click="addFields"
-            >Connaître les informations détenues par un établissement financier</a>
+            <div class="row" style="margin-top: 50px;">
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="acces"
+                data-pdf="acces"
+                @click="addFields"
+              >Droit d'accès</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="supprime"
+                data-pdf="supprime"
+                @click="addFields"
+              >Supprimer ses données personnelles</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="pub"
+                data-pdf="pub"
+                @click="addFields"
+              >Ne plus recevoir de publicités</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="traitement"
+                data-pdf="traitement"
+                @click="addFields"
+              >S'opposer au traitement de données</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="compte"
+                data-pdf="compte"
+                @click="addFields"
+              >Clôturer un compte en ligne</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="site"
+                data-pdf="site"
+                @click="addFields"
+              >Supprimer des informations vous concernant d'un site internet</a>
+            </div>
+            <div class="step" style="width: 745px; height: 12px; background-color: blue; margin-top: 80px; margin-bottom: 80px; margin-right: 20px">
+
+            </div>
+            <div class="row">
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="video"
+                data-pdf="video"
+                @click="addFields"
+              >Accéder à des images vidéo vous concernant</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="prospection"
+                data-pdf="prospection"
+                @click="addFields"
+              >Stopper la prospection commerciale</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="rectifier"
+                data-pdf="incompletes"
+                @click="addFields"
+              >Rectifier des données incomplètes</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="rectifier"
+                data-pdf="inexactes"
+                @click="addFields"
+              >Rectifier des données inexactes</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
+                data-toggle='modal'
+                data-target='#medical'
+                @click="preview"
+              >Accéder à son dossier médical</a>
+              <a
+                class='btn btn-form text-uppercase js-scroll-trigger step forth'
+                data-toggle='modal'
+                data-target='#modal'
+                data-form="financier"
+                data-pdf="financier"
+                @click="addFields"
+              >Connaître les informations détenues par un établissement financier</a>
+            </div>
           </div>
           
         </div>
