@@ -13,7 +13,7 @@
           <div class="droit-container">
             <div class="row d-flex justify-content-center" style="margin-top: 7vw;">
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth acces' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth acces popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="acces"
@@ -21,7 +21,7 @@
                 @click="addFields"
               >Droit d'accès</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth supprime' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth supprime popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="supprime"
@@ -29,7 +29,7 @@
                 @click="addFields"
               >Supprimer ses données personnelles</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="pub"
@@ -37,7 +37,7 @@
                 @click="addFields"
               >Ne plus recevoir de publicités</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth opposition' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth opposition popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="traitement"
@@ -45,7 +45,7 @@
                 @click="addFields"
               >S'opposer au traitement de données</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth cloture' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth cloture popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="compte"
@@ -53,7 +53,7 @@
                 @click="addFields"
               >Clôturer un compte en ligne</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth supprime-infos' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth supprime-infos popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="site"
@@ -66,7 +66,7 @@
             </div>-->
             <div class="row d-flex justify-content-center">
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="video"
@@ -74,7 +74,7 @@
                 @click="addFields"
               >Accéder à des images vidéo vous concernant</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth prospection' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth prospection popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="prospection"
@@ -82,7 +82,7 @@
                 @click="addFields"
               >Stopper la prospection commerciale</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="rectifier"
@@ -90,7 +90,7 @@
                 @click="addFields"
               >Rectifier des données incomplètes</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="rectifier"
@@ -98,13 +98,13 @@
                 @click="addFields"
               >Rectifier des données inexactes</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup'
                 data-toggle='modal'
                 data-target='#medical'
                 @click="preview"
               >Accéder à son dossier médical</a>
               <a
-                class='btn btn-form text-uppercase js-scroll-trigger step forth'
+                class='btn btn-form text-uppercase js-scroll-trigger step forth popup'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="financier"

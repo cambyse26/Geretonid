@@ -741,3 +741,8 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   color: #000000 !important;
   background-image: url("../img/Popup_img/cloture.jpg");
 }
+
+.popup:hover {
+  transition: transform .2s;
+  transform: scale(1.1);
+}
