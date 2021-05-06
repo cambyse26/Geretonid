@@ -78,10 +78,10 @@ export default new Router({
             name: 'not-found',
             component: FourOhFour
         },
-        // Ne pas mettre de règles de routage après la redirection !!!
         {
             path: '/**',
             redirect: '/not-found'
         },
+        // Ne pas écrire après ce commentaire !!!
     ]
 })

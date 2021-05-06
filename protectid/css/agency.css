@@ -693,3 +693,51 @@ ul.social-buttons li a {
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #fed136;
 }
+/* images-popup */
+
+.supprime {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #ffffff !important;
+  background-image: url("../img/Popup_img/supprimer_donnees.png");
+}
+
+.prospection {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/stop_prospection.jpg");
+}
+
+.supprime-infos {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/supprimer_infos.jpg");
+}
+
+.opposition {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #ffffff !important;
+  background-image: url("../img/Popup_img/opposition-traitement.png");
+}
+
+.acces {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/acces.jpg");
+}
+.cloture {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/cloture.jpg");
+}
