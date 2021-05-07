@@ -13,6 +13,7 @@ import Register from '@/components/Auth/Register'
 import BP from '@/components/Bonne_pratique'
 
 
+
 Vue.use(Router)
 
 export default new Router({
