@@ -16,13 +16,15 @@ export default {
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 id="modal-title" class="modal-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" v-on:click="resetInfos">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                     <!-- bouton allant sur la page droit -->
-                        <a href="/Droit" class="accordion-droit"><button type="button" class="btn btn-primary">Pour plus d'informations</button></a>
+                        <button type="button" class="btn btn-primary" v-on:click="showInfo">Pour plus d'informations</button>
+                        <p id="info-droit">
+                        </p>
                         <div class="modal-header">
                             <h5 class="modal-title">Informations sur la société</h5>
                         </div>
@@ -210,6 +212,54 @@ export default {
         //     const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
         //     return `${protocol}//${host}`;
         // },
+
+        showInfo() {
+            const droit = document.getElementById('modal-title');
+            let info = document.getElementById('info-droit');
+            switch(droit.innerHTML){
+                case "DROIT D'ACCÈS":
+                    info.innerHTML = "Obtenir l’ensemble des données qu’une société a récolté sur vous, savoir comment elle les a récolté.";
+                    break;
+                case "SUPPRIMER SES DONNÉES PERSONNELLES":
+                    info.innerHTML = "Obliger une entreprise à supprimer vos données personnelles.";
+                    break;
+                case "NE PLUS RECEVOIR DE PUBLICITÉS":
+                    info.innerHTML = "Exiger la suppression de vos coordonnées des fichiers d’envois de publicités de l’entreprise.";
+                    break;
+                case "S'OPPOSER AU TRAITEMENT DE DONNÉES":
+                    info.innerHTML = "Exiger d’une entreprise l'arrêt immédiat de l’analyse, la vente de vos données. Tout traitement de vos données personnelles. De nombreux algorithmes analysent vos données personnelles récoltées afin de vous cibler, il y a de nombreuses entreprises qui revendent cette analyse à d’autres sociétés.";
+                    break;
+                case "STOPPER LA PROSPECTION COMMERCIALE":
+                    info.innerHTML = "Oblige une société à ne plus vous contacter, elle doit ainsi supprimer vos données dans leurs fichiers d’envois / de prospection et notifier leurs partenaires de cette modification.";
+                    break;
+                case "SUPPRIMER DES INFORMATIONS VOUS CONCERNANT D'UN SITE INTERNET":
+                    info.innerHTML = "Obliger une entreprise à supprimer des informations vous concernant d'un site internet.";
+                    break;
+                case "ACCÉDER À DES IMAGES VIDÉO VOUS CONCERNANT":
+                    info.innerHTML = "Accéder à des images vidéos vous concernant";
+                    break;
+                case "CLÔTURER UN COMPTE EN LIGNE":
+                    info.innerHTML = "Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).";
+                    break;
+                case "RECTIFIER DES DONNÉES INCOMPLÈTES":
+                    info.innerHTML = "Modifier des données incomplètes sur vous dans les fichiers d’une entreprise, celle-ci doit vous informer si ces données si vos données ont été communiquées à un tiers.";
+                    break;
+                case "RECTIFIER DES DONNÉES INEXACTES":
+                    info.innerHTML = "Modifier des données inexactes vous concernant dans les fichiers d’une entreprise.";
+                    break;
+                case "ACCÉDER À SON DOSSIER MÉDICAL":
+                    info.innerHTML = "Exiger d’obtenir l’ensemble des données qu’un établissement de santé détient.";
+                    break
+                case "CONNAÎTRE LES INFORMATIONS DÉTENUES PAR UN ÉTABLISSEMENT FINANCIER":
+                    info.innerHTML = "Connaître les informations détenues  par un établissement financier";
+                    break;
+            }
+        },
+
+        resetInfos() {
+            let info = document.getElementById('info-droit');
+            info.innerHTML = "";
+        }
     }
 
 }
