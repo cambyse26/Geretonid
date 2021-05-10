@@ -16,15 +16,17 @@ export default {
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 id="modal-title" class="modal-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" v-on:click="resetInfos">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                     <!-- bouton allant sur la page droit -->
-                        <button type="button" class="btn btn-primary" v-on:click="showInfo">Pour plus d'informations</button>
-                        <p id="info-droit">
-                        </p>
+                        <div class="btn-group d-flex justify-content-center">
+                            <button type="button" class=" mx-auto btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-on:click="showInfo">Pour plus d'informations</button>
+                            <p id="info-droit" class="dropdown-menu">
+                            </p>
+                        </div>
                         <div class="modal-header">
                             <h5 class="modal-title">Informations sur la société</h5>
                         </div>
@@ -251,14 +253,9 @@ export default {
                     info.innerHTML = "Exiger d’obtenir l’ensemble des données qu’un établissement de santé détient.";
                     break
                 case "CONNAÎTRE LES INFORMATIONS DÉTENUES PAR UN ÉTABLISSEMENT FINANCIER":
-                    info.innerHTML = "Connaître les informations détenues  par un établissement financier";
+                    info.innerHTML = "L’entreprise est obligée de fournir les informations récoltées, d’envoyer une copie claire de l’ensemble des données (les zones “bloc-notes” ou “commentaires) et décrire comment les données ont été récoltées.";
                     break;
             }
-        },
-
-        resetInfos() {
-            let info = document.getElementById('info-droit');
-            info.innerHTML = "";
         }
     }
 
