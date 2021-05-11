@@ -10,6 +10,9 @@ import Blog from '@/components/Blog/Blog'
 import FormBlog from '@/components/Admin/FormBlog'
 import Login from '@/components/Auth/Login'
 import Register from '@/components/Auth/Register'
+import BP from '@/components/Bonne_pratique'
+
+
 
 Vue.use(Router)
 
@@ -64,6 +67,11 @@ export default new Router({
             path: '/admin/posts/new',
             name: 'FormBlog',
             component: FormBlog
+        },
+        {
+            path: '/Bonne_pratique',
+            name: 'BP',
+            component: BP
         }
     ]
 })

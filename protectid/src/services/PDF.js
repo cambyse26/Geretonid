@@ -133,7 +133,7 @@ export default {
                 doc.setFont('Times-Roman', 'normal');
                 doc.text('Madame, Monsieur,\n', 10, 76);
                 doc.text(`Je suis titulaire du compte ${values.Identifiant} sur ${values.Reseau_Social}, qui diffuse des informations me concernant à la page: ${values.Url}. \n`, 10, 84, maxWidth);
-                doc.text('Je souhaite obtenir la clôture de mon compte et vous demande, en application de l’article 17.1 du Règlement général sur la protection des données (RGPD),  de supprimer l’ensemble de mes données personnelles qui lui sont rattachées, à savoir :\n', 10, 104, maxWidth);
+                doc.text('Je souhaite obtenir la clôture de mon compte et vous demande, en application de l’article 17.1 du Règlement général sur la protection des données (RGPD),  de supprimer l’ensemble de mes données personnelles qui lui sont rattachées, à savoir : \n', 10, 104, maxWidth);
                 doc.text(values.Delete_Infos, 10, 130, maxWidth);
                 doc.text('Je vous remercie de bien vouloir m\'informer des mesures prises à la suite de ma demande dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de sa réception (article 12.3 du RGPD).\n', 10, 155, maxWidth);
                 doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n', 10, 180);
@@ -182,12 +182,13 @@ export default {
                 doc.setFont('Times-Roman', 'normal');
                 doc.text(`${values.Civilite10}, \n`, 10, 70);
                 doc.text('En application des dispositions de l’article L. 1111-7 du code de la santé publique, je vous remercie de m’adresser l’ensemble des données que vous détenez sur ma santé, qu’elles soient soient sous forme papier ou sur support informatique (ainsi que la signification des codes, sigles ou abréviations éventuellement utilisés).\n', 10, 80, maxWidth);
-                doc.text(values.informations_complementaires, 10, 110, maxWidth)
-                doc.text('Vous trouverez en pièce jointe un justificatif de mon identité.\n', 10, 148);
-                doc.text('Pour votre information, vous disposez d’un délai de huit jours pour satisfaire ma demande. Ce délai est porté à deux mois lorsque les informations médicales datent de plus de cinq ans.\n', 10, 160, maxWidth);
-                doc.text('Je vous prie d’agréer, Monsieur,, l’expression de mes salutations distinguées.\n', 10, 176);
-                doc.text('P.J :\n', 10, 188);
-                doc.text('Copie de pièce d\'identité \n', 10, 195);
+                doc.text('Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : \n', 10, 110, maxWidth);
+                doc.text(values.informations_complementaires, 10, 118, maxWidth)
+                doc.text('Vous trouverez en pièce jointe un justificatif de mon identité.\n', 10, 158);
+                doc.text('Pour votre information, vous disposez d’un délai de huit jours pour satisfaire ma demande. Ce délai est porté à deux mois lorsque les informations médicales datent de plus de cinq ans.\n', 10, 170, maxWidth);
+                doc.text('Je vous prie d’agréer, Monsieur,, l’expression de mes salutations distinguées.\n', 10, 186);
+                doc.text('P.J :\n', 10, 198);
+                doc.text('Copie de pièce d\'identité \n', 10, 205);
                 break;
 
             case "prospection":

@@ -43,7 +43,7 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-informations" class="col-form-label">Informations complémentaires</label>
-                            <textarea name="informations" id="informations_complementaires" @change="preview" rows="4" class="form-control">Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : </textarea>
+                            <textarea name="informations" id="informations_complementaires" @change="preview" rows="4" class="form-control" placeholder="Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : "></textarea>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>

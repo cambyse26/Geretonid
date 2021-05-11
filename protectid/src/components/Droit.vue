@@ -259,7 +259,6 @@
 </template>
 
 <script>
-
   export default {
     name: 'Droits',
 
