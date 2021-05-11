@@ -23,8 +23,8 @@ export default {
                     <div class="modal-body">
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
-                            <button type="button" class=" mx-auto btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-on:click="showInfo">Pour plus d'informations</button>
-                            <p id="info-droit" class="dropdown-menu"></p>
+                            <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
+                                <p id="info-droit" class="collapse"></p>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title">Informations sur la société</h5>
