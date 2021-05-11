@@ -24,8 +24,7 @@ export default {
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
                             <button type="button" class=" mx-auto btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-on:click="showInfo">Pour plus d'informations</button>
-                            <p id="info-droit" class="dropdown-menu">
-                            </p>
+                            <p id="info-droit" class="dropdown-menu"></p>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title">Informations sur la société</h5>
@@ -261,3 +260,9 @@ export default {
 
 }
 </script>
+
+<style>
+.fade {
+    transition: opacity 0s !important; /* annulation de la transition (bug d'affichage) */
+}
+</style>
