@@ -24,8 +24,8 @@ export default {
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
                             <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
-                                <p id="info-droit" class="collapse"></p>
                         </div>
+                        <p id="info-droit" class="collapse"></p>
                         <div class="modal-header">
                             <h5 class="modal-title">Informations sur la société</h5>
                         </div>
