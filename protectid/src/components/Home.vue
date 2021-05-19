@@ -13,7 +13,7 @@
           <div class="droit-container">
             <div class="row d-flex justify-content-center" style="margin-top: 7vw;">
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth acces popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="acces"
@@ -21,7 +21,7 @@
                 @click="addFields"
               >Droit d'accès</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth supprime popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="supprime"
@@ -37,7 +37,7 @@
                 @click="addFields"
               >Ne plus recevoir de publicités</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth opposition popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="traitement"
@@ -45,7 +45,7 @@
                 @click="addFields"
               >S'opposer au traitement de données</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth cloture popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="compte"
@@ -53,7 +53,7 @@
                 @click="addFields"
               >Clôturer un compte en ligne</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth supprime-infos popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="site"
@@ -74,7 +74,7 @@
                 @click="addFields"
               >Accéder à des images vidéo vous concernant</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth prospection popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="prospection"

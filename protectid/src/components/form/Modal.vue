@@ -20,7 +20,7 @@ export default {
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body was-validated">
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
                             <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
@@ -31,7 +31,7 @@ export default {
                         </div>
                         <div class="form-group" autocomplete="off">
                             <label for="organismeModal" class="col-form-label">Nom de l'organisme</label>
-                            <input type="text" id="organismeModal" v-model="organisme" @change="preview" @input="organismeChanged($event);" class="form-control" placeholder="Nom de l'organisme" list="dataListOrgaModal" autocomplete="on">
+                            <input type="text" id="organismeModal" v-model="organisme" @change="preview" @input="organismeChanged($event);" class="form-control" placeholder="Nom de l'organisme" list="dataListOrgaModal" autocomplete="on" required>
                             <datalist id="dataListOrgaModal">
                                 <option v-for="organisme in listOrganismes"
                                         v-bind:key="organisme.id">
@@ -41,7 +41,7 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="MailorgaModal" class="col-form-label">Adresse mail</label>
-                            <input class="form-control" placeholder="Adresse mail de l'organisme" @change="preview" id="MailorgaModal" v-model="email">
+                            <input class="form-control" placeholder="Adresse mail de l'organisme" @change="preview" id="MailorgaModal" v-model="email" required>
                         </div>
                         <form>
                             <div id="complementaires"></div>
@@ -50,15 +50,15 @@ export default {
                             </div>
                             <div class="form-group">
                                 <label for="NomModal" class="col-form-label">Nom</label>
-                                <input type="text" class="form-control" @change="preview" placeholder="Votre nom" id="NomModal">
+                                <input type="text" class="form-control" @change="preview" placeholder="Votre nom" id="NomModal" required>
                             </div>
                             <div class="form-group">
                                 <label for="PrenomModal" class="col-form-label">Prénom</label>
-                                <input type="text" class="form-control" @change="preview" placeholder="Votre Prénom" id="PrenomModal">
+                                <input type="text" class="form-control" @change="preview" placeholder="Votre Prénom" id="PrenomModal" required>
                             </div>
                             <div class="form-group">
                                 <label for="MailModal" class="col-form-label">Adresse mail</label>
-                                <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="MailModal">
+                                <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="MailModal" required>
                             </div>
                         </form>
                     </div>
@@ -185,7 +185,6 @@ export default {
         generatePDF($this) {
             let currentOrganisme = document.getElementById('organismeModal').value;
             const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
-
             Pdf.generate($this.srcElement.dataset.pdf, values);
         },
         preview($this) {
@@ -255,7 +254,7 @@ export default {
                     info.innerHTML = "L’entreprise est obligée de fournir les informations récoltées, d’envoyer une copie claire de l’ensemble des données (les zones “bloc-notes” ou “commentaires) et décrire comment les données ont été récoltées.";
                     break;
             }
-        }
+        },
     }
 
 }

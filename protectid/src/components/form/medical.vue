@@ -18,7 +18,7 @@ export default {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body was-validated">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
                     </div>
@@ -31,11 +31,11 @@ export default {
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Nom du médecin ou de l'établissement de santé</label>
-                        <input class="form-control" @change="preview" placeholder="Nom du destinataire" id="organisme10" v-model="organisme">
+                        <input class="form-control" @change="preview" placeholder="Nom du destinataire" id="organisme10" v-model="organisme" required>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Adresse mail</label>
-                        <input class="form-control" @change="preview" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email">
+                        <input class="form-control" @change="preview" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email" required>
                     </div>
                     <form>
                         <div class="modal-header">
@@ -43,30 +43,30 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-informations" class="col-form-label">Informations complémentaires</label>
-                            <textarea name="informations" id="informations_complementaires" @change="preview" rows="4" class="form-control" placeholder="Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : "></textarea>
+                            <textarea name="informations" id="informations_complementaires" @change="preview" rows="4" class="form-control" placeholder="Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : " required></textarea>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nom</label>
-                            <input type="text" @change="preview" class="form-control" placeholder="Votre nom" id="Nom10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre nom" id="Nom10" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Prénom</label>
-                            <input type="text" @change="preview" class="form-control" placeholder="Votre Prénom" id="Prenom10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre Prénom" id="Prenom10" required>
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Adresse mail</label>
-                            <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="Mail10">
+                            <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="Mail10" required>
                         </div>
                         <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Code postal</label>
-                            <input type="text" @change="preview" class="form-control" placeholder="Votre code postal" id="Postal10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre code postal" id="Postal10" required>
                         </div>
                         <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Ville</label>
-                            <input type="text" @change="preview" class="form-control" placeholder="Votre ville" id="Ville10" >
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre ville" id="Ville10" required>
                         </div>
                     </form>
                 </div>
