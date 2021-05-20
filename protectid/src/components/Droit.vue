@@ -284,3 +284,17 @@
   }
 
 </script>
+
+<style>
+
+.accordion .accordion-droit {
+font-weight: 600 !important;
+font-size: 1.4rem !important;
+}
+
+.accordion .accordion-panel {
+font-weight: 500 !important;
+font-size: 1.3rem !important;
+text-align: initial !important;
+}
+</style>

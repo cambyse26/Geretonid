@@ -132,6 +132,12 @@ img::-moz-selection {
     }
 }
 
+@media (max-width: 1263px) {
+    .container {
+    max-width: 770px !important;
+    }
+}
+
 @media (min-width: 1904px) {
     .container {
         max-width: 1785px !important;

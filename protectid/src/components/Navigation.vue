@@ -21,9 +21,9 @@
           <!-- <li class="nav-item">
             <router-link to="/Sensibilisation" class="nav-link js-scroll-trigger">Sensibilisation</router-link>
           </li> -->
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <router-link to="/Bonne_pratique" class="nav-link js-scroll-trigger">Bonne Pratiques</router-link>
-          </li>
+          </li>-->
         <li class="nav-item">
             <router-link to="/us" class="nav-link js-scroll-trigger">Qui sommes-nous ?</router-link>
           </li>

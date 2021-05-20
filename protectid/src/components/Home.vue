@@ -11,15 +11,18 @@
             <h3 class="h4 mb-3 step third">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
 
           <div class="droit-container">
-            <div class="row" style="margin-top: 50px;">
+            <div class="row" style="margin-top: 1.5vh;">
+              <div>
+              <p class="modal-title">Supprimer vos informations sur un site internet</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth img-suppinfo'
                 data-toggle='modal'
                 data-target='#modal'
-                data-form="acces"
-                data-pdf="acces"
+                data-form="site"
+                data-pdf="site"
                 @click="addFields"
-              >Droit d'accès</a>
+              ></a>
+              </div>
               <a
                 class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
                 data-toggle='modal'
@@ -40,6 +43,14 @@
                 class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
                 data-toggle='modal'
                 data-target='#modal'
+                data-form="acces"
+                data-pdf="acces"
+                @click="addFields"
+              >Droit d'accès</a>
+              <a
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
+                data-toggle='modal'
+                data-target='#modal'
                 data-form="traitement"
                 data-pdf="traitement"
                 @click="addFields"
@@ -52,18 +63,8 @@
                 data-pdf="compte"
                 @click="addFields"
               >Clôturer un compte en ligne</a>
-              <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
-                data-toggle='modal'
-                data-target='#modal'
-                data-form="site"
-                data-pdf="site"
-                @click="addFields"
-              >Supprimer des informations vous concernant d'un site internet</a>
             </div>
-            <div class="step" style="width: 745px; height: 12px; background-color: blue; margin-top: 80px; margin-bottom: 80px; margin-right: 20px">
-
-            </div>
+ 
             <div class="row">
               <a
                 class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth' 
@@ -119,7 +120,7 @@
        <router-link
             class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step fifth' 
             to='/droit'
-            style='margin: auto; background-color: #184abb; margin-bottom: 1rem;'
+            style='margin: auto; background-color: #184abb; margin-bottom: 1rem'
           >Quel droit choisir ?</router-link>
     </header>
 
@@ -270,3 +271,21 @@ export default {
 }
 
 </script>
+
+<style>
+
+.row {
+  justify-content: center;
+}
+ 
+.modal-title {
+    max-inline-size: fit-content;
+    word-spacing: 0.2rem;
+    font-weight: 700;
+}
+
+.img-suppinfo {
+    background-image: url("../../img/supprimer_information.png");
+    background-size: 11rem !important;
+}
+</style>
