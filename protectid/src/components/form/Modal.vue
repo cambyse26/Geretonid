@@ -66,7 +66,8 @@ export default {
                         <p>Nous ne récupérons aucune donnée</p>
                         <div class="group-btn">
                             <button type="button" id="generate-pdf" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                            <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>  
+                                                        <a id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>
+                            <a id="btn-gmail" type="button" @click="Gmail($event)" class="btn btn-primary">Gmail</a>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                         </div>        
                     </div>
@@ -205,6 +206,14 @@ export default {
                 e.preventDefault();
             }
             return document.getElementById('btn-mail').href = `mailto:${mail}`;
+        },
+        
+        Gmail(e) {
+            const mail = document.getElementById('MailModal').value;
+            if (mail === '') {
+                e.preventDefault();
+            }
+            return document.getElementById('btn-gmail').href=`https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=target@email.com&bcc=test@gmail.com&su=droitdacc%C3%A8s&body=${mail}`;
         },
 
         // getBaseUrl() {
