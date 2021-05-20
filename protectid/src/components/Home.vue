@@ -11,7 +11,7 @@
             <h3 class="h4 mb-3 step third">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
 
           <div class="droit-container">
-            <div class="row d-flex justify-content-center" style="margin-top: 7vw;">
+            <div class="row d-flex justify-content-center" style="margin-top: 1vw;">
               <a
                 class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
                 data-toggle='modal'
