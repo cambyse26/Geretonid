@@ -11,7 +11,7 @@ import FormBlog from '@/components/Admin/FormBlog'
 import Login from '@/components/Auth/Login'
 import Register from '@/components/Auth/Register'
 import BP from '@/components/Bonne_pratique'
-
+import FourOhFour from '@/components/FourOhFour'
 
 
 Vue.use(Router)
@@ -72,6 +72,16 @@ export default new Router({
             path: '/Bonne_pratique',
             name: 'BP',
             component: BP
-        }
+        },
+        {
+            path: '/not-found',
+            name: 'not-found',
+            component: FourOhFour
+        },
+        {
+            path: '/**',
+            redirect: '/not-found'
+        },
+        // Ne pas écrire après ce commentaire !!!
     ]
 })
