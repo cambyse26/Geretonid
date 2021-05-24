@@ -2,7 +2,7 @@
 // vue.config.js
 module.exports = {
     devServer: {
-        proxy: 'https://api.geretonid.com/',
+        proxy: 'http://localhost:8080/',
         disableHostCheck: true,
     },
     configureWebpack: {

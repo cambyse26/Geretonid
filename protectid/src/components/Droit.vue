@@ -297,4 +297,8 @@ font-weight: 500 !important;
 font-size: 1.3rem !important;
 text-align: initial !important;
 }
+
+p {
+  margin-bottom: 0rem !important;
+}
 </style>

@@ -20,7 +20,7 @@ export default {
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body was-validated">
+                     <div class="modal-body"> <!-- class="was-validated" -->
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
                             <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
@@ -142,7 +142,7 @@ export default {
         //
         updateListOrganismes(match) {
             console.log("updateListOrganismes start");
-            const baseURI = 'https://api.geretonid.com/api/company/search';
+            const baseURI = 'https://www.geretonid.com/api/company/search';
             const param = { name: match };
             const headers = {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -168,7 +168,7 @@ export default {
         // 
         updateOrganismeDetails(id) {
             console.log("updateOrganismeDetails start");
-            const baseURI = `https://api.geretonid.com/api/company/get/${id}`;
+            const baseURI = `https://www.geretonid.com/api/company/get/${id}`;
             const headers = {
                 headers : {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -272,5 +272,13 @@ export default {
 <style>
 .fade {
     transition: opacity 0s !important; /* annulation de la transition (bug d'affichage) */
+}
+
+.collapse {
+    margin: 0.4rem !important;
+}
+
+.collapsing {
+    margin: 0.4rem !important;
 }
 </style>
