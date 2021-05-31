@@ -149,7 +149,7 @@ export default {
     changePreview({ dataset }) {
         return document.getElementById('modal').setAttribute('preview', dataset.pdf);
     },
-    getInfo() {
+    getInfo(){
         return document.getElementById('Info').value;
     },
     getMotif() {
