@@ -149,4 +149,31 @@ export default {
     changePreview({ dataset }) {
         return document.getElementById('modal').setAttribute('preview', dataset.pdf);
     },
+    getInfo() {
+        return document.getElementById('Info').value;
+    },
+    getMotif() {
+        return document.getElementById('Motif').value;
+    },
+    getIdentifiant() {
+        return document.getElementById('Identifiant').value
+    },
+    getRectifier() {
+        return document.getElementById('Rectifier').value;
+    },
+    getRectifiees() {
+        return document.getElementById('Rectifiees').value;
+    },
+    getUrl() {
+        return document.getElementById('Url').value;
+    },
+    getUrls() {
+        return document.getElementById('Urls').value;
+    },
+    getReseauSocial() {
+        return document.getElementById('Reseau_Social').value;
+    },
+    getDeleteInfos() {
+        return document.getElementById('Delete_Infos').value
+    }
 };
