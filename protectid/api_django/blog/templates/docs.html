@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+    <meta name="Description" content="Enter your description here" />
+
+    <!-- CSS CDN for Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- App CSS file -->
+    <link rel="stylesheet" href="../css/app.css">
+    <title>Documentation de l'api blog</title>
+</head>
+
+<body>
+
+    <!-- Start wrapper -->
+    <section id="wrapper">
+        <!-- Start page-section -->
+        <section id="page-section">
+            <!-- Start section-left -->
+            <section class="section section-left">
+                <div class="menu-vertical">
+                    <div class="menu-vertical-item">
+                        <a class="menu-vertical-link" href="#api-http-methods">Les méthodes HTTP utilisées</a>
+                    </div>
+                    <div class="menu-vertical-item">
+                        <a class="menu-vertical-link" href="#api-http-code">Les codes HTTP utilisés</a>
+                    </div>
+                    <div class="menu-vertical-item">
+                        <a class="menu-vertical-link" href="#api-auth">Auth</a>
+                    </div>
+                    <div class="menu-vertical-item">
+                        <a class="menu-vertical-link" href="#api-user">User</a>
+                    </div>
+                    <div class="menu-vertical-item">
+                        <a class="menu-vertical-link" href="#api-upload">Upload</a>
+                    </div>
+                    <div class="menu-vertical-item">
+                        <a class="menu-vertical-link" href="#api-post">Post</a>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End section-left -->
+            <!-- Start section-right -->
+            <section class="section section-right">
+                <div class="section-container">
+                    <h1>Documentation de l'api Blog de Geretonid </h1>
+                    <div class="separator"></div>
+
+                    <!-- Http requests methods section -->
+                    <div class="api-http-methods mt-3" id="api-http-methods">
+                        <h2 class="h4">Les méthodes HTTP utilisées</h2>
+                        <table>
+                            <tr>
+                                <td>GET</td>
+                                <td>Récupérer une ressource ou une liste de ressources</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>Créer une ressource</td>
+                            </tr>
+                            <tr>
+                                <td>PUT</td>
+                                <td>Mettre à jour une ressource</td>
+                            </tr>
+                            <tr>
+                                <td>DELETE</td>
+                                <td>Supprimer une ressource</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Http status code -->
+                    <div class="api-http-code mt-3" id="api-http-code">
+                        <h2 class="h4">Les code http utilisés</h2>
+                        <table>
+                            <tr>
+                                <td>200</td>
+                                <td>Ok</td>
+                            </tr>
+                            <tr>
+                                <td>201</td>
+                                <td>Created</td>
+                            </tr>
+                            <tr>
+                                <td>400</td>
+                                <td>Bad Request</td>
+                            </tr>
+                            <tr>
+                                <td>401</td>
+                                <td>Unauthorized</td>
+                            </tr>
+                            <tr>
+                                <td>403</td>
+                                <td>Forbidden</td>
+                            </tr>
+                            <tr>
+                                <td>404</td>
+                                <td>Not Found</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Auth section -->
+                    <div class="api-auth mt-3" id="api-auth">
+                        <h2 class="h2 text-blue">Auth</h2>
+                        <div class="separator"></div>
+                        <h4 class="h4">Requetes Auth</h4>
+                        <div class="row actions">
+                            <div class="col-4">
+                                <div class="action-name active" id="authRegister">Inscription d'un utilisateur</div>
+                                <div class="action-name" id="authLogin">Connextion d'un utiilisateur</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="action-panel" data-action="authRegister">
+                                    <div class="mb-2">
+                                        <span class="action-method post">POST</span>
+                                        <span class="action-url">/auth/register</span>
+                                    </div>
+                                    <p class="text-green">Data : <span class="text-blue">{}</i></span> </p>
+                                    <ul>
+                                        <li>email &nbsp; <code>(String)</code></li>
+                                        <li>password &nbsp; <code>(String)</code></li>
+                                    </ul>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">201</p>
+                                    <code class=" mt-1">
+                                            { "user created" }
+                                        </code>
+                                    <p class="text-danger">400</p>
+                                    <code class=" mt-1">
+                                        {
+                                            "errors" : 
+                                                {
+                                                    "password" : "...",
+                                                    "email" : "..."
+                                                }
+                                        }
+                                    </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="authLogin">
+                                    <div class="mb-2">
+                                        <span class="action-method post">POST</span>
+                                        <span class="action-url">/auth/login</span>
+                                    </div>
+                                    <p class="text-green">Data : <span class="text-blue">{}</i></span> </p>
+                                    <ul>
+                                        <li>email &nbsp; <code>(String)</code></li>
+                                        <li>password &nbsp; <code>(String)</code></li>
+                                    </ul>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">201</p>
+                                    <code class=" mt-1">
+                                            { 
+                                                "token" : "..." 
+                                            }
+                                        </code>
+                                    <p class="text-danger">403</p>
+                                    <code class=" mt-1">
+                                        {
+                                            "errors" : "..."
+                                        }
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User section -->
+                    <div class="api-user mt-3" id="api-user">
+                        <h2 class="h2 text-blue">User</h2>
+                        <div class="separator"></div>
+                        <h3 class="h4">Les propriétés de User</h3>
+                        <ul>
+                            <li>id <code>(Integer)</code> : identifiant unique</li>
+                            <li>email <code>(String)</code> : adresse e-mail | identifiant de connexion</li>
+                            <li>password <code>(String)</code> : mot de passe</li>
+                            <li>token <code>(String)</code> : jeton d'identification pour les requêtes </li>
+                            <li>created_at <code>(Datetime)</code> : date de creation de l'ulilisateur</li>
+                            <li>id <code>(string)</code> : identifiant unique</li>
+                        </ul>
+                        <div class="separator"></div>
+                        <h4 class="h4">Requetes User</h4>
+                        <div class="row actions">
+                            <div class="col-4">
+                                <div class="action-name active" id="getUsers">Récupérer les utiilisateurs</div>
+                                <div class="action-name" id="getUser">Récupérer un utiilisateur</div>
+                                <div class="action-name" id="deleteUser">Supprimer un utilisateur</div>
+                                <div class="action-name" id="createUser">Ajouter un utilisateur</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="action-panel" data-action="getUsers">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/users</span>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            [
+                                                {
+                                                    "id" : 1,
+                                                    "email" : "admin@email.com",
+                                                    "password" : "sha256$wnHYMlJD$b9da6c2bf227627f8a176af11c5b7b...",
+                                                    "token" : "xqCWr1wGEMmtg00NkboXqFOVA6wKtew4P0siotmJPxhk2Aksgjl9v...",
+                                                    "created_at" : "2021-12-03 10:30:17"
+                                                }
+                                            ]
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="getUser">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/users/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "id" : 1,
+                                                "email" : "admin@email.com",
+                                                "password" : "sha256$wnHYMlJD$b9da6c2bf227627f8a176af11c5b7b...",
+                                                "token" : "xqCWr1wGEMmtg00NkboXqFOVA6wKtew4P0siotmJPxhk2Aksgjl9v...",
+                                                "created_at" : "2021-12-03 10:30:17"
+                                            }
+                                        </code>
+                                    <p class="text-danger">404</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "User not found"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="deleteUser">
+                                    <div class="mb-2">
+                                        <span class="action-method delete">DELETE</span>
+                                        <span class="action-url">/api/users/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            {"user deleted"}
+                                        </code>
+                                    <p class="text-danger">404</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "User not found"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="createUser">
+                                    <div class="mb-2">
+                                        <span class="action-method post">POST</span>
+                                        <span class="action-url">/api/users</span>
+                                    </div>
+                                    <p class="text-green">Data : <span class="text-blue">{}</i></span> </p>
+                                    <ul>
+                                        <li>email &nbsp; <code>(String)</code></li>
+                                        <li>password &nbsp; <code>(String)</code></li>
+                                    </ul>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">201</p>
+                                    <code class=" mt-1">
+                                            { "created" }
+                                        </code>
+                                    <p class="text-danger">400</p>
+                                    <code class=" mt-1">
+                                        {
+                                            "errors" : 
+                                                {
+                                                    "password" : "...",
+                                                    "email" : "..."
+                                                }
+                                        }
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload section -->
+                    <div class="api-upload mt-3" id="api-upload">
+                        <h2 class="h2 text-blue">Upload</h2>
+                        <div class="separator"></div>
+                        <h3 class="h4">Les propriétés de Upload</h3>
+                        <ul>
+                            <li>id <code>(Integer)</code> : identifiant unique</li>
+                            <li>path <code>(String)</code> : chemin d'accès vers le fichier</li>
+                        </ul>
+                        <div class="separator"></div>
+                        <h4 class="h4">Requetes Upload</h4>
+                        <div class="row actions">
+                            <div class="col-4">
+                                <div class="action-name active" id="getUploads">Récupérer les uploads</div>
+                                <div class="action-name" id="getUpload">Récupérer un upload</div>
+                                <div class="action-name" id="deleteUpload">Supprimer un upload</div>
+                                <div class="action-name" id="createUpload">Ajouter un upload</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="action-panel" data-action="getUploads">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/uploads</span>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            [
+                                                {
+                                                    "id" : 1,
+                                                    "path" : "/static/uploads/mon-fichier.png"
+                                                }
+                                            ]
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="getUpload">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/uploads/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "id" : 1,
+                                                "path" : "/static/uploads/mon-fichier.png"
+                                            }
+                                        </code>
+                                    <p class="text-danger">404</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "Upload not found"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="deleteUpload">
+                                    <div class="mb-2">
+                                        <span class="action-method delete">DELETE</span>
+                                        <span class="action-url">/api/users/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            { "upload deleted" }
+                                        </code>
+                                    <p class="text-danger">404</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "Upload not found"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">[
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="createUpload">
+                                    <div class="mb-2">
+                                        <span class="action-method post">POST</span>
+                                        <span class="action-url">/api/users</span>
+                                    </div>
+                                    <p class="text-green">Data : <span class="text-blue"><i>FormData()</i></span> </p>
+                                    <ul>
+                                        <li>file &nbsp; <code>(Binary)</code></li>
+                                    </ul>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">201</p>
+                                    <code class=" mt-1">
+                                            { "File Uploaded" }
+                                        </code>
+                                    <p class="text-danger">400</p>
+                                    <code class=" mt-1">
+                                            { "No file received" }
+                                        </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post section -->
+                    <div class="api-post mt-3" id="api-post">
+                        <h2 class="h2 text-blue">Post</h2>
+                        <div class="separator"></div>
+                        <h3 class="h4">Les propriétés de Post</h3>
+                        <ul>
+                            <li>id <code>(Integer)</code> : identifiant unique</li>
+                            <li>title <code>(String)</code> : Titre de l'article</li>
+                            <li>content <code>(Text)</code> : Contenu de l'article</li>
+                            <li>excerpt <code>(Text)</code> : Extrait de l'article</li>
+                            <li>poster <code>(String)</code> : Image de l'article</li>
+                            <li>status <code>(String)</code> : Status de l'article</li>
+                            <li>slug <code>(String)</code> : Slug de l'article</li>
+                            <li>created_at <code>(DateTime)</code> : Date de création de l'article</li>
+                            <li>updated_at <code>(DateTime)</code> : Date de la dernière modification de l'article</li>
+                        </ul>
+                        <div class="separator"></div>
+                        <h4 class="h4">Requetes Post</h4>
+                        <div class="row actions">
+                            <div class="col-4">
+                                <div class="action-name active" id="getPosts">Récupérer les posts</div>
+                                <div class="action-name" id="getPost">Récupérer un post</div>
+                                <div class="action-name" id="getPaginatedPosts">Récupérer les posts paginés</div>
+                                <div class="action-name" id="updatePost">Modifier un post</div>
+                                <div class="action-name" id="createPost">Ajouter un post</div>
+                                <div class="action-name" id="deletePost">Supprimer un post</div>
+                                <div class="action-name" id="createPost">Ajouter un post</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="action-panel" data-action="getPosts">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/posts</span>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            [
+                                                {
+                                                    "id" : 1,
+                                                    "title" : "Titre de l'article",
+                                                    "content" : "Contenu de l'article",
+                                                    "excerpt" : "Extrait de l'article",
+                                                    "poster" : "https://api-blog.geretonid.com/static/uploads/mon-poster.jpg",
+                                                    "status" : "draft",
+                                                    "slug" : "slug-de-l-article",
+                                                    "created_at" : "2021-03-15 08:55:55",
+                                                    "updated_at" : "2021-03-15 08:55:55"
+                                                }
+                                            ]
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="getPaginatedPosts">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/posts?page=&items_per_page=10</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>page &nbsp; <code>(Integer)</code></li>
+                                            <li>items_per_page &nbsp; <code>(Integer)</code>, argument facultatif items_per_page est de 10 par défaut</li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                        [
+                                            {
+                                                "id" : 1,
+                                                "title" : "Titre de l'article",
+                                                "content" : "Contenu de l'article",
+                                                "excerpt" : "Extrait de l'article",
+                                                "poster" : "https://api-blog.geretonid.com/static/uploads/mon-poster.jpg",
+                                                "status" : "draft",
+                                                "slug" : "slug-de-l-article",
+                                                "created_at" : "2021-03-15 08:55:55",
+                                                "updated_at" : "2021-03-15 08:55:55"
+                                            }
+                                        ]
+                                    </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="getPost">
+                                    <div class="mb-2">
+                                        <span class="action-method get">GET</span>
+                                        <span class="action-url">/api/posts/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "id" : 1,
+                                                "title" : "Titre de l'article",
+                                                "content" : "Contenu de l'article",
+                                                "excerpt" : "Extrait de l'article",
+                                                "poster" : "https://api-blog.geretonid.com/static/uploads/mon-poster.jpg",
+                                                "status" : "draft",
+                                                "slug" : "slug-de-l-article",
+                                                "created_at" : "2021-03-15 08:55:55",
+                                                "updated_at" : "2021-03-15 08:55:55"
+                                            }
+                                        </code>
+                                    <p class="text-danger">404</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "Post not found"
+                                            }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="updatePost">
+                                    <div class="mb-2">
+                                        <span class="action-method put">PUT</span>
+                                        <span class="action-url">/api/posts/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-green">Data : <span class="text-blue"><i>FormData()</i></span> </p>
+                                        <ul>
+                                            <li>title &nbsp; <code>(String)</code></li>
+                                            <li>content &nbsp; <code>(String)</code></li>
+                                            <li>status &nbsp; <code>(String)</code></li>
+                                            <li>excerpt &nbsp; <code>(String)</code></li>
+                                            <li>slug &nbsp; <code>(String)</code></li>
+                                            <li>poster &nbsp; <code>(Binary)</code></li>
+                                        </ul>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "post updated"
+                                            }
+                                        </code>
+                                    <p class="text-danger">404</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "Post not found"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                    <p class="text-danger">400</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "..."
+                                            }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="deletePost">
+                                    <div class="mb-2">
+                                        <span class="action-method delete">DELETE</span>
+                                        <span class="action-url">/api/posts/{id}</span>
+                                    </div>
+                                    <div class="action">
+                                        <p class="text-blue">Params</p>
+                                        <ul>
+                                            <li>id &nbsp; <code>(Integer)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">200</p>
+                                    <code class=" mt-1">
+                                            { "post deleted" }
+                                        </code>
+                                    <p class="text-danger">400</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "Post not found"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                </div>
+                                <div class="action-panel hidden" data-action="createPost">
+                                    <div class="action">
+                                        <div class="mb-2">
+                                            <span class="action-method post">POST</span>
+                                            <span class="action-url">/api/posts</span>
+                                        </div>
+                                        <p class="text-green">Data : <span class="text-blue"><i>FormData()</i></span> </p>
+                                        <ul>
+                                            <li>title &nbsp; <code>(String)</code></li>
+                                            <li>content &nbsp; <code>(String)</code></li>
+                                            <li>status &nbsp; <code>(String)</code></li>
+                                            <li>excerpt &nbsp; <code>(String)</code></li>
+                                            <li>slug &nbsp; <code>(String)</code></li>
+                                            <li>poster &nbsp; <code>(Binary)</code></li>
+                                        </ul>
+                                    </div>
+                                    <p class="h6">Response</p>
+                                    <p class="text-success">201</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "post created"
+                                            }
+                                        </code>
+                                    <p class="text-danger">401</p>
+                                    <code class=" mt-1">
+                                            { "Authentification failed" }
+                                        </code>
+                                    <p class="text-danger">400</p>
+                                    <code class=" mt-1">
+                                            {
+                                                "errors" : "..."
+                                            }
+                                        </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                </div>
+
+
+
+                <footer>
+                    Copyright &copy; Geretonid 2021
+                </footer>
+            </section>
+            <!-- End section-right -->
+        </section>
+        <!-- End page-section -->
+    </section>
+    <!-- End wrapper -->
+
+    <!-- JS CDN for Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="../js/docs.js"></script>
+
+</body>
+
+</html>
