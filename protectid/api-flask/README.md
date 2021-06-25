@@ -7,7 +7,7 @@ cd /path/to/the/project
 python -m venv ./
 
 # Install the dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Configure the database connection 
 Change SQLALCHEMY_DATABASE_URI in config.py

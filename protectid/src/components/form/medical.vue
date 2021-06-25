@@ -5,6 +5,7 @@ import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
 import Forms from '@/services/Forms';
 import PDF from '@/services/PDF';
+import Modal from './Modal';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -19,6 +20,10 @@ export default {
                     </button>
                 </div>
                 <div class="modal-body was-validated">
+                    <div class="btn-group d-flex justify-content-center">
+                        <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit-med" aria-expanded="false" aria-controls="info-droit-med">Pour plus d'informations</button>
+                    </div>
+                    <p id="info-droit-med" class="collapse">Exiger d’obtenir l’ensemble des données qu’un établissement de santé détient.</p>
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
                     </div>
@@ -92,6 +97,9 @@ export default {
       addressZip: "",
       addressCity: ""
     }
+  },
+  components: {
+    Modal
   },
   methods: {
 
