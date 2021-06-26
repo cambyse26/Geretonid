@@ -11,19 +11,23 @@ Vue.use(DisableAutocomplete);
 export default {
 
     template: `
-        <div class="modal fade" id="modal" preview="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal" preview="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" v-on:click="close">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 id="modal-title" class="modal-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" v-on:click="close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                      <div class="modal-body"> <!-- class="was-validated" -->
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
+<<<<<<< HEAD
                             <button type="button" style="color: white" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
+=======
+                            <button type="button" id="infos" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
+>>>>>>> 4acc4c6f1c634c111a2199da9f86b854b26f9963
                         </div>
                         <p id="info-droit" class="collapse"></p>
                         <div class="modal-header">
@@ -362,6 +366,21 @@ export default {
                     break;
             }
         },
+        close: function (envent) {
+            if (envent) {
+                var element =  document.getElementById('info-droit');
+                element.classList.remove('show');
+                console.log('closed');
+            }
+        },
+        greet: function (event) {
+            // `this` inside methods points to the Vue instance
+            alert('Hello ' + this.name + '!')
+            // `event` is the native DOM event
+            if (event) {
+                alert(event.target.tagName)
+            }
+        }
     }
 
 }
