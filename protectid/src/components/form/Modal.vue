@@ -23,7 +23,7 @@ export default {
                      <div class="modal-body"> <!-- class="was-validated" -->
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
-                            <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
+                            <button type="button" style="color: white" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
                         </div>
                         <p id="info-droit" class="collapse"></p>
                         <div class="modal-header">
@@ -65,9 +65,9 @@ export default {
                     <div class="modal-footer">
                         <p>Nous ne récupérons aucune donnée</p>
                         <div class="group-btn">
-                            <button type="button" id="generate-pdf" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                                                        <a id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary" >Envoyer par mail</a>
-                            <a id="btn-gmail" type="button" @click="Gmail($event)" class="btn btn-primary">Gmail</a>
+                            <button type="button" id="generate-pdf" style="color: white" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
+                                                        <a id="btn-mail" type="button" @click="changeEmail($event)" style="color: white" class="btn btn-primary" >Envoyer par mail</a>
+                            <a id="btn-gmail" type="button" @click="Gmail($event)" style="color: white" class="btn btn-primary">Gmail</a>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                         </div>        
                     </div>

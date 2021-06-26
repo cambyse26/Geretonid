@@ -18,7 +18,7 @@ export default {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body was-validated">
+                <div class="modal-body">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
                     </div>
@@ -73,9 +73,9 @@ export default {
                 <div class="modal-footer">
                   <p>Nous ne récupérons aucune donnée</p>
                   <div class="group-btn">
-                    <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                    <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>  
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" style="color: white" v-on:click="generatePDF">Generer le PDF</button>
+                    <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" style="color: white" class="btn btn-primary">Envoyer par mail</a>  
+                    <button type="button" style="color: white" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                   </div>        
                 </div>
             </div>

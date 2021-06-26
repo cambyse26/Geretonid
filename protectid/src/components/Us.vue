@@ -41,7 +41,7 @@
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="../../img/profil_user.png" alt="">
             <h4>Baptiste Vanderborght</h4>
-            <p class="text-muted">Co-fondateur/Développeur</p>
+            <p class="text-muted">Développeur back-end</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="https://www.linkedin.com/in/baptiste-vandenborght/">

@@ -3,49 +3,60 @@
     <!-- Formulaire -->
     <header class='masthead'>
       <div class='container'>
-        <div class='intro-text'>
-          <!-- <img style=' width: 25%; margin-top: 20px; height: auto;' src='../../img/ProtectID_logo.png' alt="Logo GeretonID"> -->
-          <!--<div class='intro-lead-in'>Bienvenue</div>-->
+        <div class='intro-text' style="display: inline-flex">
             <h1 class="h4 mb-3 step first">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
             <h2 class="h4 mb-3 step second">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
             <h3 class="h4 mb-3 step third">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
-
+      </div>
           <div class="droit-container">
-            <div class="row d-flex justify-content-center" style="margin-top: 1vw;">
+            <div class="row d-flex justify-content-center" style="margin-top: 1vw; align-items: flex-end;">
+            <div class="step forth" style="width: min-content;"><p style="padding-bottom: 0.8rem">Droit d'accès</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup img-acces'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="acces"
                 data-pdf="acces"
                 @click="addFields"
-              >Droit d'accès</a>
+                style="color: transparent"
+              >Droit d'accès</a></div>
+              <div class="step forth" style="width: min-content;"><p>Supprimer ses données personnelles</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup img-delete'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="supprime"
                 data-pdf="supprime"
                 @click="addFields"
-              >Supprimer ses données personnelles</a>
+                style="color: transparent"
+              >Supprimer ses données personnelles</a></div>
+              <div class="step forth" style="width: min-content;"><p>Ne plus recevoir de publicités</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup img-ban' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="pub"
                 data-pdf="pub"
                 @click="addFields"
+                style="color: transparent"
               >Ne plus recevoir de publicités</a>
+              </div>
+              <div class="step forth" style="width: min-content;"><p>S'opposer au traitement de données</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup img-opposition' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="traitement"
                 data-pdf="traitement"
                 @click="addFields"
+                style="color: transparent"
               >S'opposer au traitement de données</a>
+              </div>
+            </div>
+              <div style="padding-top: 1rem;" class="collapse" id="collapse">
+            <div class="row d-flex justify-content-center">
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="compte"
@@ -53,20 +64,15 @@
                 @click="addFields"
               >Clôturer un compte en ligne</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="site"
                 data-pdf="site"
                 @click="addFields"
               >Supprimer des informations vous concernant d'un site internet</a>
-            </div>
-            <!--<div class="step" style="width: 745px; height: 12px; background-color: blue; margin-top: 80px; margin-bottom: 80px; margin-right: 20px">
-
-            </div>-->
-            <div class="row d-flex justify-content-center">
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="video"
@@ -74,15 +80,17 @@
                 @click="addFields"
               >Accéder à des images vidéo vous concernant</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup' 
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup' 
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="prospection"
                 data-pdf="prospection"
                 @click="addFields"
               >Stopper la prospection commerciale</a>
+            </div>
+            <div class="row d-flex justify-content-center">
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="rectifier"
@@ -90,7 +98,7 @@
                 @click="addFields"
               >Rectifier des données incomplètes</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="rectifier"
@@ -98,31 +106,32 @@
                 @click="addFields"
               >Rectifier des données inexactes</a>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup'
                 data-toggle='modal'
                 data-target='#medical'
                 @click="preview"
               >Accéder à son dossier médical</a>
               <a
-                class='btn btn-form text-uppercase js-scroll-trigger step forth popup'
+                class='btn btn-form text-uppercase js-scroll-trigger popup'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="financier"
                 data-pdf="financier"
                 @click="addFields"
               >Connaître les informations détenues par un établissement financier</a>
-            </div>
           </div>
-          
+          </div>
         </div>
+           <!-- id="togg1" --> <button data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse" class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step fifth' to='/droit'
+            style='margin: auto; background-color: #184abb; margin-bottom: 1rem; margin-top: 1.5rem; color: white'>Plus de demande</button>
       </div>
        <router-link
-            class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step fifth' 
+            class='text-uppercase js-scroll-trigger step fifth' 
             to='/droit'
-            style='margin: auto; background-color: #184abb; margin-bottom: 1rem;'
+            style='margin: auto; margin-bottom: 1rem;'
           >Quel droit choisir ?</router-link>
     </header>
-
+    
     <!-- Services -->
     <section class="text"  id='services'>
       <div class='container'>
@@ -265,7 +274,7 @@ export default {
       if (window.innerWidth > 1000) {        
         PDF.previewMedical(values, "#preview-medical-pdf");
       }
-    }
+    },
   }
 }
 </script>
@@ -282,8 +291,27 @@ export default {
     font-weight: 700;
 }
 
-.img-suppinfo {
-    background-image: url("../../img/supprimer_information.png");
-    background-size: 11rem !important;
+.img-acces {
+    background-image: url("../../img/Popup_img/search-folder.png");
+    background-size: 5rem !important;
+    background-position: center;
+}
+
+.img-delete {
+    background-image: url("../../img/Popup_img/delete.png");
+    background-size: 5rem !important;
+    background-position: center;
+}
+
+.img-ban {
+    background-image: url("../../img/Popup_img/ban-solid.png");
+    background-size: 5rem !important;
+    background-position: center;
+}
+
+.img-opposition {
+    background-image: url("../../img/Popup_img/opposer_traitement.png");
+    background-size: 5rem !important;
+    background-position: center;
 }
 </style>

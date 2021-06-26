@@ -95,8 +95,15 @@ img::-moz-selection {
 .btn-primary {
   background-color: #184abb;
   border-color: #184abb;
+  color: white;
+}
+
+.btn-primary .modal {
+  background-color: #184abb;
+  border-color: #184abb;
   color: white !important;
 }
+
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   background-color: #184abb !important;

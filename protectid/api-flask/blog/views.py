@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, render_template, jsonify, request
 from argon2 import PasswordHasher
 import json
