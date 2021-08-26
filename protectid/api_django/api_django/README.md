@@ -7,6 +7,8 @@ Django : [Documentation](https://docs.djangoproject.com/en/3.2/)
 ```
 python3 manage.py runserver
 ```
+## Start mysql
+sudo service mysql start
 
 ## Migrations
 

@@ -1,15 +1,14 @@
 from django.db import models
 from datetime import datetime
-from slugify import Slugify
 from werkzeug.security import generate_password_hash
 from validate_email import validate_email
 from .utils import *
+from tinymce.widgets import TinyMCE
+from django.contrib import admin
 from django.http import HttpRequest
 from urllib.parse import urljoin
 import re
 import logging
-
-custom_slugify = Slugify(to_lower=True)
 
 class Post (models.Model) :
     Titre = models.CharField(max_length=200, null=True)
@@ -20,7 +19,19 @@ class Post (models.Model) :
     Image3 = models.ImageField(max_length=255, null=True, blank=True, upload_to='blog/static/')
     Status = models.CharField(max_length=100, null=True)
     
+class textEditor(models.Model): # new
 
+   content = models.TextField() #new    
+class textEditorAdmin(admin.ModelAdmin):
+
+   list_display = ["content"]
+
+   formfield_overrides = {
+
+   models.TextField: {'widget': TinyMCE()}
+
+   }
+admin.site.register(textEditor, textEditorAdmin)
 class User (models.Model) :
     email = models.CharField(max_length=200)
     password = models.CharField(max_length=255)

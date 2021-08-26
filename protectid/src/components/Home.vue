@@ -1,8 +1,25 @@
 <template>
   <div id='app'>
     <!-- Formulaire -->
-    <header class='masthead'>
+    <header class='masthead' style="display: flex">
+      <div class="container" style="margin-top: 18vh; color:  white;">
+        <div class="mb-2"  style="margin-top: 18vh; color:  white; margin-left: -25vh;">
+          <h1 class="">Welcome To Our Studio!</h1>
+          <h2 class="">It's Nice To Meet You</h2>
+          <a class="btn btn-primary btn-xl text-uppercase" href="#services" style="margin-right: 2vh;">Tell Me More</a>
+          <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+        </div>
+      </div>
+      <div class="mb-2" style="margin-top: 26vh; margin-right: 10vw">
+      <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+  frameborder="0"></iframe> </div>
+    </header>
+    
+    <!-- Services -->
+    <section class="text"  id='services'>
       <div class='container'>
+              <div class='container'>
         <div class='intro-text' style="display: inline-flex">
             <h1 class="h4 mb-3 step first">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
             <h2 class="h4 mb-3 step second">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
@@ -130,11 +147,6 @@
             to='/droit'
             style='margin: auto; margin-bottom: 1rem;'
           >Quel droit choisir ?</router-link>
-    </header>
-    
-    <!-- Services -->
-    <section class="text"  id='services'>
-      <div class='container'>
         <div class='row'>
           <div class='col-lg-12'>
             <h4 class="step sixth">L'entreprise a 1 mois pour valider votre demande et peut vous demander un justificatif afin de vérifier votre identité.</h4>

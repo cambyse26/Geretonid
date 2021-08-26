@@ -23,11 +23,7 @@ export default {
                      <div class="modal-body"> <!-- class="was-validated" -->
                     <!-- bouton allant sur la page droit -->
                         <div class="btn-group d-flex justify-content-center">
-<<<<<<< HEAD
-                            <button type="button" style="color: white" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
-=======
                             <button type="button" id="infos" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit" aria-expanded="false" aria-controls="info-droit" v-on:click="showInfo">Pour plus d'informations</button>
->>>>>>> 4acc4c6f1c634c111a2199da9f86b854b26f9963
                         </div>
                         <p id="info-droit" class="collapse"></p>
                         <div class="modal-header">
@@ -397,5 +393,13 @@ export default {
 
 .collapsing {
     margin: 0.4rem !important;
+}
+
+.div.group-btn {
+    color: white !important;
+}
+
+.mx-auto.btn.btn-primary {
+    color: white !important
 }
 </style>
