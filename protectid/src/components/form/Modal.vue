@@ -146,8 +146,7 @@ export default {
             const param = { name: match };
             const headers = {
                 "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
-                "Content-Type": "application/json", 
-                "Clear-Site-Data": "*",
+                "Content-Type": "application/json",
             };
             axios.post(baseURI, param, { headers })
             .then((result) => {
