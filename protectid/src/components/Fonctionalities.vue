@@ -7,44 +7,222 @@
           <h2 class="section-heading text-uppercase" style="margin-bottom: 70px">Service internalisé</h2>
         </div>
       </div>
+      </div>
       <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col">
-      <img src="../../img/service_internalise/facebook.png" class="card-img-top" alt="">
-          <div class="card">
-
-      <div class="card-body">
+  <img src="../../img/service_internalise/facebook.png" style="max-width:50%;" class="card-img-top" alt="">
+ <a class="btn btn-primary btn-xl " href="https://www.facebook.com/settings?tab=your_facebook_information">Accéder et supprimer vos données</a>
+      </div>
+    
+  
+  <div class="col">
+      <img src="../../img/service_internalise/logo-instagram.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+      
         <h5 class="card-title"></h5>
-        <a class="card-text" href="https://www.facebook.com/settings?tab=your_facebook_information"> Lien</a>
-      </div>
-    </div>
+        
+        <a class="btn btn-primary btn-xl" href="https://www.instagram.com/download/request">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://www.instagram.com/accounts/remove/request/permanent/">Supprimer vos données</a>
+      
+    
   </div>
   <div class="col">
-    <div class="card">
-      <img src="" class="card-img-top" alt="">
-      <div class="card-body">
-        <h5 class="card-title">Instagram</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
+      <img src="../../img/service_internalise/Google-Logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        
+        <a class="btn btn-primary btn-xl" href="https://takeout.google.com/">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://security.google.com/settings/security/deleteaccount">Supprimer vos données</a>
+      
   </div>
   <div class="col">
-    <div class="card">
-      <img src="" class="card-img-top" alt="">
-      <div class="card-body">
-        <h5 class="card-title">Google</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+    
+      <img src="../../img/service_internalise/YouTube-logo.png" style="max-width:50%;" class="card-img-top" alt="">
+        <a class="btn btn-primary btn-xl" href="https://myaccount.google.com/deleteservices">Accéder ou supprimer vos données</a>
       </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="" class="card-img-top" alt="">
-      <div class="card-body">
-        <h5 class="card-title">Youtube</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
+   
 </div>
-    </div>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="col">
+  
+      <img src="../../img/service_internalise/Gmaillogo.png" style="max-width:50%;" class="card-img-top" alt="">
+
+        <a class="btn btn-primary btn-xl" href="https://myaccount.google.com/deleteservices">Accéder ou supprimer vos données</a>
+      </div>
+<div class="col">
+    
+      <img src="../../img/service_internalise/Snapchat-Logo-bandeau.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        
+        <a class="btn btn-primary btn-xl" href="https://support.snapchat.com/en-US/a/download-my-data">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://www.snapchat.com/a/delete_account">Supprimer vos données</a>
+      
+  </div>
+  <div class="col">
+    
+      <img src="../../img/service_internalise/WhatsApp_logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        
+        <a class="btn btn-primary btn-xl" href="https://faq.whatsapp.com/general/account-and-profile/how-to-request-your-account-information/?lang=fr">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://faq.whatsapp.com/android/account-and-profile/how-to-delete-your-account/?lang=fr">Supprimer vos données</a>
+     
+  </div>
+   <div class="col">
+    
+      <img src="../../img/service_internalise/Twitter logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        <a class="btn btn-primary btn-xl" href="https://twitter.com/settings/your_twitter_data">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://twitter.com/settings/accounts/confirm_deactivation">Supprimer vos données</a>
+     
+  </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+   <div class="col">
+    
+      <img src="../../img/service_internalise/Spotify_Logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        <a class="btn btn-primary btn-xl" href="https://www.spotify.com/us/account/privacy/">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://support.spotify.com/close-account">Supprimer vos données</a>
+        
+     
+  
+  </div>
+   <div class="col">
+    
+      <img src="../../img/service_internalise/logotelegram.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        <a class="btn btn-primary btn-xl" href="https://t.me/gdprbot">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://telegram.org/deactivate">Supprimer vos données</a>
+        
+  </div>
+   <div class="col">
+    
+      <img src="../../img/service_internalise/Linkedin-Logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+
+        <a class="btn btn-primary btn-xl" href="https://www.linkedin.com/">Accéder à vos données</a>#décrire comment faire
+        
+        <a class="btn btn-primary btn-xl" href="https://www.linkedin.com/help/linkedin/answer/63">Supprimer vos données</a>
+     
+  </div>
+  <div class="col">
+    
+      <img src="../../img/service_internalise/apple_logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+       
+        <a class="btn btn-primary btn-xl" href="https://privacy.apple.com/">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://support.apple.com/en-us/HT208504">Supprimer vos données</a>
+     
+  </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    
+      <img src="../../img/service_internalise/Itunes logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        <a class="btn btn-primary btn-xl" href="https://privacy.apple.com/">Accéder ou supprimer vos données</a>
+      
+  </div>
+
+
+<div class="col">
+   <img src="../../img/service_internalise/Tinder.logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        
+        <a class="btn btn-primary btn-xl" href="https://account.gotinder.com/data">Accéder à ses données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://www.help.tinder.com/hc/fr/articles/115003495143-Probl%C3%A8me-avec-la-suppression-de-compte-#:~:text=Ouvrez%20l'appli%20Tinder%20ou,appuyez%20sur%20Supprimer%20le%20compte.">Supprimer vos données</a>
+      
+  </div>
+  <div class="col">
+    
+      <img src="../../img/service_internalise/EBay_logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        
+         <a class="btn btn-primary btn-xl" href="https://www.sarweb.ebay.com/sar">Accéder à vos données</a>
+        
+         <a class="btn btn-primary btn-xl" href="https://ocsnext.ebay.com/ocs/ca">Supprimer vos données</a>
+     
+  </div>
+  <div class="col">
+    
+      <img src="../../img/service_internalise/TikTok_Logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        
+        <a class="btn btn-primary btn-xl" href="https://www.tiktok.com/legal/report/privacy">Accéder à vos données</a>
+        
+        <a class="btn btn-primary btn-xl" href="https://www.tiktok.com/">Supprimer vos données</a>#Suppression (explication : Tap account (with people depicton, on the bottom right edge Menu (on top right edge) Privacy and SettingsPrivacy and Safetyelete Account>Next>Continue>Delete Account.
+     
+  </div>
+  </div>
+   <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    
+      <img src="../../img/service_internalise/wikipedia_logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        <a class="btn btn-primary btn-xl" href="https://en.wikipedia.org/w/api.php?action=query&meta=userinfo&uiprop=email%7Cregistrationdate%7Crights%7Cgroups%7Coptions%7Ceditcount%7Clatestcontrib">Accéder à vos données</a>
+
+        <a class="btn btn-primary btn-xl" href="https://fr.wikipedia.org/wiki/Aide:Je_veux_partir_de_Wikip%C3%A9dia">Supprimer vos données</a>
+      
+  
+  </div>
+  
+  <div class="col">
+    
+      <img src="../../img/service_internalise/Discord-logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+        <a class="btn btn-primary btn-xl" href="https://www.tiktok.com/legal/report/privacy">Accéder à vos données</a>#: You have to log into your Discord account, go to 'Settings > Privacy and security' and click on 'Request all my data'.
+       
+        <a class="btn btn-primary btn-xl" href="https://support.discordapp.com/hc/en-us/articles/212500837-How-do-I-permanently-delete-my-account-">Supprimer vos données</a>
+     
+  </div>
+  <div class="col">
+    
+      <img src="../../img/service_internalise/Aliexpress_logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+       
+        <a class="btn btn-primary btn-xl" href="https://www.alibabagroup.com/en/contact/law_e_commerce?spm=a271m.8038972.0.0.5a916d82MwfIzm">Accéder à vos données</a>
+       
+        <a class="btn btn-primary btn-xl" href="https://accounts.aliexpress.com/user/organization/deactive_account.htm ">Supprimer vos données</a>
+      
+  </div>
+  <div class="col">
+    
+      <img src="../../img/service_internalise/WordPress-Logo.png" style="max-width:50%;" class="card-img-top" alt="">
+       
+        <h5 class="card-title"></h5>
+      
+        <a class="btn btn-primary btn-xl" href="https://wordpress.com/me/account">Supprimer vos données</a>
+      
+  </div>
+  
+  </div>
+  
+  
+  
+  
+
+  
   </section></template>
