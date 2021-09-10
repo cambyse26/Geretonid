@@ -4,16 +4,16 @@
     <header class='masthead' style="display: flex">
       <div class="container" style="margin-top: 10vh; margin-left: 14rem; color:  white;">
         <div class="mb-2"  style="margin-top: 18vh; color:  white; margin-left: -25vh;">
-          <h1 class="">Et vos données, vous y pensez ?</h1>
-          <!--<h2 class="">It's Nice To Meet You</h2> -->
-          <a class="btn btn-primary btn-xl text-uppercase" href="#services" style="margin-right: 2vh; margin-top: 4vh">Générer une demande</a>
-          <a class="btn btn-primary btn-xl text-uppercase" href="#services" style="margin-right: 2vh; margin-top: 4vh">En savoir plus sur mes droits</a>
+          <h1 class="" style="margin-bottom: 5vh">Et vos données, vous y pensez ?</h1>
+          <h4 class="" style="margin-left: 12vh; margin-right: 12vh">Découvrez comment et quelles données sont récoltées par les entreprises, et supprimez-les en quelques clics</h4>
+          <a class="btn btn-primary btn-xl text-uppercase" href="#services" style="margin-right: 2vh; margin-top: 4vh; color: #0c3dbb; font-weight: bold; background-color: #eee; border-color: #e9ecef;">Générer une demande</a>
+          <a class="btn btn-primary btn-xl text-uppercase" href="#services" style="margin-right: 2vh; margin-top: 4vh; color: #0c3dbb; font-weight: bold; background-color: #eee; border-color: #e9ecef;">En savoir plus sur mes droits</a>
         </div>
       </div>
       <div class="mb-2" style="margin-top: 26vh; margin-right: 10vw">
-      <iframe id="ytplayer" type="text/html" width="640" height="360"
+       <iframe id="ytplayer" type="text/html" width="640" height="360"
   src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-  frameborder="0"></iframe> </div>
+  frameborder="0"></iframe> </div> 
     </header>
     
     <!-- Services -->
@@ -26,7 +26,7 @@
             <h3 class="h4 mb-3 step third">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
       </div>
           <div class="droit-container">
-            <div class="row d-flex justify-content-center" style="margin-top: 1vw; align-items: flex-end;">
+            <div class="row d-flex justify-content-center" style="margin-top: 1vw; margin-bottom: 1vw; align-items: flex-end;">
             <div class="step forth" style="width: min-content;"><p style="padding-bottom: 0.8rem">Droit d'accès</p>
               <a
                 class='btn btn-primary btn-form text-uppercase js-scroll-trigger step forth popup img-acces'
@@ -70,8 +70,7 @@
               >S'opposer au traitement de données</a>
               </div>
             </div>
-              <div style="padding-top: 1rem;" class="collapse" id="collapse">
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center" style="margin-bottom: 1vw">
             <div style="width: min-content;"><p>Clôturer un compte en ligne</p>
               <a
                 class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup img-supprimer-compte' 
@@ -117,10 +116,11 @@
               >Stopper la prospection commerciale</a>
               </div>
             </div>
+            <div style="padding-top: 1rem;" class="collapse" id="collapse">
             <div class="row d-flex justify-content-center">
               <div style="width: min-content;"><p>Rectifier des données incomplètes</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup img-incomplet'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="rectifier"
@@ -131,7 +131,7 @@
               </div>
               <div style="width: min-content;"><p>Rectifier des données inexactes</p>
               <a
-                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup'
+                class='btn btn-primary btn-form text-uppercase js-scroll-trigger popup img-inexacte'
                 data-toggle='modal'
                 data-target='#modal'
                 data-form="rectifier"
@@ -149,7 +149,7 @@
                 style="color: transparent"
               >Accéder à son dossier médical</a>
               </div>
-              <div style="width: min-content;"><p>Connaître les informations détenues par un établissement financier</p>
+              <div style="width: 21vh;"><p>Accéder aux informations détenues par une banque</p>
               <a
                 class='btn btn-form text-uppercase js-scroll-trigger popup img-banque'
                 data-toggle='modal'
@@ -164,14 +164,14 @@
           </div>
         </div>
            <!-- id="togg1" --> <button data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse" class='btn btn-primary btn-xl text-uppercase js-scroll-trigger step fifth' to='/droit'
-            style='margin: auto; background-color: #184abb; margin-bottom: 3rem; margin-top: 2rem; color: white'>Plus de demande</button>
+            style='margin: auto; background-color: #184abb; margin-bottom: 1rem; margin-top: 1rem; color: white'>Plus de demande</button>
       </div>
-       <router-link
+      <!-- <router-link
             class='text-uppercase js-scroll-trigger step fifth' 
             to='/droit'
-          >Quel droit choisir ?</router-link>
+          >Quel droit choisir ?</router-link> -->
         <div class='row'>
-          <div class='col-lg-12' style="margin-top: 7vh">
+          <div class='col-lg-12'>
             <h4 class="step sixth">L'entreprise a 1 mois pour valider votre demande et peut vous demander un justificatif afin de vérifier votre identité.</h4>
             <h4 class="step sixth">GERETONID vous permet de contrôler vos données personnelles en vous aidant à exercer vos droits.</h4>
           </div>
@@ -378,5 +378,20 @@ export default {
     background-image: url("../../img/Popup_img/prospection.png");
     background-size: 5rem !important;
     background-position: center;
+}
+.img-inexacte {
+    background-image: url("../../img/Popup_img/inexacte.png");
+    background-size: 5rem !important;
+    background-position: center;
+}
+.img-incomplet {
+    background-image: url("../../img/Popup_img/incomplet.png");
+    background-size: 5rem !important;
+    background-position: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+body {
+font-family: 'Times New Roman', Times, serif;
 }
 </style>
