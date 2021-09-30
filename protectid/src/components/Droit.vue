@@ -37,7 +37,7 @@
           id="acces"
         >
           <p>
-            Obtenir l’ensemble des données qu’une société a récolté sur vous, savoir comment elle les a récolté.
+            Obtenir l’ensemble des données qu’une société a récolté sur vous et savoir comment elle les a récolté.
           </p>
         </div>
 
@@ -75,7 +75,7 @@
           id="pub"
         >
           <p>
-            Exiger la suppression de vos coordonnées des fichiers d’envois de publicités de l’entreprise.
+            Exiger la suppression de vos coordonnées, des fichiers d’envois de publicités de l’entreprise.
           </p>
         </div>
 
@@ -94,7 +94,7 @@
           id="traitement"
         >
           <p>
-            Exiger d’une entreprise l'arrêt immédiat de l’analyse, la vente de vos données. Tout traitement de vos données personnelles. De nombreux algorithmes analysent vos données personnelles récoltées afin de vous cibler, il y a de nombreuses entreprises qui revendent cette analyse à d’autres sociétés.
+            Exiger d’une entreprise l'arrêt immédiat de l’analyse et de la vente de vos données, et de tout traitement de vos données personnelles. ( De nombreux algorithmes analysent vos données personnelles récoltées afin de vous cibler, et de nombreuses entreprises revendent cette analyse à d’autres sociétés.)
           </p>
         </div>
 
@@ -151,7 +151,7 @@
           id="incompletes"
         >
           <p>
-            Modifier des données incomplètes sur vous dans les fichiers d’une entreprise, celle-ci doit vous informer si ces données si vos données ont été communiquées à un tiers.
+            Modifier des données incomplètes sur vous dans les fichiers d’une entreprise, celle-ci doit vous informer si vos données ont été communiquées à un tiers.
           </p>
         </div>
 
@@ -170,7 +170,7 @@
           id="cloturer"
         >
           <p>
-            Restituer les Données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).
+            Restituer les données à caractère personnel contenues dans le SI suite à la demande des personnes dans un format lisible par une machine. Seules les données communiquées par les personnes doivent lui être transmises (ex : profilage exclu).
           </p>
         </div>
 
@@ -230,7 +230,7 @@
             Exiger d’obtenir l’ensemble des données qu’un établissement de santé détient.
           </p>
         </div>
-
+<!--
         <a 
           class="accordion-droit" 
           v-on:click.prevent="setActive('autre')" 
@@ -248,8 +248,9 @@
           <p>
             Demander si des données sur vous sont présentés dans leurs fichiers.
           </p>
-        </div>
 
+        </div>
+          -->
       </div>
       
     </div>

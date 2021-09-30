@@ -13,7 +13,7 @@
             <router-link to="/" class="nav-link js-scroll-trigger">Accueil</router-link>
           </li>
            <li class="nav-item">
-            <router-link to="/fonctionalities" class="nav-link js-scroll-trigger">Service internalisé</router-link>
+            <router-link to="/Service" class="nav-link js-scroll-trigger">Service internalisé</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/Droit" class="nav-link js-scroll-trigger">Détail des droits</router-link>

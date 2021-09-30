@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase" style="margin-bottom: 70px">Service internalisé</h2>
+          <h2 class="section-heading text-uppercase" style="margin-bottom: 2vw">Service internalisé</h2>
         </div>
       </div>
       </div>
@@ -23,7 +23,7 @@
         
         <a class="btn btn-primary btn-xl" href="https://www.instagram.com/download/request">Accéder à vos données</a>
         
-        <a class="btn btn-primary btn-xl" href="https://www.instagram.com/accounts/remove/request/permanent/">Supprimer vos données</a>
+        <a class="btn btn-primary btn-xl" style="background-color: red; border-color: red; margin-left: 1vw" href="https://www.instagram.com/accounts/remove/request/permanent/">Supprimer vos données</a>
       
     
   </div>

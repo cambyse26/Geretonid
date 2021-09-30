@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Fonctionalities from '@/components/Fonctionalities'
+import Service from '@/components/Service-internalisé'
 import Us from '@/components/Us'
 import Sensibilisation from '@/components/Sensibilisation'
 import Droit from '@/components/Droit'
@@ -24,9 +24,9 @@ export default new Router({
             component: Home
         },
         {
-            path: '/fonctionalities',
-            name: 'Fonctionalities',
-            component: Fonctionalities
+            path: '/Service',
+            name: 'Service-internalisé',
+            component: Service
         },
         {
             path: '/us',
