@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Service from '@/components/Service-internalisé'
+import Service from '@/components/Service-internalise'
 import Us from '@/components/Us'
 import Sensibilisation from '@/components/Sensibilisation'
 import Droit from '@/components/Droit'
@@ -25,7 +25,7 @@ export default new Router({
         },
         {
             path: '/Service',
-            name: 'Service-internalisé',
+            name: 'Service-internalise',
             component: Service
         },
         {
@@ -82,6 +82,6 @@ export default new Router({
             path: '/**',
             redirect: '/not-found'
         },
-        // Ne pas écrire après ce commentaire !!!
+        // Ne pas ecrire après ce commentaire !!!
     ]
 })
