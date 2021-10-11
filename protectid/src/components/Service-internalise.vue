@@ -8,7 +8,7 @@
         </div>
       </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 g-4" style="align-items: flex-end;">
+      <div class="row g-4" style="align-items: flex-end;">
   <div class="col" style="display: grid; padding
 : 3vh; justify-items: center">
   <img src="../../img/service_internalise/facebook.png" style="width: 10vw" class="card-img-top" alt="">
@@ -50,7 +50,7 @@
       </div>
    
 </div>
-<div class="row row-cols-1 row-cols-md-2 g-4" style="align-items: flex-end;">
+<div class="row g-4" style="align-items: flex-end;">
 <div class="col" style="display: grid; padding
 : 3vh; justify-items: center">
   
@@ -95,7 +95,7 @@
      
   </div>
   </div>
-  <div class="row row-cols-1 row-cols-md-2 g-4" style="align-items: flex-end;">
+  <div class="row g-4" style="align-items: flex-end;">
    <div class="col" style="display: grid; padding
 : 3vh; justify-items: center">
     
@@ -145,7 +145,7 @@
      
   </div>
   </div>
-  <div class="row row-cols-1 row-cols-md-2 g-4" style="align-items: flex-end;">
+  <div class="row g-4" style="align-items: flex-end;">
   <div class="col" style="display: grid; padding
 : 3vh; justify-items: center">
     
@@ -194,7 +194,7 @@
      
   </div>
   </div>
-   <div class="row row-cols-1 row-cols-md-2 g-4" style="align-items: flex-end;">
+   <div class="row g-4" style="align-items: flex-end;">
   <div class="col" style="display: grid; padding
 : 3vh; justify-items: center">
     

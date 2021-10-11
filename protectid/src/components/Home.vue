@@ -21,9 +21,9 @@
       <div class='container'>
               <div class='container' style="text-align: center">
         <div class='etape' style="display: inline-flex; margin-bottom: 1vh;">
-            <h1 class=" mb-4 step first expepa text-size ">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
-            <h2 class=" mb-4 step second expepa text-size ">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
-            <h3 class=" mb-4 step third expepa text-size ">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
+            <h1 class=" mb-4 step first expepa text-size " style="margin-left: 1vw">Etape 1 : Choisissez le droit que vous voulez utiliser</h1>
+            <h2 class=" mb-4 step second expepa text-size " style="margin-left: 1vw">Etape 2 : Indiquez le nom de l'entreprise et vos informations</h2>
+            <h3 class=" mb-4 step third expepa text-size " style="margin-left: 1vw">Etape 3 : Générer le PDF et envoyez-le à l'adresse indiquée</h3>
       </div>
           <div class="droit-container">
             <div class="row d-flex justify-content-center pop" style="margin-top: 1vw; margin-bottom: 1vw; align-items: flex-end;">
