@@ -57,7 +57,7 @@ export default {
                                 <input type="text" class="form-control" @change="preview" placeholder="Votre Prénom" id="PrenomModal" required>
                             </div>
                             <div class="form-group">
-                                <label for="MailModal" class="col-form-label">Adresse mail</label>
+                                <label for="MailModal" class="col-form-label">Adresse mail (Falcultatif) </label>
                                 <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="MailModal" required>
                             </div>
                         </form>

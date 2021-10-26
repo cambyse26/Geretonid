@@ -5,6 +5,10 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase" style="margin-bottom: 2vw">Service internalisé</h2>
+          <p> Voici les entreprises où les droits s’exercent directement au sein de leur site internet, selon le droit que vous voulez exercer, sélectionnez le lien qui correspond à votre besoin.<br>
+
+Nous vous redirigeons sur le meilleur endroit afin que vous gagniez le plus de temps possible</p>
+
         </div>
       </div>
       </div>
