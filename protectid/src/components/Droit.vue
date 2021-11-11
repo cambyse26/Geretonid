@@ -28,7 +28,7 @@
           :class="{ active: isActive('acces') }" 
           href="#acces"
         >
-          <p>Droit d'accès</p>
+          <p>(Droit d'accès) Accéder à vos données personnelles </p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('acces') }"></i>
         </a>
         <div 
@@ -37,7 +37,10 @@
           id="acces"
         >
           <p>
-            Obtenir l’ensemble des données qu’une société a récolté sur vous et savoir comment elle les a récolté.
+            Obtenir l’ensemble des données qu’une société a récolté sur vous, savoir comment et par quel moyen elle les a récolté ainsi que<br> la finalité de cette récolte (analyse, vente etc… ), la durée de conservation de vos données.
+Vous saurez qui a reçu vos données dans le cas où elles ont été transmises.
+
+<br> En savoir plus : <a href="https://www.cnil.fr/fr/modele/courrier/exercer-son-droit-dacces">https://www.cnil.fr/fr/modele/courrier/exercer-son-droit-dacces</a>
           </p>
         </div>
 
@@ -47,7 +50,7 @@
           :class="{ active: isActive('supprime') }" 
           href="#supprime"
         >
-          <p>Supprimer ses données personnelles </p>
+          <p>(Droit à l’effacement) Supprimer ses données personnelles </p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('supprime') }"></i>
         </a>
         <div 
@@ -56,7 +59,12 @@
           id="supprime"
         >
           <p>
-            Obliger une entreprise à supprimer vos données personnelles.
+             obliger une entreprise à supprimer toutes vos données personnelles, il faut préciser les données que vous souhaitez supprimer, pour savoir lesquelles nous vous recommandons d’exercer votre droit “accédez à vos données personnelles") 
+
+
+
+<br>En savoir plus : <a href="https://www.cnil.fr/fr/le-droit-leffacement-supprimer-vos-donnees-en-ligne">https://www.cnil.fr/fr/le-droit-leffacement-supprimer-vos-donnees-en-ligne</a>
+
           </p>
         </div>
         
@@ -66,16 +74,18 @@
           :class="{ active: isActive('pub') }" 
           href="#pub"
         >
-          <p>Ne plus recevoir de publicité</p>
+          <p>(Droit d’opposition) Ne plus recevoir de publicité </p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('pub') }"></i>
         </a>
         <div 
           class="accordion-panel fade" 
           :class="{ 'active show': isActive('pub') }" 
           id="pub"
-        >
+        > 
           <p>
-            Exiger la suppression de vos coordonnées, des fichiers d’envois de publicités de l’entreprise.
+            Exiger la suppression de vos coordonnées des fichiers d’envois de publicités de l’entreprise.
+
+            <br>En savoir plus : <a href="https://www.cnil.fr/fr/le-droit-dopposition-refuser-lutilisation-de-vos-donnees">https://www.cnil.fr/fr/le-droit-dopposition-refuser-lutilisation-de-vos-donnees</a>
           </p>
         </div>
 
@@ -85,7 +95,7 @@
           :class="{ active: isActive('traitement') }" 
           href="#traitement"
         >
-          <p>S'opposer au traitement de données </p>
+          <p>(Droit d’opposition) S'opposer au traitement de données </p>
          <i class="fas fa-chevron-down" :class="{ rotate: isActive('traitement') }"></i> 
         </a>
         <div 
@@ -95,6 +105,8 @@
         >
           <p>
             Exiger d’une entreprise l'arrêt immédiat de l’analyse et de la vente de vos données, et de tout traitement de vos données personnelles. ( De nombreux algorithmes analysent vos données personnelles récoltées afin de vous cibler, et de nombreuses entreprises revendent cette analyse à d’autres sociétés.)
+
+            <br> En savoir plus : <a href="https://www.cnil.fr/fr/le-droit-dopposition-refuser-lutilisation-de-vos-donnees">https://www.cnil.fr/fr/le-droit-dopposition-refuser-lutilisation-de-vos-donnees</a>
           </p>
         </div>
 
@@ -104,7 +116,7 @@
           :class="{ active: isActive('prospection') }" 
           href="#prospection"
         >
-          <p>S'opposer à la prospection commerciale (par sms, mail ou courrier )</p>
+          <p>S'opposer à la prospection commerciale (par sms, mail ou courrier) </p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('prospection') }"></i>
         </a>
         <div 
@@ -114,6 +126,7 @@
         >
           <p>
             Oblige une société à ne plus vous contacter, elle doit ainsi supprimer vos données dans leurs fichiers d’envois / de prospection et notifier leurs partenaires de cette modification.
+            <br> En savoir plus : <a href="https://www.cnil.fr/fr/le-droit-dopposition-refuser-lutilisation-de-vos-donnees">https://www.cnil.fr/fr/le-droit-dopposition-refuser-lutilisation-de-vos-donnees</a>
           </p>
         </div>
 
@@ -123,7 +136,7 @@
           :class="{ active: isActive('inexactes') }" 
           href="#inexactes"
         >
-          <p>Rectifier des données inexactes </p>
+          <p>(Droit de rectification) Rectifier des données inexactes</p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('inexactes') }"></i>
         </a>
         <div 
@@ -133,6 +146,7 @@
         >
           <p>
             Modifier des données inexactes vous concernant dans les fichiers d’une entreprise.
+            <br> En savoir plus : <a href="https://www.cnil.fr/fr/le-droit-de-rectification-corriger-vos-informations">https://www.cnil.fr/fr/le-droit-de-rectification-corriger-vos-informations</a>
           </p>
         </div>
 
@@ -142,7 +156,7 @@
           :class="{ active: isActive('incompletes') }" 
           href="#incompletes"
         >
-          <p>Rectifier des données incomplètes </p>
+          <p>(Droit de rectification) Rectifier des données incomplètes  </p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('incompletes') }"></i>
         </a>
         <div 
@@ -152,6 +166,7 @@
         >
           <p>
             Modifier des données incomplètes sur vous dans les fichiers d’une entreprise, celle-ci doit vous informer si vos données ont été communiquées à un tiers.
+            <br> En savoir plus : <a href="https://www.cnil.fr/fr/le-droit-de-rectification-corriger-vos-informations">https://www.cnil.fr/fr/le-droit-de-rectification-corriger-vos-informations</a>
           </p>
         </div>
 
@@ -161,7 +176,7 @@
           :class="{ active: isActive('cloturer') }" 
           href="#cloturer"
         >
-          <p>Clôturer un compte en ligne</p>
+          <p>(Droit à l’effacement) Clôturer un compte en ligne </p>
           <i class="fas fa-chevron-down" :class="{ rotate: isActive('cloturer') }"></i>
         </a>
         <div 
