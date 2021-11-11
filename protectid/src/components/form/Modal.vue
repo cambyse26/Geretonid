@@ -66,8 +66,8 @@ export default {
                         <p>Nous ne récupérons aucune donnée</p>
                         <div class="group-btn">
                             <button type="button" id="generate-pdf" style="color: white" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                                                        <a id="btn-mail" type="button" @click="changeEmail($event)" style="color: white" class="btn btn-primary" >Envoyer par mail</a>
-                            <a id="btn-gmail" type="button" @click="Gmail($event)" style="color: white" class="btn btn-primary">Gmail</a>
+                                                        <button id="btn-mail" type="button" @click="changeEmail($event)" style="color: white" class="btn btn-primary" >Envoyer par mail</button>
+                            <button id="btn-gmail" type="button" @click="Gmail($event)" style="color: white" class="btn btn-primary">Gmail</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                         </div>        
                     </div>
