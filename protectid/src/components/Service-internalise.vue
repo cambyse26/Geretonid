@@ -15,7 +15,7 @@ Nous vous redirigeons sur le meilleur endroit afin que vous gagniez le plus de t
       <div class="row g-4" style="align-items: flex-end;">
   <div class="col" style="display: grid; padding
 : 3vh; justify-items: center">
-  <img src="../../img/service_internalise/facebook.png" style="width: 10vw" class="card-img-top" alt="">
+  <img src="../../img/service_internalise/facebook.png" style="width: 10vw" class="card-img-top" alt="test">
  <a class="btn btn-primary btn-xl btn-service" href="https://www.facebook.com/settings?tab=your_facebook_information">Accéder à vos données</a>
   <a class="btn btn-primary btn-xl btn-service" style="background-color: red; border-color: red; margin-top: 1vh; font-weight: bold" href="https://www.facebook.com/settings?tab=your_facebook_information">Supprimer vos données</a>
       </div>
