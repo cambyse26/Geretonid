@@ -95,8 +95,15 @@ img::-moz-selection {
 .btn-primary {
   background-color: #184abb;
   border-color: #184abb;
+  color: white;
+}
+
+.btn-primary .modal {
+  background-color: #184abb;
+  border-color: #184abb;
   color: white !important;
 }
+
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   background-color: #184abb !important;
@@ -138,7 +145,6 @@ img::-moz-selection {
   font-weight: 400;
   padding: 0.75em 0;
   letter-spacing: 1px;
-  color: white !important;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
@@ -177,11 +183,12 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  /*background-image: url("../img/informatique.jpg");*/
+  background-image: url("../img/informatique.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  height: 90vh;
 }
 
 header.masthead .intro-text {
@@ -379,6 +386,10 @@ header.masthead .intro-text .intro-heading {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   background-color: #212529;
+}
+
+.modal-title, h5{
+  text-align: center;
 }
 
 .timeline {
@@ -689,3 +700,142 @@ ul.social-buttons li a {
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #fed136;
 }
+/* images-popup */
+
+/* .supprime {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #ffffff !important;
+  background-image: url("../img/Popup_img/supprimer_donnees.png");
+}
+
+.prospection {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/stop_prospection.jpg");
+}
+
+.supprime-infos {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/supprimer_infos.jpg");
+}
+
+.opposition {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #ffffff !important;
+  background-image: url("../img/Popup_img/opposition-traitement.png");
+}
+
+.acces {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/acces.jpg");
+}
+.cloture {
+  background-size: 100%;
+  background-blend-mode: luminosity;
+  font-weight: 1000 !important;
+  color: #000000 !important;
+  background-image: url("../img/Popup_img/cloture.jpg");
+} */
+
+.popup:hover {
+  transition: transform .2s;
+  transform: scale(1.1);
+}
+
+.bp{
+  text-align: center;
+  margin: 45px;  
+  }
+  
+  #carouselExampleCaptions{
+    margin: auto;
+  }
+  
+  .carousel-item{
+    width: 100%!important;
+  }
+  
+  .carousel-item img{
+    width: 1000px; 
+    height: 800px
+  }
+  
+  .carousel-caption{
+    height: auto;
+  }
+  
+  .bprecent-container,
+  .bp-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width:2000px;
+    margin: auto;
+  }
+  
+  .bprecent-container a{
+    color: black;
+  }
+  
+  .bprecent-container a:hover{
+    color:#007bff;
+  }
+  
+  .bprecent-container{
+    overflow:hidden;
+  }
+  
+  .p{
+    width:50%; 
+    float:left; 
+    display:inline;
+    text-align: center;
+  }
+  
+  .bprecent-container img{
+    width: 500px;
+    height: 300px;
+  }
+  
+  .bp-container img{
+    width: 300px;
+    height: 200px;
+  }
+  
+  @media (max-width:1300px) {
+    .carousel-item{
+      width: 300px;
+      height: 250px;
+    } 
+    .carousel-item img{
+      width: 300px;
+      height: 250px;
+    } 
+    .bprecent-container img{
+      width: 300px;
+      height: 200px;
+      white-space: normal;
+    }  
+    .bp-container img{
+      width: 200px;
+      height: 100px;
+    }
+    h1, h2, h3, h5{
+      text-align: center;
+    }
+  }

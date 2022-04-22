@@ -1,0 +1,48 @@
+.modal-dialog {
+    margin: .5rem !important;
+}
+
+.modal-open .modal.show {
+    overflow-y: hidden !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+    height: auto;
+    height: 70vh;
+    max-height: 580px;
+    padding: .5rem !important;
+}
+
+#preview-modal-pdf,
+#preview-medical-pdf {
+    width: auto;
+    height: auto;
+    color: #ffffff;
+    opacity: 1;
+    z-index: 1050;
+    position: relative;
+    top: 5px;
+}
+
+.group-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &>[type=button] {
+        min-width: 120px;
+        padding: .45rem .75rem;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

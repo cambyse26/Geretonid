@@ -4,6 +4,8 @@ import Vue from 'vue'
 import DisableAutocomplete from 'vue-disable-autocomplete';
 import axios from "axios";
 import Forms from '@/services/Forms';
+import PDF from '@/services/PDF';
+import Modal from './Modal';
 Vue.use(DisableAutocomplete);
 
 export default {
@@ -18,23 +20,27 @@ export default {
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="btn-group d-flex justify-content-center">
+                        <button type="button" class="mx-auto btn btn-primary" data-toggle="collapse" data-target="#info-droit-med" aria-expanded="false" aria-controls="info-droit-med">Pour plus d'informations</button>
+                    </div>
+                    <p id="info-droit-med" class="collapse">Exiger d’obtenir l’ensemble des données qu’un établissement de santé détient.</p>
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Informations sur la société</h5>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="civilite">Civilité</label>
-                        <select name="civlite" id="Civilite10" class="form-select custom-select">
+                        <select name="civlite" id="Civilite10" @change="preview" class="form-select custom-select">
                             <option value="Madame">Mme</option>
                             <option value="Monsieur">Mr</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Nom du médecin ou de l'établissement de santé</label>
-                        <input class="form-control" placeholder="Nom du destinataire" id="Destinataire10" v-model="organisme">
+                        <input class="form-control" @change="preview" placeholder="Nom du destinataire" id="organisme10" v-model="organisme" required>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Adresse mail</label>
-                        <input class="form-control" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email">
+                        <input class="form-control" @change="preview" placeholder="Adresse mail de l'organisme" id="Mailorga10" v-model="email" required>
                     </div>
                     <form>
                         <div class="modal-header">
@@ -42,42 +48,45 @@ export default {
                         </div>
                         <div class="form-group">
                             <label for="recipient-informations" class="col-form-label">Informations complémentaires</label>
-                            <textarea name="informations" rows="4" class="form-control">Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : </textarea>
+                            <textarea name="informations" id="informations_complementaires" @change="preview" rows="4" class="form-control" placeholder="Pour faciliter le traitement de ma demande, je vous précise les informations suivantes : " required></textarea>
                         </div>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Vos informations</h5>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nom</label>
-                            <input type="text" class="form-control" placeholder="Votre nom" id="Nom10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre nom" id="Nom10" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Prénom</label>
-                            <input type="text" class="form-control" placeholder="Votre Prénom" id="Prenom10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre Prénom" id="Prenom10" required>
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Adresse mail</label>
-                            <input class="form-control" placeholder="Votre adresse mail"  id="Mail10">
+                            <input class="form-control" @change="preview" placeholder="Votre adresse mail"  id="Mail10" required>
                         </div>
                         <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Code postal</label>
-                            <input type="text" class="form-control" placeholder="Votre code postal" id="Postal10">
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre code postal" id="Postal10" required>
                         </div>
                         <div class="form-group" style="display: none">
                             <label for="recipient-name" class="col-form-label">Ville</label>
-                            <input type="text" class="form-control" placeholder="Votre ville" id="Ville10" >
+                            <input type="text" @change="preview" class="form-control" placeholder="Votre ville" id="Ville10" required>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <p>Nous ne récupérons aucune donnée</p>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  <p>Nous ne récupérons aucune donnée</p>
+                  <div class="group-btn">
                     <button type="button" class="btn btn-primary" v-on:click="generatePDF">Generer le PDF</button>
-                    <a href="mailto: bcc=bonplanmat@gmail.com" type="button" class="btn btn-primary">Envoyer par mail</a>          
+                    <a href="mailto: " id="btn-mail" type="button" @click="changeEmail($event)" class="btn btn-primary">Envoyer par mail</a>  
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  </div>        
                 </div>
             </div>
         </div>
-    </div>
+    <div id="preview-medical-pdf"></div>
+  </div>
 `,
   name: 'App',
     data () {
@@ -88,6 +97,9 @@ export default {
       addressZip: "",
       addressCity: ""
     }
+  },
+  components: {
+    Modal
   },
   methods: {
 
@@ -168,7 +180,7 @@ export default {
     // 
     updateOrganismeDetails(id) {
       console.log("updateOrganismeDetails start");
-      const baseURI = "https://api.geretonid.com/api/company/get/" + id;
+      const baseURI = `https://api.geretonid.com/api/company/get/${id}`;
       const headers = {
         headers : {
           "Authorization":  "token 32ffef7a5e2682244a84fa2a68630da15bc6575b",
@@ -213,10 +225,36 @@ export default {
       doc.text('P.J :\n', 10, 180)
       doc.text('Copie de pièce d\'identité \n', 10, 190)
       doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
-      doc.save('Medical.pdf')
-      
-
-    }
-  }
+      doc.save('Medical.pdf')     
+    }, 
+    preview () {
+      if (window.innerWidth > 1000) {
+        let currentOrganisme = document.getElementById('organisme10').value;
+        const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
+        PDF.previewMedical(values, "#preview-medical-pdf");
+      }
+    },
+    changeEmail(e) {
+      console.log(document.getElementById('btn-mail'))
+      const mail = document.getElementById('MailorgaModal').value;
+      if (mail === '') {
+          e.preventDefault();
+      }
+      return document.getElementById('btn-mail').href = `mailto:${mail}`;
+    },
+    // getBaseUrl() {
+    //   const protocol = window.location.protocol;
+    //   const host = window.location.hostname === "localhost" ? window.location.host : "api.geretonid.com";
+    //   return `${protocol}//${host}`;
+    // },
+  },
 }
 </script>
+
+<style>
+
+.modal-footer {
+    color: white !important;
+}
+
+</style>

@@ -1,42 +1,69 @@
 // Styling for the footer
 .footer {
-  text-align: center;
-  span.copyright {
-    font-size: 90%;
-    line-height: 40px;
-    text-transform: none;
-    @include heading-font;
-  }
-  ul.quicklinks {
-    font-size: 90%;
-    line-height: 40px;
-    margin-bottom: 0;
-    text-transform: none;
-    @include heading-font;
-  }
+    text-align: center;
+    background-color: #eeeeee;
+    margin-top: 10px;
+    width: 100vw;
+    height: auto;
+    min-height: 10vh;
+    color: #212529;
+    font-size: 1.15rem;
+    .footer-container {
+        width: 100%;
+        padding-top: 1.2vh;
+        padding-right: 6vh;
+        padding-left: 16vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        .footer-menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: .95rem;
+            * {
+                padding: .4rem;
+            }
+            .social-link {
+                color: #212529;
+                &:active,
+                &:focus,
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+        .footer-link {
+            color: #212529;
+        }
+    }
 }
 
-ul.social-buttons {
-  margin-bottom: 0;
-  li {
-    a {
-      font-size: 20px;
-      line-height: 50px;
-      display: block;
-      width: 50px;
-      height: 50px;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
-      color: white;
-      border-radius: 100%;
-      outline: none;
-      background-color: $gray-900;
-      &:active,
-      &:focus,
-      &:hover {
-        background-color: $primary;
-      }
+@media screen and (max-width: 576px) {
+    .footer {
+        font-size: 1rem;
+        .footer-container {
+            padding: 1rem .5rem;
+            .footer-menu {
+                padding: .5rem;
+                .social-link i {
+                    font-size: 1.5rem;
+                }
+                .social-contact {
+                    display: none;
+                }
+            }
+        }
     }
-  }
+}
+
+@media screen and (max-width: 850px) {
+    .footer {
+        .footer-container {
+            justify-content: center;
+        }
+    }
 }

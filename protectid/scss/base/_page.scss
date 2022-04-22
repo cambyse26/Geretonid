@@ -1,22 +1,78 @@
 // Global styling for this template
 body {
-  overflow-x: hidden;
-  @include body-font;
+    overflow: hidden;
+    padding: 0;
+    width: 100vw;
+    @include body-font;
+}
+
+.container {
+    padding: 1rem !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: $gray-500;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: $primary;
 }
 
 p {
-  line-height: 1.75;
+    line-height: 1.75;
+}
+
+.hidden {
+    display: none;
+}
+
+#app,
+.page-section {
+    min-height: calc(100vh - 195px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mentions-legales {
+    padding: 0 15px;
 }
 
 a {
-  color: $primary;
-  &:hover {
-    color: darken($primary, 10%);
-  }
+    color: $primary;
+    &:hover {
+        color: darken($primary, 10%);
+    }
 }
 
 .text-primary {
-  color: $primary !important;
+    color: $primary !important;
 }
 
 h1,
@@ -25,47 +81,65 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  @include heading-font;
+    font-weight: 700;
+    @include heading-font;
 }
 
 .page-section {
-  padding-top: 100px;
-  h2.section-heading {
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  h3.section-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    margin-bottom: 75px;
-    text-transform: none;
-    @include serif-font;
-  }
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 45px;
+        text-transform: none;
+        @include serif-font;
+    }
 }
+
 @media(min-width:768px) {
-  section {
-    padding: 0px 0;
-  }
+    section {
+        padding: 0px 0;
+    }
 }
 
 // Highlight color customization
 ::-moz-selection {
-  background: $primary;
-  text-shadow: none;
+    background: $primary;
+    text-shadow: none;
 }
 
 ::selection {
-  background: $primary;
-  text-shadow: none;
+    background: $primary;
+    text-shadow: none;
 }
 
 img::selection {
-  background: transparent;
+    background: transparent;
 }
 
 img::-moz-selection {
-  background: transparent;
+    background: transparent;
+}
+
+@media (min-width: 1264px) {
+    .container {
+        max-width: 1185px !important;
+    }
+}
+
+@media (max-width: 1263px) {
+    .container {
+    max-width: 770px !important;
+    }
+}
+
+@media (min-width: 1904px) {
+    .container {
+        max-width: 1785px !important;
+    }
 }

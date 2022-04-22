@@ -2,14 +2,14 @@
 // vue.config.js
 module.exports = {
     devServer: {
-        proxy: 'https://api.geretonid.com/',
+        proxy: 'http://localhost:8080/',
         disableHostCheck: true,
     },
     configureWebpack: {
         resolve: {
-          alias: {
-            'vue$': 'vue/dist/vue.esm.js'
-          }
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js'
+            }
         }
-      }   
+    }
 }

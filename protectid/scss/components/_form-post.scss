@@ -1,0 +1,55 @@
+#postForm {
+    min-height: 75vh;
+    padding: 0 1rem;
+}
+
+
+/* Dropdown */
+
+.drop-down {
+    border-radius: .209rem;
+    border: 1px solid rgba(0, 0, 0, 0.105);
+    padding: 0 !important;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    height: auto;
+    overflow: hidden !important;
+    >* {
+        padding: .5rem 1rem;
+    }
+    .drop-btn {
+        font-size: 1.33rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.105);
+        .fa-caret-down {
+            font-size: 1.75rem;
+            transition: all 300ms ease-in-out;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .drop {
+        transition: height ease-out .4s;
+        pointer-events: all;
+        overflow: hidden;
+        height: 0;
+        &.show {
+            animation: display 300ms forwards ease-out;
+        }
+        #uploadedFile {
+            box-shadow: 2px ​2px 8px rgba(0, 0, 0, 0.105);
+            height: auto;
+            width: 100%;
+            margin-bottom: .75rem;
+        }
+    }
+}
+
+@keyframes display {
+    0% {
+        display: unset;
+    }
+    100% {
+        height: auto;
+    }
+}
