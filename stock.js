@@ -1,5 +1,6 @@
 <script>
-var app = new Vue({
+// test
+  var app = new Vue({
   el: '#app',
   data() {
     return {
