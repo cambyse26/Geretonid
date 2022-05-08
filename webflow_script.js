@@ -1,6 +1,3 @@
-import jsPDF from 'jspdf';
-import PdfView from '@/services/PDFView';
-
 var options = {
     height: "calc(77vh + 150px)",
     width: "auto",
