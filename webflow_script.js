@@ -237,6 +237,11 @@ var app = new Vue({
             })
             console.log("updateOrganismeDetails end");
         },
+        function generatePDF($this) {
+            let currentOrganisme = document.getElementById('organismeModal').value;
+            const values = { ...Forms.getValues('.form-control'), ...Forms.getValues('.form-select'), currentOrganisme};
+            Pdf.generate($this.srcElement.dataset.pdf, values);
+        },
         }
         })
 
