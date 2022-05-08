@@ -58,7 +58,7 @@ export default {
         // PDF Content
         this.getContent(pdf, doc, values);
 
-        // PDF Footer
+        //  PDF Footer
         doc.text(NP, 10, 250);
         doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 140, 280, 60, 15);
 
