@@ -122,7 +122,6 @@
         }
 
         function generatePDF() {
-            window.jsPDF = window.jspdf.jsPDF;
             let pdfName = 'test'; 
             var doc = new jsPDF();
             doc.text("Hello World", 10, 10);
