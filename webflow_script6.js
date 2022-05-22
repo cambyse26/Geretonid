@@ -1,4 +1,4 @@
-  import jsPDF from 'jspdf'
+  import jsPDF from 'jspdf';
 
   var app = new Vue({
   el: '#app',
