@@ -132,52 +132,37 @@
                 precision: 2
             });
           
-            const NP = `${values.PrenomModal} ${values.NomModal}`
+            let orgaName = document.getElementById('organismeModal').value;
+            let orgaMail = document.getElementById('MailorgaModal').value;
+            let prenom = document.getElementById('PrenomModal').value;
+            let nom = document.getElementById('NomModal').value;
+            let mail = document.getElementById('MailModal').value;
+          
+            const NP = `${prenom} ${nom}`
 
             // PDF Header
             doc.setFontSize(14);
             doc.text(NP, 10, 15);
-            doc.text(values.MailModal, 10, 20);
-            doc.text(values.currentOrganisme, 200, 45, null, null, "right");
-            doc.text(values.MailorgaModal, 200, 50, null, null, "right");
+            doc.text(orgaMail, 10, 20);
+            doc.text(orgaName, 200, 45, null, null, "right");
+            doc.text(orgaMail, 200, 50, null, null, "right");
             doc.setFont('Times-Roman', 'bold');
 
-            // PDF Content
-            getPdfContent(, doc, values);
+            doc.text('Objet: Droit d\'accès', 10, 60, maxWidth);
+            doc.setFont('Times-Roman', 'normal')
+            doc.text('Madame, Monsieur,', 10, 70, maxWidth);
+            doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans vos fichiers informatisés ou manuels.', 10, 80, maxWidth);
+            doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces et données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires ») en application de l\'article 15 du Règlement général sur la protection des données (RGPD).', 10, 100, maxWidth);
+            doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).', 10, 130, maxWidth);
+            doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse incomplète je me réserve la possibilité de saisir la Commission nationale de l\'informatique et des libertés (CNIL) d\'une réclamation.', 10, 155, maxWidth);
+            doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL : ', 10, 178, maxWidth);
+            doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.', 10, 184, maxWidth);
+            doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 200, maxWidth);
 
             // PDF Footer
             doc.text(NP, 10, 240);
             // doc.addImage("/img/ProtectID_logo.242c85be.png", "PNG", 145, 280, 60, 15);
-            doc.save(pdfName + '.pdf');
+            doc.save("test" + '.pdf');
         }
 
-        // Afficher le contenu des pdf
-       function getPdfContent(pdf, doc, values) {
-            let maxWidth = { maxWidth: 190 };
-            switch (pdf) {
-            case "acces":
-                doc.text('Objet: Droit d\'accès', 10, 60, maxWidth);
-                doc.setFont('Times-Roman', 'normal')
-                doc.text('Madame, Monsieur,', 10, 70, maxWidth);
-                doc.text('Je vous prie de bien vouloir m\'indiquer si des données me concernant figurent dans vos fichiers informatisés ou manuels.', 10, 80, maxWidth);
-                doc.text('Dans l\'affirmative, je souhaiterais obtenir une copie, en langage clair, de l\'ensemble de ces et données (y compris celles figurant dans les zones « blocs-notes » ou « commentaires ») en application de l\'article 15 du Règlement général sur la protection des données (RGPD).', 10, 100, maxWidth);
-                doc.text('Je vous remercie de me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d\'un mois à compter de la réception de ma demande (article 12.3 du RGPD).', 10, 130, maxWidth);
-                doc.text('A défaut de réponse de votre part dans les délais impartis ou en cas de réponse incomplète je me réserve la possibilité de saisir la Commission nationale de l\'informatique et des libertés (CNIL) d\'une réclamation.', 10, 155, maxWidth);
-                doc.text('A toutes fins utiles, vous trouverez des informations sur le site internet de la CNIL : ', 10, 178, maxWidth);
-                doc.text('https://www.cnil.fr/fr/professionnels-comment-repondre-une-demande-de-droit-dacces.', 10, 184, maxWidth);
-                doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.', 10, 200, maxWidth);
-                break;
-
-            case "compte":
-                doc.text('Objet: Demande de clôture de compte et de suppression de données personnelles me concernant\n', 10, 60, maxWidth);
-                doc.setFont('Times-Roman', 'normal');
-                doc.text('Madame, Monsieur,\n', 10, 76);
-                doc.text(`Je suis titulaire du compte ${values.Identifiant} sur ${values.Reseau_Social}, qui diffuse des informations me concernant à la page: ${values.Url}. \n`, 10, 84, maxWidth);
-                doc.text('Je souhaite obtenir la clôture de mon compte et vous demande, en application de l’article 17.1 du Règlement général sur la protection des données (RGPD),  de supprimer l’ensemble de mes données personnelles qui lui sont rattachées, à savoir : \n', 10, 104, maxWidth);
-                doc.text(values.Delete_Infos, 10, 130, maxWidth);
-                doc.text('Je vous remercie de bien vouloir m\'informer des mesures prises à la suite de ma demande dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de sa réception (article 12.3 du RGPD).\n', 10, 155, maxWidth);
-                doc.text('Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n', 10, 180);
-                break;
-          }
-        }
 
