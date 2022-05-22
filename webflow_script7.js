@@ -1,5 +1,3 @@
-  import jsPDF from 'jspdf';
-
   var app = new Vue({
   el: '#app',
   data() {
@@ -125,7 +123,7 @@
 
         function generatePDF() {
             let pdfName = 'test'; 
-            var doc = new jsPDF();
+            var doc = new jspdf();
             doc.text("Hello World", 10, 10);
             doc.save(pdfName + '.pdf');
         }
