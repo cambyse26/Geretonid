@@ -122,7 +122,7 @@
         }
 
         function generatePDF() {
-            let pdfName = 'test'; 
+            let pdfName = 'Droit_dacces'; 
             var doc = new jsPDF({
                 orientation: 'p',
                 unit: 'mm',
